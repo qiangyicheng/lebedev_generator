@@ -1,233 +1,73 @@
 #pragma once
 
-#include <type_traits>
+#include "detail/point_type.h"
+#include "detail/rule_info.h"
 
-#include "qutility/c_array.h"
-#include "qutility/traits.h"
+namespace lebedev{
+    using detail::LEBEDEV_POINT_TYPE;
+    using detail::c_array;
+    
+    template<size_t Rule>
+    struct LebedevInfo {
+    public:
+        static constexpr bool if_available_ = detail::if_available(Rule);
+        static constexpr size_t precision_ = detail::precision(Rule);
+        static constexpr size_t available_index_ = detail::available_index(Rule);
+        static constexpr size_t total_num_of_points_ = detail::point_count(Rule);
+        static constexpr c_array<size_t, 6> point_type_count_ = detail::point_type_count(Rule);
+        static constexpr c_array<size_t, 6> point_type_accum_count_ = detail::point_type_accum_count(Rule);
+        static constexpr c_array<size_t, 6> point_type_multiplicity_ = detail::point_type_multiplicity();
+        
+        static constexpr size_t point_type_total_ = point_type_accum_count_[5];
 
-namespace lebedev {
-	namespace lebedev {
-		using qutility::c_array::c_array;
+    private:
+        //obtain the type of corresponding unique Lebdev point, namely equivalent points under octahedra group is considered as one
+        //index should be less than point_type_total_
+        static constexpr LEBEDEV_POINT_TYPE point_type(size_t index) {
+            if (index < point_type_accum_count_[0]) return LEBEDEV_POINT_TYPE::OPTRN6_001;
+            if (index < point_type_accum_count_[1]) return LEBEDEV_POINT_TYPE::OPTRN12_0AA;
+            if (index < point_type_accum_count_[2]) return LEBEDEV_POINT_TYPE::OPTRN8_AAA;
+            if (index < point_type_accum_count_[3]) return LEBEDEV_POINT_TYPE::OPTRN24_AAB;
+            if (index < point_type_accum_count_[4]) return LEBEDEV_POINT_TYPE::OPTRN24_AB0;
+            if (index < point_type_accum_count_[5]) return LEBEDEV_POINT_TYPE::OPTRN48_ABC;
+            return LEBEDEV_POINT_TYPE::OPTRN0_EMPTY;
+        }
 
-		enum class LEBEDEV_POINT_TYPE {
-			OPTRN6_001 = 0,
-			OPTRN12_0AA = 1,
-			OPTRN8_AAA = 2,
-			OPTRN24_AAB = 3,
-			OPTRN24_AB0 = 4,
-			OPTRN48_ABC = 5,
-			OPTRN0_EMPTY = 6
-		};
+        struct EmptyPointInfo {
+            static constexpr LEBEDEV_POINT_TYPE point_type_ = LEBEDEV_POINT_TYPE::OPTRN0_EMPTY;
+            static constexpr size_t point_multiplicity_ = 0;
+            static constexpr size_t point_shift_ = 0;
+        };
 
-		struct LebedevData {
-			static constexpr size_t rule_max_ = 65;
-			static constexpr size_t rule_avaliable_ = 32;
-			static constexpr c_array<size_t, 6> point_type_multiplicity_ = { {
-				6,   12,    8,   24,   24,   48
-			} };
-			static constexpr c_array<size_t, rule_max_> available_table_ = { {
-				1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-				1,    1,    1,    1,    1,    0,    1,    0,    0,    1,
-				0,    0,    1,    0,    0,    1,    0,    0,    1,    0,
-				0,    1,    0,    0,    1,    0,    0,    1,    0,    0,
-				1,    0,    0,    1,    0,    0,    1,    0,    0,    1,
-				0,    0,    1,    0,    0,    1,    0,    0,    1,    0,
-				0,    1,    0,    0,    1
-			} };
-			static constexpr c_array<size_t, rule_max_> available_index_table_ = { {
-				1,    2,    3,    4,    5,    6,    7,    8,    9,   10,
-			   11,   12,   13,   14,   15,    0,   16,    0,    0,   17,
-				0,    0,   18,    0,    0,   19,    0,    0,   20,    0,
-				0,   21,    0,    0,   22,    0,    0,   23,    0,    0,
-			   24,    0,    0,   25,    0,    0,   26,    0,    0,   27,
-				0,    0,   28,    0,    0,   29,    0,    0,   30,    0,
-				0,   31,    0,    0,   32
-			} };
-			static constexpr c_array<size_t, rule_max_> point_count_table_ = { {
-				6,   14,   26,   38,   50,   74,   86,  110,  146,  170,
-			  194,  230,  266,  302,  350,  386,  434,  482,  530,  590,
-			  650,  698,  770,  830,  890,  974, 1046, 1118, 1202, 1274,
-			 1358, 1454, 1538, 1622, 1730, 1814, 1910, 2030, 2126, 2222,
-			 2354, 2450, 2558, 2702, 2810, 2930, 3074, 3182, 3314, 3470,
-			 3590, 3722, 3890, 4010, 4154, 4334, 4466, 4610, 4802, 4934,
-			 5090, 5294, 5438, 5606, 5810
-			} };
-			static constexpr c_array<size_t, rule_max_> precision_table_ = { {
-				3,    5,    7,    9,   11,   13,   15,   17,   19,   21,
-			   23,   25,   27,   29,   31,   33,   35,   37,   39,   41,
-			   43,   45,   47,   49,   51,   53,   55,   57,   59,   61,
-			   63,   65,   67,   69,   71,   73,   75,   77,   79,   81,
-			   83,   85,   87,   89,   91,   93,   95,   97,   99,  101,
-			  103,  105,  107,  109,  111,  113,  115,  117,  119,  121,
-			  123,  125,  127,  129,  131
-			} };
-			static constexpr c_array<c_array<size_t, 6>, rule_avaliable_> point_type_count_table_ = { {
-			   {{1,    0,    0,    0,    0,    0}},
-			   {{1,    0,    1,    0,    0,    0}},
-			   {{1,    1,    1,    0,    0,    0}},
-			   {{1,    0,    1,    0,    1,    0}},
-			   {{1,    1,    1,    1,    0,    0}},
-			   {{1,    1,    1,    1,    1,    0}},
-			   {{1,    0,    1,    2,    1,    0}},
-			   {{1,    0,    1,    3,    1,    0}},
-			   {{1,    1,    1,    3,    0,    1}},
-			   {{1,    1,    1,    3,    1,    1}},
-			   {{1,    1,    1,    4,    1,    1}},
-			   {{1,    0,    1,    5,    2,    1}},
-			   {{1,    1,    1,    5,    1,    2}},
-			   {{1,    0,    1,    6,    2,    2}},
-			   {{1,    0,    1,    6,    2,    3}},
-			   {{1,    1,    1,    7,    2,    4}},
-			   {{1,    0,    1,    9,    3,    6}},
-			   {{1,    1,    1,   10,    3,    9}},
-			   {{1,    0,    1,   12,    4,   12}},
-			   {{1,    1,    1,   13,    4,   16}},
-			   {{1,    0,    1,   15,    5,   20}},
-			   {{1,    1,    1,   16,    5,   25}},
-			   {{1,    0,    1,   18,    6,   30}},
-			   {{1,    1,    1,   19,    6,   36}},
-			   {{1,    0,    1,   21,    7,   42}},
-			   {{1,    1,    1,   22,    7,   49}},
-			   {{1,    0,    1,   24,    8,   56}},
-			   {{1,    1,    1,   25,    8,   64}},
-			   {{1,    0,    1,   27,    9,   72}},
-			   {{1,    1,    1,   28,    9,   81}},
-			   {{1,    0,    1,   30,   10,   90}},
-			   {{1,    1,    1,   31,   10,  100}}
-			} };
-			static constexpr c_array<c_array<size_t, 6>, rule_avaliable_> point_type_accum_count_table_ = { {
-			   {{1,    1,    1,    1,    1,    1}},
-			   {{1,    1,    2,    2,    2,    2}},
-			   {{1,    2,    3,    3,    3,    3}},
-			   {{1,    1,    2,    2,    3,    3}},
-			   {{1,    2,    3,    4,    4,    4}},
-			   {{1,    2,    3,    4,    5,    5}},
-			   {{1,    1,    2,    4,    5,    5}},
-			   {{1,    1,    2,    5,    6,    6}},
-			   {{1,    2,    3,    6,    6,    7}},
-			   {{1,    2,    3,    6,    7,    8}},
-			   {{1,    2,    3,    7,    8,    9}},
-			   {{1,    1,    2,    7,    9,   10}},
-			   {{1,    2,    3,    8,    9,   11}},
-			   {{1,    1,    2,    8,   10,   12}},
-			   {{1,    1,    2,    8,   10,   13}},
-			   {{1,    2,    3,   10,   12,   16}},
-			   {{1,    1,    2,   11,   14,   20}},
-			   {{1,    2,    3,   13,   16,   25}},
-			   {{1,    1,    2,   14,   18,   30}},
-			   {{1,    2,    3,   16,   20,   36}},
-			   {{1,    1,    2,   17,   22,   42}},
-			   {{1,    2,    3,   19,   24,   49}},
-			   {{1,    1,    2,   20,   26,   56}},
-			   {{1,    2,    3,   22,   28,   64}},
-			   {{1,    1,    2,   23,   30,   72}},
-			   {{1,    2,    3,   25,   32,   81}},
-			   {{1,    1,    2,   26,   34,   90}},
-			   {{1,    2,    3,   28,   36,  100}},
-			   {{1,    1,    2,   29,   38,  110}},
-			   {{1,    2,    3,   31,   40,  121}},
-			   {{1,    1,    2,   32,   42,  132}},
-			   {{1,    2,    3,   34,   44,  144}}
-			} };
-		};
+        //obtain the infomation of corresponding unique Lebdev point, namely equivalent points under octahedra group is considered as one
+        template<size_t Index>
+        struct PointInfo {
+            static_assert(Index < point_type_total_, "Index must be smaller than point_type_total_");
+            using LastPointInfo = typename qutility::traits::static_if<Index == 0, EmptyPointInfo, PointInfo<Index - 1>>::type;
+            static constexpr LEBEDEV_POINT_TYPE point_type_ = point_type(Index);
+            static constexpr size_t point_multiplicity_ = point_type_multiplicity_[static_cast<size_t>(point_type_)];
+            static constexpr size_t point_shift_ = LastPointInfo::point_shift_ + LastPointInfo::point_multiplicity_;
+        };
 
-		constexpr size_t point_type_multiplicity(LEBEDEV_POINT_TYPE PType) {
-			return LebedevData::point_type_multiplicity_[static_cast<size_t>(PType)];
-		}
+        //Here the dual {} is not used since this will cause error when N==0
+        template<size_t N, size_t... Is>
+        static constexpr c_array<LEBEDEV_POINT_TYPE, N> point_type_list_impl(qutility::c_array::seq<Is...>) {
+            return { PointInfo<Is>::point_type_... };
+        };
 
-        constexpr bool if_available(size_t rule) {
-			if (rule < 1) return false;
-			if (rule > LebedevData::rule_max_) return false;
-			return LebedevData::available_table_[rule - 1];
-		}
+        template<size_t N, size_t... Is>
+        static constexpr c_array<size_t, N> point_multiplicity_list_impl(qutility::c_array::seq<Is...>) {
+            return { PointInfo<Is>::point_multiplicity_... };
+        };
 
-		constexpr size_t precision(size_t rule) {
-			return LebedevData::precision_table_[rule - 1];
-		}
+        template<size_t N, size_t... Is>
+        static constexpr c_array<size_t, N> point_shift_list_impl(qutility::c_array::seq<Is...>) {
+            return { PointInfo<Is>::point_shift_... };
+        };
 
-		constexpr size_t available_index(size_t rule) {
-			return LebedevData::available_index_table_[rule - 1];
-		}
-
-		constexpr size_t point_count(size_t rule) {
-			return LebedevData::point_count_table_[rule - 1];
-		}
-
-        constexpr c_array<size_t, 6> point_type_count(size_t rule) {
-			return !if_available(rule) ? c_array<size_t, 6>{} : LebedevData::point_type_count_table_[available_index(rule) - 1];
-		}
-
-        constexpr c_array<size_t, 6> point_type_accum_count(size_t rule) {
-			return !if_available(rule) ? c_array<size_t, 6>{} : LebedevData::point_type_accum_count_table_[available_index(rule) - 1];
-		}
-
-        constexpr c_array<size_t, 6> point_type_multiplicity() {
-			return LebedevData::point_type_multiplicity_;
-		}
-
-		template<size_t Rule>
-		struct LebedevInfo {
-		public:
-			static constexpr bool if_available_ = if_available(Rule);
-			static constexpr size_t precision_ = precision(Rule);
-			static constexpr size_t available_index_ = available_index(Rule);
-			static constexpr size_t total_num_of_points_ = point_count(Rule);
-			static constexpr c_array<size_t, 6> point_type_count_ = point_type_count(Rule);
-			static constexpr c_array<size_t, 6> point_type_accum_count_ = point_type_accum_count(Rule);
-			static constexpr c_array<size_t, 6> point_type_multiplicity_ = point_type_multiplicity();
-			
-            static constexpr size_t point_type_total_ = point_type_accum_count_[5];
-
-		private:
-			//obtain the type of corresponding unique Lebdev point, namely equivalent points under octahedra group is considered as one
-            //index should be less than point_type_total_
-            static constexpr LEBEDEV_POINT_TYPE point_type(size_t index) {
-				if (index < point_type_accum_count_[0]) return LEBEDEV_POINT_TYPE::OPTRN6_001;
-				if (index < point_type_accum_count_[1]) return LEBEDEV_POINT_TYPE::OPTRN12_0AA;
-				if (index < point_type_accum_count_[2]) return LEBEDEV_POINT_TYPE::OPTRN8_AAA;
-				if (index < point_type_accum_count_[3]) return LEBEDEV_POINT_TYPE::OPTRN24_AAB;
-				if (index < point_type_accum_count_[4]) return LEBEDEV_POINT_TYPE::OPTRN24_AB0;
-				if (index < point_type_accum_count_[5]) return LEBEDEV_POINT_TYPE::OPTRN48_ABC;
-				return LEBEDEV_POINT_TYPE::OPTRN0_EMPTY;
-			}
-
-			struct EmptyPointInfo {
-				static constexpr LEBEDEV_POINT_TYPE point_type_ = LEBEDEV_POINT_TYPE::OPTRN0_EMPTY;
-				static constexpr size_t point_multiplicity_ = 0;
-				static constexpr size_t point_shift_ = 0;
-			};
-
-            //obtain the infomation of corresponding unique Lebdev point, namely equivalent points under octahedra group is considered as one
-			template<size_t Index>
-			struct PointInfo {
-				static_assert(Index < point_type_total_, "Index must be smaller than point_type_total_");
-				using LastPointInfo = typename qutility::traits::static_if<Index == 0, EmptyPointInfo, PointInfo<Index - 1>>::type;
-				static constexpr LEBEDEV_POINT_TYPE point_type_ = point_type(Index);
-				static constexpr size_t point_multiplicity_ = point_type_multiplicity_[static_cast<size_t>(point_type_)];
-				static constexpr size_t point_shift_ = LastPointInfo::point_shift_ + LastPointInfo::point_multiplicity_;
-			};
-
-			//Here the dual {} is not used since this will cause error when N==0
-			template<size_t N, size_t... Is>
-			static constexpr c_array<LEBEDEV_POINT_TYPE, N> point_type_list_impl(qutility::c_array::seq<Is...>) {
-				return { PointInfo<Is>::point_type_... };
-			};
-
-			template<size_t N, size_t... Is>
-			static constexpr c_array<size_t, N> point_multiplicity_list_impl(qutility::c_array::seq<Is...>) {
-				return { PointInfo<Is>::point_multiplicity_... };
-			};
-
-			template<size_t N, size_t... Is>
-			static constexpr c_array<size_t, N> point_shift_list_impl(qutility::c_array::seq<Is...>) {
-				return { PointInfo<Is>::point_shift_... };
-			};
-
-		public:
-			static constexpr auto point_type_list_ = point_type_list_impl<point_type_total_>(qutility::c_array::gen_seq<point_type_total_>{});
-			static constexpr auto point_multiplicity_list_ = point_multiplicity_list_impl<point_type_total_>(qutility::c_array::gen_seq<point_type_total_>{});
-			static constexpr auto point_shift_list_ = point_shift_list_impl<point_type_total_>(qutility::c_array::gen_seq<point_type_total_>{});
-		};
-
-	}
+    public:
+        static constexpr auto point_type_list_ = point_type_list_impl<point_type_total_>(qutility::c_array::gen_seq<point_type_total_>{});
+        static constexpr auto point_multiplicity_list_ = point_multiplicity_list_impl<point_type_total_>(qutility::c_array::gen_seq<point_type_total_>{});
+        static constexpr auto point_shift_list_ = point_shift_list_impl<point_type_total_>(qutility::c_array::gen_seq<point_type_total_>{});
+    };
 }
