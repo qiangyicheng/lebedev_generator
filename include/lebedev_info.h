@@ -2,6 +2,7 @@
 
 #include "detail/point_type.h"
 #include "detail/rule_info.h"
+#include <detail/rule_point_data.h>
 
 namespace lebedev{
     using detail::LEBEDEV_POINT_TYPE;
@@ -19,6 +20,8 @@ namespace lebedev{
         static constexpr c_array<size_t, 6> point_type_multiplicity_ = detail::point_type_multiplicity();
         
         static constexpr size_t point_type_total_ = point_type_accum_count_[5];
+
+        using PointData=detail::RulePointData<Rule>;
 
     private:
         //obtain the type of corresponding unique Lebdev point, namely equivalent points under octahedra group is considered as one

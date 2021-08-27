@@ -33,7 +33,8 @@ TEST(LebedevInfoTest, ValidRule15) {
   c_array<size_t, 6> point_type_count{{1,0,1,6,2,3}};
   EXPECT_EQ(LebedevRule15::point_type_count_,point_type_count);
   
-  LebedevRule15::point_type_list_;
+  EXPECT_EQ(LebedevRule15::point_type_list_, LebedevRule15::PointData::type_list);
+
   LebedevRule15::point_type_multiplicity_;
   LebedevRule15::point_type_total_;
   EXPECT_EQ(LebedevRule15::total_num_of_points_,350);
