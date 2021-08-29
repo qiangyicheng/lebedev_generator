@@ -123,37 +123,37 @@ namespace lebedev {
 			} };
 		};
 
-		constexpr size_t point_type_multiplicity(LEBEDEV_POINT_TYPE PType) {
+		inline constexpr size_t point_type_multiplicity(LEBEDEV_POINT_TYPE PType) {
 			return LebedevRuleInfo::point_type_multiplicity_[static_cast<size_t>(PType)];
 		}
 
-        constexpr bool if_available(size_t rule) {
+        inline constexpr bool if_available(size_t rule) {
 			if (rule < 1) return false;
 			if (rule > LebedevRuleInfo::rule_max_) return false;
 			return LebedevRuleInfo::available_table_[rule - 1];
 		}
 
-		constexpr size_t precision(size_t rule) {
+		inline constexpr size_t precision(size_t rule) {
 			return LebedevRuleInfo::precision_table_[rule - 1];
 		}
 
-		constexpr size_t available_index(size_t rule) {
+		inline constexpr size_t available_index(size_t rule) {
 			return LebedevRuleInfo::available_index_table_[rule - 1];
 		}
 
-		constexpr size_t point_count(size_t rule) {
+		inline constexpr size_t point_count(size_t rule) {
 			return LebedevRuleInfo::point_count_table_[rule - 1];
 		}
 
-        constexpr c_array<size_t, 6> point_type_count(size_t rule) {
+        inline constexpr c_array<size_t, 6> point_type_count(size_t rule) {
 			return !if_available(rule) ? c_array<size_t, 6>{} : LebedevRuleInfo::point_type_count_table_[available_index(rule) - 1];
 		}
 
-        constexpr c_array<size_t, 6> point_type_accum_count(size_t rule) {
+        inline constexpr c_array<size_t, 6> point_type_accum_count(size_t rule) {
 			return !if_available(rule) ? c_array<size_t, 6>{} : LebedevRuleInfo::point_type_accum_count_table_[available_index(rule) - 1];
 		}
 
-        constexpr c_array<size_t, 6> point_type_multiplicity() {
+        inline constexpr c_array<size_t, 6> point_type_multiplicity() {
 			return LebedevRuleInfo::point_type_multiplicity_;
 		}
 	}
