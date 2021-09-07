@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    293622,       4649]
-NotebookOptionsPosition[    292921,       4629]
-NotebookOutlinePosition[    293339,       4646]
-CellTagsIndexPosition[    293296,       4643]
+NotebookDataLength[    293888,       4654]
+NotebookOptionsPosition[    293185,       4634]
+NotebookOutlinePosition[    293605,       4651]
+CellTagsIndexPosition[    293562,       4648]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -352,11 +352,11 @@ point_type_total_=point_type_accum_count(Rule_)[5];\>\""}]}], ";",
            RowBox[{"All", ",", "1"}], "]"}], "]"}], "/.", 
          RowBox[{"{", 
           RowBox[{
-           RowBox[{"1", "->", "\"\<LEBEDEV_POINT_TYPE::OPTRN6_001\>\""}], ",", 
-           RowBox[{"2", "->", "\"\<LEBEDEV_POINT_TYPE::OPTRN12_0AA\>\""}], 
+           RowBox[{"1", "->", "\"\<LEBEDEV_POINT_TYPE::OPTRN6_00C\>\""}], ",", 
+           RowBox[{"2", "->", "\"\<LEBEDEV_POINT_TYPE::OPTRN12_0BB\>\""}], 
            ",", 
            RowBox[{"3", "->", "\"\<LEBEDEV_POINT_TYPE::OPTRN8_AAA\>\""}], ",", 
-           RowBox[{"4", "->", "\"\<LEBEDEV_POINT_TYPE::OPTRN24_AAB\>\""}], 
+           RowBox[{"4", "->", "\"\<LEBEDEV_POINT_TYPE::OPTRN24_AAC\>\""}], 
            ",", 
            RowBox[{"5", "->", "\"\<LEBEDEV_POINT_TYPE::OPTRN24_AB0\>\""}], 
            ",", 
@@ -365,7 +365,7 @@ point_type_total_=point_type_accum_count(Rule_)[5];\>\""}]}], ";",
         RowBox[{"{", "\[IndentingNewLine]", 
          RowBox[{
          "\"\<\n            static constexpr c_array<LEBEDEV_POINT_TYPE, \
-point_type_total_> type_list={{\n                \>\"", ",", 
+point_type_total_> type_list_={{\n                \>\"", ",", 
           "\[IndentingNewLine]", "\"\<,\n                \>\"", ",", 
           "\[IndentingNewLine]", "\"\<\n            }};\>\""}], 
          "\[IndentingNewLine]", "\[IndentingNewLine]", "}"}]}], "]"}]}], ";", 
@@ -382,7 +382,7 @@ point_type_total_> type_list={{\n                \>\"", ",",
         RowBox[{"{", "\[IndentingNewLine]", 
          RowBox[{
          "\"\<\n            static constexpr c_array<c_array<double, 3>, \
-point_type_total_> pos_list={{\n                \>\"", ",", 
+point_type_total_> pos_list_={{\n              \>\"", ",", 
           "\[IndentingNewLine]", "\"\<,\n              \>\"", ",", 
           "\[IndentingNewLine]", "\"\<\n            }};\>\""}], 
          "\[IndentingNewLine]", "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
@@ -398,7 +398,7 @@ point_type_total_> pos_list={{\n                \>\"", ",",
         RowBox[{"{", "\[IndentingNewLine]", 
          RowBox[{
          "\"\<\n            static constexpr c_array<double, \
-point_type_total_> weight_list={{\n                \>\"", ",", 
+point_type_total_> weight_list_={{\n                \>\"", ",", 
           "\[IndentingNewLine]", "\"\<,\n                \>\"", ",", 
           "\[IndentingNewLine]", "\"\<\n            }};\>\""}], 
          "\[IndentingNewLine]", "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
@@ -443,8 +443,11 @@ point_type_total_> weight_list={{\n                \>\"", ",",
    3.8389584338577075`*^9}, {3.838958494461568*^9, 3.838958541062908*^9}, {
    3.839035880797406*^9, 3.8390359581318765`*^9}, 3.8390548928628616`*^9, 
    3.839055216902728*^9, 3.8390552499816465`*^9, {3.839055346874605*^9, 
-   3.8390553570658555`*^9}, {3.8390564518268642`*^9, 3.8390564576463633`*^9}},
- CellLabel->"In[5]:=",ExpressionUUID->"b03bdd55-6bd4-4c03-b399-b9c015309706"],
+   3.8390553570658555`*^9}, {3.8390564518268642`*^9, 
+   3.8390564576463633`*^9}, {3.8392814397593656`*^9, 3.839281439916521*^9}, {
+   3.839922764160845*^9, 3.839922775287962*^9}, {3.839993835326099*^9, 
+   3.8399938411277676`*^9}},
+ CellLabel->"In[65]:=",ExpressionUUID->"b03bdd55-6bd4-4c03-b399-b9c015309706"],
 
 Cell[CellGroupData[{
 
@@ -468,139 +471,139 @@ Cell[BoxData[
  CellChangeTimes->{{3.839036792371849*^9, 3.8390367993796787`*^9}, {
   3.8390543956158347`*^9, 3.839054445961756*^9}, {3.839054708278001*^9, 
   3.83905478142933*^9}, {3.8390549508612337`*^9, 3.8390549509888945`*^9}},
- CellLabel->"In[19]:=",ExpressionUUID->"4d8b9e3f-7211-4ac1-a1e6-04b0f0007690"],
+ CellLabel->"In[79]:=",ExpressionUUID->"4d8b9e3f-7211-4ac1-a1e6-04b0f0007690"],
 
 Cell[BoxData["\<\"\\n\\n        template<>\\n        struct RulePointData<1>{\
 \\n            static constexpr size_t Rule_=1;\\n            static \
 constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];\\n       \
      static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> \
-type_list={{\\n                LEBEDEV_POINT_TYPE::OPTRN6_001\\n            \
+type_list_={{\\n                LEBEDEV_POINT_TYPE::OPTRN6_00C\\n            \
 }};\\n            static constexpr c_array<c_array<double, 3>, \
-point_type_total_> pos_list={{\\n                {{                        \
-0.,                        0.,                        1.}}\\n            \
-}};\\n            static constexpr c_array<double, point_type_total_> \
-weight_list={{\\n                0.1666666666666667\\n            }};\\n      \
-  };\\n\\n        template<>\\n        struct RulePointData<2>{\\n            \
-static constexpr size_t Rule_=2;\\n            static constexpr size_t \
+point_type_total_> pos_list_={{\\n              {{                        0., \
+                       0.,                        1.}}\\n            }};\\n   \
+         static constexpr c_array<double, point_type_total_> \
+weight_list_={{\\n                0.1666666666666667\\n            }};\\n     \
+   };\\n\\n        template<>\\n        struct RulePointData<2>{\\n           \
+ static constexpr size_t Rule_=2;\\n            static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{        0.5773502691896257,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{        0.5773502691896257,        \
 0.5773502691896257,        0.5773502691896257}}\\n            }};\\n          \
-  static constexpr c_array<double, point_type_total_> weight_list={{\\n       \
-         0.06666666666666668,\\n                0.07500000000000001\\n        \
-    }};\\n        };\\n\\n        template<>\\n        struct \
+  static constexpr c_array<double, point_type_total_> weight_list_={{\\n      \
+          0.06666666666666668,\\n                0.07500000000000001\\n       \
+     }};\\n        };\\n\\n        template<>\\n        struct \
 RulePointData<3>{\\n            static constexpr size_t Rule_=3;\\n           \
  static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN12_0AA,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN12_0BB,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{                        0.,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{                        0.,        \
 0.7071067811865476,        0.7071067811865476}},\\n              {{        \
 0.5773502691896257,        0.5773502691896257,        0.5773502691896257}}\\n \
            }};\\n            static constexpr c_array<double, \
-point_type_total_> weight_list={{\\n                0.04761904761904762,\\n   \
-             0.0380952380952381,\\n                0.03214285714285714\\n     \
-       }};\\n        };\\n\\n        template<>\\n        struct \
+point_type_total_> weight_list_={{\\n                0.04761904761904762,\\n  \
+              0.0380952380952381,\\n                0.03214285714285714\\n    \
+        }};\\n        };\\n\\n        template<>\\n        struct \
 RulePointData<4>{\\n            static constexpr size_t Rule_=4;\\n           \
  static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{        0.5773502691896257,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{        0.5773502691896257,        \
 0.5773502691896257,        0.5773502691896257}},\\n              {{        \
 0.4597008433809831,        0.8880738339771152,                        0.}}\\n \
            }};\\n            static constexpr c_array<double, \
-point_type_total_> weight_list={{\\n                0.00952380952380952,\\n   \
-             0.03214285714285714,\\n                0.02857142857142857\\n    \
-        }};\\n        };\\n\\n        template<>\\n        struct \
+point_type_total_> weight_list_={{\\n                0.00952380952380952,\\n  \
+              0.03214285714285714,\\n                0.02857142857142857\\n   \
+         }};\\n        };\\n\\n        template<>\\n        struct \
 RulePointData<5>{\\n            static constexpr size_t Rule_=5;\\n           \
  static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN12_0AA,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN12_0BB,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{                        0.,        \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC\\n            }};\\n            static \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{                        0.,        \
 0.7071067811865476,        0.7071067811865476}},\\n              {{        \
 0.5773502691896257,        0.5773502691896257,        \
 0.5773502691896257}},\\n              {{        0.3015113445777636,        \
 0.3015113445777636,        0.9045340337332909}}\\n            }};\\n          \
-  static constexpr c_array<double, point_type_total_> weight_list={{\\n       \
-         0.0126984126984127,\\n                0.02257495590828924,\\n        \
-        0.02109375,\\n                0.02017333553791887\\n            \
+  static constexpr c_array<double, point_type_total_> weight_list_={{\\n      \
+          0.0126984126984127,\\n                0.02257495590828924,\\n       \
+         0.02109375,\\n                0.02017333553791887\\n            \
 }};\\n        };\\n\\n        template<>\\n        struct \
 RulePointData<6>{\\n            static constexpr size_t Rule_=6;\\n           \
  static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN12_0AA,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN12_0BB,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{                        0.,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{                        0.,        \
 0.7071067811865476,        0.7071067811865476}},\\n              {{        \
 0.5773502691896257,        0.5773502691896257,        \
 0.5773502691896257}},\\n              {{        0.4803844614152614,        \
 0.4803844614152614,        0.7337993857053428}},\\n              {{        \
 0.3207726489807764,        0.9471562213625879,                        0.}}\\n \
            }};\\n            static constexpr c_array<double, \
-point_type_total_> weight_list={{\\n                0.0005130671797338464,\\n \
-               0.01660406956574204,\\n                \
--0.02958603896103896,\\n                0.02657620708215946,\\n               \
- 0.01652217099371571\\n            }};\\n        };\\n\\n        \
-template<>\\n        struct RulePointData<7>{\\n            static constexpr \
-size_t Rule_=7;\\n            static constexpr size_t \
+point_type_total_> weight_list_={{\\n                \
+0.0005130671797338464,\\n                0.01660406956574204,\\n              \
+  -0.02958603896103896,\\n                0.02657620708215946,\\n             \
+   0.01652217099371571\\n            }};\\n        };\\n\\n        template<>\
+\\n        struct RulePointData<7>{\\n            static constexpr size_t \
+Rule_=7;\\n            static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{        0.5773502691896257,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{        0.5773502691896257,        \
 0.5773502691896257,        0.5773502691896257}},\\n              {{        \
 0.3696028464541502,        0.3696028464541502,        \
 0.8525183117012676}},\\n              {{        0.6943540066026664,        \
 0.6943540066026664,         0.189063552885395}},\\n              {{        \
 0.3742430390903412,        0.9273306571511725,                        0.}}\\n \
            }};\\n            static constexpr c_array<double, \
-point_type_total_> weight_list={{\\n                0.01154401154401154,\\n   \
-             0.01194390908585628,\\n                0.0111105557106034,\\n    \
-            0.01187650129453714,\\n                0.01181230374690448\\n     \
-       }};\\n        };\\n\\n        template<>\\n        struct \
+point_type_total_> weight_list_={{\\n                0.01154401154401154,\\n  \
+              0.01194390908585628,\\n                0.0111105557106034,\\n   \
+             0.01187650129453714,\\n                0.01181230374690448\\n    \
+        }};\\n        };\\n\\n        template<>\\n        struct \
 RulePointData<8>{\\n            static constexpr size_t Rule_=8;\\n           \
  static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{        0.5773502691896257,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{        0.5773502691896257,        \
 0.5773502691896257,        0.5773502691896257}},\\n              {{        \
 0.1851156353447362,        0.1851156353447362,       \
 0.96512403508659409}},\\n              {{        0.6904210483822922,        \
@@ -608,25 +611,25 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.3956894730559419,        0.3956894730559419,        \
 0.8287699812525922}},\\n              {{        0.4783690288121502,        \
 0.8781589106040661,                        0.}}\\n            }};\\n          \
-  static constexpr c_array<double, point_type_total_> weight_list={{\\n       \
-         0.003828270494937163,\\n                0.00979373751248751,\\n      \
-          0.00821173728319111,\\n                0.0099428148911781,\\n       \
-         0.00959547133607097,\\n                0.00969499636166303\\n        \
-    }};\\n        };\\n\\n        template<>\\n        struct \
+  static constexpr c_array<double, point_type_total_> weight_list_={{\\n      \
+          0.003828270494937163,\\n                0.00979373751248751,\\n     \
+           0.00821173728319111,\\n                0.0099428148911781,\\n      \
+          0.00959547133607097,\\n                0.00969499636166303\\n       \
+     }};\\n        };\\n\\n        template<>\\n        struct \
 RulePointData<9>{\\n            static constexpr size_t Rule_=9;\\n           \
  static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN12_0AA,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN12_0BB,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{                        0.,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{                        0.,        \
 0.7071067811865476,        0.7071067811865476}},\\n              {{        \
 0.5773502691896257,        0.5773502691896257,        \
 0.5773502691896257}},\\n              {{        0.6764410400114264,        \
@@ -636,26 +639,26 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.1574676672039082,       0.97488864367717323}},\\n              {{        \
 0.1403553811713183,        0.4493328323269557,        0.8822700112603227}}\\n \
            }};\\n            static constexpr c_array<double, \
-point_type_total_> weight_list={{\\n                0.0005996313688621381,\\n \
-               0.007372999718620756,\\n                \
-0.007210515360144488,\\n                0.007116355493117555,\\n              \
-  0.006753829486314476,\\n                0.007574394159054034,\\n            \
-    0.006991087353303262\\n            }};\\n        };\\n\\n        \
+point_type_total_> weight_list_={{\\n                \
+0.0005996313688621381,\\n                0.007372999718620756,\\n             \
+   0.007210515360144488,\\n                0.007116355493117555,\\n           \
+     0.006753829486314476,\\n                0.007574394159054034,\\n         \
+       0.006991087353303262\\n            }};\\n        };\\n\\n        \
 template<>\\n        struct RulePointData<10>{\\n            static constexpr \
 size_t Rule_=10;\\n            static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN12_0AA,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN12_0BB,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{                        0.,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{                        0.,        \
 0.7071067811865476,        0.7071067811865476}},\\n              {{        \
 0.5773502691896257,        0.5773502691896257,        \
 0.5773502691896257}},\\n              {{        0.2551252621114134,        \
@@ -666,28 +669,28 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.2613931360335988,       0.96523242197644838,                        \
 0.}},\\n              {{        0.4990453161796037,        \
 0.1446630744325115,        0.8544158046846588}}\\n            }};\\n          \
-  static constexpr c_array<double, point_type_total_> weight_list={{\\n       \
-         0.005544842902037363,\\n                0.006071332770670752,\\n     \
-           0.006383674773515093,\\n                0.00518338758774779,\\n    \
-            0.006317929009813725,\\n                0.006201670006589078,\\n  \
-              0.005477143385137349,\\n                0.005968383987681156\\n \
-           }};\\n        };\\n\\n        template<>\\n        struct \
-RulePointData<11>{\\n            static constexpr size_t Rule_=11;\\n         \
-   static constexpr size_t \
+  static constexpr c_array<double, point_type_total_> weight_list_={{\\n      \
+          0.005544842902037363,\\n                0.006071332770670752,\\n    \
+            0.006383674773515093,\\n                0.00518338758774779,\\n   \
+             0.006317929009813725,\\n                0.006201670006589078,\\n \
+               0.005477143385137349,\\n                \
+0.005968383987681156\\n            }};\\n        };\\n\\n        \
+template<>\\n        struct RulePointData<11>{\\n            static constexpr \
+size_t Rule_=11;\\n            static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN12_0AA,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN12_0BB,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{                        0.,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{                        0.,        \
 0.7071067811865476,        0.7071067811865476}},\\n              {{        \
 0.5773502691896257,        0.5773502691896257,        \
 0.5773502691896257}},\\n              {{        0.6712973442695226,        \
@@ -700,8 +703,8 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.9383192181375915,                        0.}},\\n              {{        \
 0.1590417105383530,        0.8360360154824589,         0.525118572443642}}\\n \
            }};\\n            static constexpr c_array<double, \
-point_type_total_> weight_list={{\\n                0.001782340447244611,\\n  \
-              0.005716905949977102,\\n                \
+point_type_total_> weight_list_={{\\n                0.001782340447244611,\\n \
+               0.005716905949977102,\\n                \
 0.005573383178848736,\\n                0.005608704082587997,\\n              \
   0.005158237711805382,\\n                0.005518771467273615,\\n            \
     0.004106777028169394,\\n                0.005051846064614808,\\n          \
@@ -709,20 +712,20 @@ point_type_total_> weight_list={{\\n                0.001782340447244611,\\n  \
 template<>\\n        struct RulePointData<12>{\\n            static constexpr \
 size_t Rule_=12;\\n            static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{        0.5773502691896257,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{        0.5773502691896257,        \
 0.5773502691896257,        0.5773502691896257}},\\n              {{        \
 0.4492044687397611,        0.4492044687397611,        \
 0.7722892531483641}},\\n              {{        0.2520419490210201,        \
@@ -736,31 +739,31 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.3545877390518688,        0.9350227458805929,                        \
 0.}},\\n              {{        0.2272181808998187,        \
 0.4864661535886647,        0.8436365210688943}}\\n            }};\\n          \
-  static constexpr c_array<double, point_type_total_> weight_list={{\\n       \
-         -0.05522639919727324,\\n                0.004450274607445226,\\n     \
-           0.004496841067921404,\\n                0.005049153450478751,\\n   \
-             0.003976408018051883,\\n                0.004401400650381014,\\n \
-               0.01724544350544401,\\n                \
-0.004231083095357343,\\n                0.005198069864064399,\\n              \
-  0.004695720972568884\\n            }};\\n        };\\n\\n        template<>\
-\\n        struct RulePointData<13>{\\n            static constexpr size_t \
-Rule_=13;\\n            static constexpr size_t \
+  static constexpr c_array<double, point_type_total_> weight_list_={{\\n      \
+          -0.05522639919727324,\\n                0.004450274607445226,\\n    \
+            0.004496841067921404,\\n                0.005049153450478751,\\n  \
+              0.003976408018051883,\\n                \
+0.004401400650381014,\\n                0.01724544350544401,\\n               \
+ 0.004231083095357343,\\n                0.005198069864064399,\\n             \
+   0.004695720972568884\\n            }};\\n        };\\n\\n        \
+template<>\\n        struct RulePointData<13>{\\n            static constexpr \
+size_t Rule_=13;\\n            static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN12_0AA,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN12_0BB,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{                        0.,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{                        0.,        \
 0.7071067811865476,        0.7071067811865476}},\\n              {{        \
 0.5773502691896257,        0.5773502691896257,        \
 0.5773502691896257}},\\n              {{        0.7039373391585475,        \
@@ -776,32 +779,32 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.1153112011009701,        0.9392279297499157}},\\n              {{        \
 0.2314790158712601,        0.5244939240922365,        0.8193433888191203}}\\n \
            }};\\n            static constexpr c_array<double, \
-point_type_total_> weight_list={{\\n                -0.001313769127326952,\\n \
-               -0.002522728704859336,\\n                0.004186853881700584,\
-\\n                0.005315167977810885,\\n                \
-0.004047142377086219,\\n                0.004112482394406991,\\n              \
-  0.003595584899758781,\\n                0.004256131351428158,\\n            \
-    0.00422958270064724,\\n                0.004080914225780504,\\n           \
-     0.004071467593830964\\n            }};\\n        };\\n\\n        \
+point_type_total_> weight_list_={{\\n                \
+-0.001313769127326952,\\n                -0.002522728704859336,\\n            \
+    0.004186853881700584,\\n                0.005315167977810885,\\n          \
+      0.004047142377086219,\\n                0.004112482394406991,\\n        \
+        0.003595584899758781,\\n                0.004256131351428158,\\n      \
+          0.00422958270064724,\\n                0.004080914225780504,\\n     \
+           0.004071467593830964\\n            }};\\n        };\\n\\n        \
 template<>\\n        struct RulePointData<14>{\\n            static constexpr \
 size_t Rule_=14;\\n            static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{        0.5773502691896257,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{        0.5773502691896257,        \
 0.5773502691896257,        0.5773502691896257}},\\n              {{        \
 0.3515640345570105,        0.3515640345570105,        \
 0.8676436245440833}},\\n              {{        0.6566329410219612,        \
@@ -818,34 +821,34 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.2510034751770465,        0.8000727494073952,         \
 0.544867737258077}},\\n              {{        0.1233548532583327,        \
 0.4127724083168531,        0.9024425295330004}}\\n            }};\\n          \
-  static constexpr c_array<double, point_type_total_> weight_list={{\\n       \
-         0.000854591172512815,\\n                0.003599119285025571,\\n     \
-           0.003449788424305883,\\n                0.003604822601419882,\\n   \
-             0.003576729661743367,\\n                0.002352101413689164,\\n \
-               0.003108953122413676,\\n                \
-0.003650045807677255,\\n                0.002982344963171804,\\n              \
-  0.003600820932216461,\\n                0.003571540554273387,\\n            \
-    0.00339231220500617\\n            }};\\n        };\\n\\n        \
+  static constexpr c_array<double, point_type_total_> weight_list_={{\\n      \
+          0.000854591172512815,\\n                0.003599119285025571,\\n    \
+            0.003449788424305883,\\n                0.003604822601419882,\\n  \
+              0.003576729661743367,\\n                \
+0.002352101413689164,\\n                0.003108953122413676,\\n              \
+  0.003650045807677255,\\n                0.002982344963171804,\\n            \
+    0.003600820932216461,\\n                0.003571540554273387,\\n          \
+      0.00339231220500617\\n            }};\\n        };\\n\\n        \
 template<>\\n        struct RulePointData<15>{\\n            static constexpr \
 size_t Rule_=15;\\n            static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{        0.5773502691896257,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{        0.5773502691896257,        \
 0.5773502691896257,        0.5773502691896257}},\\n              {{        \
 0.7068965463912316,        0.7068965463912316,          \
 0.02438330166935}},\\n              {{        0.4794682625712025,        \
@@ -864,8 +867,8 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.8280801506686862,        0.5521820743493993}},\\n              {{        \
 0.1833434647041659,        0.9074658265305127,         0.378009189874487}}\\n \
            }};\\n            static constexpr c_array<double, \
-point_type_total_> weight_list={{\\n                0.003006796749453936,\\n  \
-              0.003050627745650771,\\n                \
+point_type_total_> weight_list_={{\\n                0.003006796749453936,\\n \
+               0.003050627745650771,\\n                \
 0.001621104600288991,\\n                0.003005701484901752,\\n              \
   0.002990992529653774,\\n                0.002982170644107595,\\n            \
     0.002721564237310992,\\n                0.003033513795811141,\\n          \
@@ -875,26 +878,26 @@ point_type_total_> weight_list={{\\n                0.003006796749453936,\\n  \
 template<>\\n        struct RulePointData<17>{\\n            static constexpr \
 size_t Rule_=17;\\n            static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN12_0AA,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN12_0BB,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{                        0.,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{                        0.,        \
 0.7071067811865476,        0.7071067811865476}},\\n              {{        \
 0.5773502691896257,        0.5773502691896257,        \
 0.5773502691896257}},\\n              {{        0.6909346307509111,        \
@@ -917,10 +920,10 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.5550152361076807,        0.7717462626915901,         \
 0.310428403516654}},\\n              {{        0.9371809858553722,        \
 0.3344363145343455,         0.099217696364293}}\\n            }};\\n          \
-  static constexpr c_array<double, point_type_total_> weight_list={{\\n       \
-         0.0005265897968224436,\\n                0.002548219972002607,\\n    \
-            0.002512317418927307,\\n                0.002530403801186355,\\n  \
-              0.002014279020918528,\\n                \
+  static constexpr c_array<double, point_type_total_> weight_list_={{\\n      \
+          0.0005265897968224436,\\n                0.002548219972002607,\\n   \
+             0.002512317418927307,\\n                0.002530403801186355,\\n \
+               0.002014279020918528,\\n                \
 0.002501725168402936,\\n                0.002513267174597564,\\n              \
   0.002302694782227416,\\n                0.001462495621594614,\\n            \
     0.00244537343731298,\\n                0.002417442375638981,\\n           \
@@ -930,18 +933,18 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 template<>\\n        struct RulePointData<20>{\\n            static constexpr \
 size_t Rule_=20;\\n            static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
@@ -951,9 +954,9 @@ LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{        0.5773502691896257,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{        0.5773502691896257,        \
 0.5773502691896257,        0.5773502691896257}},\\n              {{        \
 0.7040954938227469,        0.7040954938227469,          \
 0.09219040707690}},\\n              {{        0.6807744066455243,        \
@@ -982,10 +985,10 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.2778673190586244,        0.0821302158193251,         \
 0.957102074310073}},\\n              {{        0.5033564271075117,        \
 0.0899920584207488,         0.859379855890721}}\\n            }};\\n          \
-  static constexpr c_array<double, point_type_total_> weight_list={{\\n       \
-         0.0003095121295306187,\\n                0.001852379698597489,\\n    \
-            0.001871790639277744,\\n                0.001858812585438317,\\n  \
-              0.001852028828296213,\\n                \
+  static constexpr c_array<double, point_type_total_> weight_list_={{\\n      \
+          0.0003095121295306187,\\n                0.001852379698597489,\\n   \
+             0.001871790639277744,\\n                0.001858812585438317,\\n \
+               0.001852028828296213,\\n                \
 0.001846715956151242,\\n                0.001818471778162769,\\n              \
   0.001749564657281154,\\n                0.001617210647254411,\\n            \
     0.001384737234851692,\\n                0.000976433116505105,\\n          \
@@ -997,20 +1000,20 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 template<>\\n        struct RulePointData<23>{\\n            static constexpr \
 size_t Rule_=23;\\n            static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN12_0AA,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN12_0BB,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
@@ -1023,9 +1026,9 @@ LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{                        0.,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{                        0.,        \
 0.7071067811865476,        0.7071067811865476}},\\n              {{        \
 0.5773502691896257,        0.5773502691896257,        \
 0.5773502691896257}},\\n              {{       0.05087204410502359,       \
@@ -1062,39 +1065,39 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.4908826589037616,        0.8156092232039754}},\\n              {{        \
 0.3822477379524787,        0.5648768149099500,        0.7313007936597657}}\\n \
            }};\\n            static constexpr c_array<double, \
-point_type_total_> weight_list={{\\n                0.0002192942088181184,\\n \
-               0.00143643361731908,\\n                \
-0.001421940344335877,\\n                0.0006798123511050502,\\n             \
-   0.000991318423529491,\\n                0.001180207833238949,\\n           \
-     0.001296599602080921,\\n                0.001365871427428316,\\n         \
-       0.001402988604775325,\\n                0.001418645563595609,\\n       \
-         0.001421376741851662,\\n                0.001423996475490962,\\n     \
-           0.001431554042178567,\\n                0.000925440149986537,\\n   \
-             0.001250239995053509,\\n                0.00139436584332923,\\n  \
-              0.001127089094671749,\\n                0.00134575376091067,\\n \
-               0.001424957283316783,\\n                \
-0.00126152334123775,\\n                0.001392547106052696,\\n               \
- 0.001418761677877656,\\n                0.001338366684479554,\\n             \
-   0.001393700862676131,\\n                0.001415914757466932\\n            \
-}};\\n        };\\n\\n        template<>\\n        struct \
+point_type_total_> weight_list_={{\\n                \
+0.0002192942088181184,\\n                0.00143643361731908,\\n              \
+  0.001421940344335877,\\n                0.0006798123511050502,\\n           \
+     0.000991318423529491,\\n                0.001180207833238949,\\n         \
+       0.001296599602080921,\\n                0.001365871427428316,\\n       \
+         0.001402988604775325,\\n                0.001418645563595609,\\n     \
+           0.001421376741851662,\\n                0.001423996475490962,\\n   \
+             0.001431554042178567,\\n                0.000925440149986537,\\n \
+               0.001250239995053509,\\n                \
+0.00139436584332923,\\n                0.001127089094671749,\\n               \
+ 0.00134575376091067,\\n                0.001424957283316783,\\n              \
+  0.00126152334123775,\\n                0.001392547106052696,\\n             \
+   0.001418761677877656,\\n                0.001338366684479554,\\n           \
+     0.001393700862676131,\\n                0.001415914757466932\\n          \
+  }};\\n        };\\n\\n        template<>\\n        struct \
 RulePointData<26>{\\n            static constexpr size_t Rule_=26;\\n         \
    static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
@@ -1111,9 +1114,9 @@ LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{        0.5773502691896257,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{        0.5773502691896257,        \
 0.5773502691896257,        0.5773502691896257}},\\n              {{       \
 0.04292963545341347,       0.04292963545341347,         \
 0.998155345023847}},\\n              {{        0.1051426854086404,        \
@@ -1157,10 +1160,10 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.2087307061103274,        0.5348666438135476,        \
 0.8187485362810218}},\\n              {{        0.4055122137872836,        \
 0.5674997546074373,        0.7165918454670238}}\\n            }};\\n          \
-  static constexpr c_array<double, point_type_total_> weight_list={{\\n       \
-         0.0001438294190527431,\\n                0.001125772288287004,\\n    \
-            0.000494802934194924,\\n                0.000735799010912547,\\n  \
-              0.000888913277130438,\\n                \
+  static constexpr c_array<double, point_type_total_> weight_list_={{\\n      \
+          0.0001438294190527431,\\n                0.001125772288287004,\\n   \
+             0.000494802934194924,\\n                0.000735799010912547,\\n \
+               0.000888913277130438,\\n                \
 0.000988834783892144,\\n                0.001053299681709471,\\n              \
   0.001092778807014578,\\n                0.001114389394063227,\\n            \
     0.001123724788051555,\\n                0.001125239325243814,\\n          \
@@ -1178,23 +1181,23 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 RulePointData<29>{\\n            static constexpr size_t Rule_=29;\\n         \
    static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN12_0AA,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN12_0BB,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
@@ -1215,9 +1218,9 @@ LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{                        0.,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{                        0.,        \
 0.7071067811865476,        0.7071067811865476}},\\n              {{        \
 0.5773502691896257,        0.5773502691896257,        \
 0.5773502691896257}},\\n              {{       0.03712636449657089,       \
@@ -1270,48 +1273,48 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.7344305757559503,        0.6031161693096310,         \
 0.311227594714961}},\\n              {{        0.7043837184021765,        \
 0.5693702498468441,         0.423864478152234}}\\n            }};\\n          \
-  static constexpr c_array<double, point_type_total_> weight_list={{\\n       \
-         0.0001105189233267572,\\n                0.000920523273809074,\\n    \
-            0.000913315978644356,\\n                0.0003690421898017899,\\n \
-               0.000560399092868066,\\n                0.0006865297629282608,\
-\\n                0.0007720338551145631,\\n                \
-0.00083015459588948,\\n                0.000868669255017963,\\n               \
- 0.000892707628584689,\\n                0.000906082023856822,\\n             \
-   0.000911977725494087,\\n                0.000912872013860418,\\n           \
-     0.000913071493569173,\\n                0.000915287378455412,\\n         \
-       0.000918743627432166,\\n                0.0005176977312965693,\\n      \
-          0.0007331143682101416,\\n                0.000846323283637993,\\n   \
-             0.000903112269425399,\\n                \
-0.0006485778453163258,\\n                0.000743503091098237,\\n             \
-   0.0007998527891839055,\\n                0.000810173149746802,\\n          \
-      0.000848338957459433,\\n                0.000855629925731181,\\n        \
-        0.000880320867973826,\\n                0.000881104818242572,\\n      \
-          0.000885028234126544,\\n                0.000902134229904065,\\n    \
-            0.000901009167710509,\\n                0.000902269293842691,\\n  \
-              0.000915801617469347,\\n                \
-0.000913157800318943,\\n                0.000910781357948271,\\n              \
-  0.000910576025897013\\n            }};\\n        };\\n\\n        template<>\
-\\n        struct RulePointData<32>{\\n            static constexpr size_t \
-Rule_=32;\\n            static constexpr size_t \
+  static constexpr c_array<double, point_type_total_> weight_list_={{\\n      \
+          0.0001105189233267572,\\n                0.000920523273809074,\\n   \
+             0.000913315978644356,\\n                \
+0.0003690421898017899,\\n                0.000560399092868066,\\n             \
+   0.0006865297629282608,\\n                0.0007720338551145631,\\n         \
+       0.00083015459588948,\\n                0.000868669255017963,\\n        \
+        0.000892707628584689,\\n                0.000906082023856822,\\n      \
+          0.000911977725494087,\\n                0.000912872013860418,\\n    \
+            0.000913071493569173,\\n                0.000915287378455412,\\n  \
+              0.000918743627432166,\\n                \
+0.0005176977312965693,\\n                0.0007331143682101416,\\n            \
+    0.000846323283637993,\\n                0.000903112269425399,\\n          \
+      0.0006485778453163258,\\n                0.000743503091098237,\\n       \
+         0.0007998527891839055,\\n                0.000810173149746802,\\n    \
+            0.000848338957459433,\\n                0.000855629925731181,\\n  \
+              0.000880320867973826,\\n                \
+0.000881104818242572,\\n                0.000885028234126544,\\n              \
+  0.000902134229904065,\\n                0.000901009167710509,\\n            \
+    0.000902269293842691,\\n                0.000915801617469347,\\n          \
+      0.000913157800318943,\\n                0.000910781357948271,\\n        \
+        0.000910576025897013\\n            }};\\n        };\\n\\n        \
+template<>\\n        struct RulePointData<32>{\\n            static constexpr \
+size_t Rule_=32;\\n            static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
@@ -1337,9 +1340,9 @@ LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{        0.5773502691896257,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{        0.5773502691896257,        \
 0.5773502691896257,        0.5773502691896257}},\\n              {{       \
 0.03229290663413854,       0.03229290663413854,         \
 0.998956623864238}},\\n              {{        0.0803673327146222,        \
@@ -1401,15 +1404,15 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.6419978471082389,        0.1164174423140873,        \
 0.7578164312242329}},\\n              {{        0.5817218061802611,       \
 0.05797589531445219,         0.811319009870262}}\\n            }};\\n         \
-   static constexpr c_array<double, point_type_total_> weight_list={{\\n      \
-          0.00007777160743261247,\\n                0.0007557646413004702,\\n \
-               0.0002841633806090617,\\n                \
-0.0004374419127053554,\\n                0.0005417174740872172,\\n            \
-    0.0006148000891358593,\\n                0.0006664394485800706,\\n        \
-        0.000702503935692322,\\n                0.0007268511789249627,\\n     \
-           0.000742263753420863,\\n                0.0007509545035841214,\\n  \
-              0.00075485350577184,\\n                0.0007554088969774,\\n   \
-             0.000755314717444281,\\n                \
+   static constexpr c_array<double, point_type_total_> weight_list_={{\\n     \
+           0.00007777160743261247,\\n                \
+0.0007557646413004702,\\n                0.0002841633806090617,\\n            \
+    0.0004374419127053554,\\n                0.0005417174740872172,\\n        \
+        0.0006148000891358593,\\n                0.0006664394485800706,\\n    \
+            0.000702503935692322,\\n                0.0007268511789249627,\\n \
+               0.000742263753420863,\\n                0.0007509545035841214,\
+\\n                0.00075485350577184,\\n                0.0007554088969774,\
+\\n                0.000755314717444281,\\n                \
 0.0007564767653292297,\\n                0.000758799180851873,\\n             \
    0.0007608261832033028,\\n                0.0004021680447874916,\\n         \
        0.0005804871793945964,\\n                0.0006792151955945158,\\n     \
@@ -1429,26 +1432,26 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 template<>\\n        struct RulePointData<35>{\\n            static constexpr \
 size_t Rule_=35;\\n            static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN12_0AA,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN12_0BB,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
@@ -1479,9 +1482,9 @@ LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{                        0.,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{                        0.,        \
 0.7071067811865476,        0.7071067811865476}},\\n              {{        \
 0.5773502691896257,        0.5773502691896257,        \
 0.5773502691896257}},\\n              {{       0.02860923126194662,       \
@@ -1554,7 +1557,7 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.1594171564034221,        0.7494129385291201}},\\n              {{        \
 0.6511904367376113,        0.0535478953656554,        0.7570228781241607}}\\n \
            }};\\n            static constexpr c_array<double, \
-point_type_total_> weight_list={{\\n                \
+point_type_total_> weight_list_={{\\n                \
 0.00006309049437420978,\\n                0.0006398287705571748,\\n           \
      0.0006357185073530722,\\n                0.0002221207162188168,\\n       \
          0.0003475784022286848,\\n                0.0004350742443589804,\\n   \
@@ -1586,27 +1589,27 @@ point_type_total_> weight_list={{\\n                \
 RulePointData<38>{\\n            static constexpr size_t Rule_=38;\\n         \
    static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
@@ -1643,9 +1646,9 @@ LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{        0.5773502691896257,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{        0.5773502691896257,        \
 0.5773502691896257,        0.5773502691896257}},\\n              {{       \
 0.02540835336814348,       0.02540835336814348,         \
 0.999354207054856}},\\n              {{       0.06399322800504915,       \
@@ -1728,65 +1731,65 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.6020628374713980,       0.04916375015738109,        \
 0.7969336643700977}},\\n              {{        0.6529222529856881,        \
 0.0986162154012701,        0.7509776119272954}}\\n            }};\\n          \
-  static constexpr c_array<double, point_type_total_> weight_list={{\\n       \
-         0.00004656031899197432,\\n                0.0005421549195295507,\\n  \
-              0.0001778522133346554,\\n                0.0002811325405682796,\
-\\n                0.0003548896312631459,\\n                \
-0.0004090310897173365,\\n                0.0004493286134169965,\\n            \
-    0.0004793728447962723,\\n                0.0005015415319164265,\\n        \
-        0.0005175127372677936,\\n                0.0005285522262081019,\\n    \
-            0.0005356832703713962,\\n                0.000539791473617517,\\n \
-               0.0005416899441599931,\\n                \
-0.0005419308476889938,\\n                0.0005416936902030597,\\n            \
-    0.0005419544338703163,\\n                0.0005428983656630974,\\n        \
-        0.0005442286500098193,\\n                0.0005452250345057301,\\n    \
-            0.000256800249772853,\\n                0.0003827211700292146,\\n \
-               0.0004579491561917824,\\n                \
-0.0005042003969083574,\\n                0.0005312708889976026,\\n            \
-    0.0005438401790747117,\\n                0.0003316041873197344,\\n        \
-        0.000389911356715377,\\n                0.0004343343327201309,\\n     \
-           0.0004679415262318919,\\n                0.0004930847981631031,\\n \
-               0.000511503186754009,\\n                0.0005245217148457368,\
-\\n                0.0005332041499895323,\\n                \
-0.0005384583126021542,\\n                0.0005411067210798852,\\n            \
-    0.0004259797391468714,\\n                0.000460493136846002,\\n         \
-       0.0004871814878255202,\\n                0.0005072242910074884,\\n     \
-           0.0005217069845235351,\\n                0.0005315785966280309,\\n \
-               0.0005376833708758904,\\n                \
-0.0005408032092069522,\\n                0.0004842744917904866,\\n            \
-    0.000504892607618813,\\n                0.0005202607980478373,\\n         \
-       0.0005309932388325743,\\n                0.0005377419770895208,\\n     \
-           0.0005411696331677716,\\n                0.000519799629328242,\\n  \
-              0.0005311120836622944,\\n                0.0005384309319956952,\
-\\n                0.0005421859504051886,\\n                \
-0.0005390948355046314,\\n                0.0005433312705027845\\n            \
-}};\\n        };\\n\\n        template<>\\n        struct \
+  static constexpr c_array<double, point_type_total_> weight_list_={{\\n      \
+          0.00004656031899197432,\\n                0.0005421549195295507,\\n \
+               0.0001778522133346554,\\n                \
+0.0002811325405682796,\\n                0.0003548896312631459,\\n            \
+    0.0004090310897173365,\\n                0.0004493286134169965,\\n        \
+        0.0004793728447962723,\\n                0.0005015415319164265,\\n    \
+            0.0005175127372677936,\\n                \
+0.0005285522262081019,\\n                0.0005356832703713962,\\n            \
+    0.000539791473617517,\\n                0.0005416899441599931,\\n         \
+       0.0005419308476889938,\\n                0.0005416936902030597,\\n     \
+           0.0005419544338703163,\\n                0.0005428983656630974,\\n \
+               0.0005442286500098193,\\n                \
+0.0005452250345057301,\\n                0.000256800249772853,\\n             \
+   0.0003827211700292146,\\n                0.0004579491561917824,\\n         \
+       0.0005042003969083574,\\n                0.0005312708889976026,\\n     \
+           0.0005438401790747117,\\n                0.0003316041873197344,\\n \
+               0.000389911356715377,\\n                0.0004343343327201309,\
+\\n                0.0004679415262318919,\\n                \
+0.0004930847981631031,\\n                0.000511503186754009,\\n             \
+   0.0005245217148457368,\\n                0.0005332041499895323,\\n         \
+       0.0005384583126021542,\\n                0.0005411067210798852,\\n     \
+           0.0004259797391468714,\\n                0.000460493136846002,\\n  \
+              0.0004871814878255202,\\n                0.0005072242910074884,\
+\\n                0.0005217069845235351,\\n                \
+0.0005315785966280309,\\n                0.0005376833708758904,\\n            \
+    0.0005408032092069522,\\n                0.0004842744917904866,\\n        \
+        0.000504892607618813,\\n                0.0005202607980478373,\\n     \
+           0.0005309932388325743,\\n                0.0005377419770895208,\\n \
+               0.0005411696331677716,\\n                0.000519799629328242,\
+\\n                0.0005311120836622944,\\n                \
+0.0005384309319956952,\\n                0.0005421859504051886,\\n            \
+    0.0005390948355046314,\\n                0.0005433312705027845\\n         \
+   }};\\n        };\\n\\n        template<>\\n        struct \
 RulePointData<41>{\\n            static constexpr size_t Rule_=41;\\n         \
    static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN12_0AA,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN12_0BB,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
@@ -1829,9 +1832,9 @@ LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{                        0.,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{                        0.,        \
 0.7071067811865476,        0.7071067811865476}},\\n              {{        \
 0.5773502691896257,        0.5773502691896257,        \
 0.5773502691896257}},\\n              {{       0.02290024646530589,       \
@@ -1926,70 +1929,71 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.6532272537379033,        0.1369294213140155,        \
 0.7446774392665899}},\\n              {{        0.6594761494500487,       \
 0.04589901487275583,        0.7503229229740002}}\\n            }};\\n         \
-   static constexpr c_array<double, point_type_total_> weight_list={{\\n      \
-          0.00003922616270665293,\\n                0.0004703831750854425,\\n \
-               0.0004678202801282136,\\n                \
-0.00014378322289799,\\n                0.0002303572493577644,\\n              \
-  0.0002933110752447454,\\n                0.0003402905998359839,\\n          \
-      0.0003759138466870372,\\n                0.0004030638447899798,\\n      \
-          0.0004236591432242212,\\n                0.0004390522656946747,\\n  \
-              0.0004502523466626246,\\n                0.0004580577727783541,\
-\\n                0.00046313916166159,\\n                \
-0.0004660928953698676,\\n                0.0004674751807936954,\\n            \
-    0.0004676414903932919,\\n                0.000467408649234787,\\n         \
-       0.0004674928539483208,\\n                0.0004680748979686447,\\n     \
-           0.000469044980638904,\\n                0.0004699877075860819,\\n  \
-              0.0002099942281069176,\\n                0.0003172269150712804,\
-\\n                0.0003832051358546523,\\n                \
-0.0004252193818146985,\\n                0.0004513807963755,\\n               \
- 0.0004657797469114177,\\n                0.0002733362800522836,\\n           \
-     0.0003235485368463559,\\n                0.0003624908726013453,\\n       \
-         0.0003925540070712828,\\n                0.0004156129781116236,\\n   \
-             0.0004330644984623263,\\n                \
-0.0004459677725921313,\\n                0.0004551593004456794,\\n            \
-    0.0004613341462749919,\\n                0.0004651019618269806,\\n        \
-        0.0004670249536100624,\\n                0.0003549555576441708,\\n    \
-            0.000385610824524901,\\n                0.0004098622845756882,\\n \
-               0.000428632860426895,\\n                0.0004427802198993945,\
-\\n                0.0004530473511488561,\\n                \
-0.0004600805475703138,\\n                0.0004644599059958017,\\n            \
-    0.0004667274455712509,\\n                0.0004069360518020357,\\n        \
-        0.0004260442819919196,\\n                0.0004408678508029063,\\n    \
-            0.0004518748115548598,\\n                \
-0.0004595564875375116,\\n                0.0004643988774315845,\\n            \
-    0.0004668827491646946,\\n                0.0004400541823741973,\\n        \
-        0.0004514512890193798,\\n                0.0004596198627347548,\\n    \
-            0.0004648659016801782,\\n                \
-0.0004675502017157672,\\n                0.0004598494476455523,\\n            \
-    0.0004654916955152048,\\n                0.0004684709779505136,\\n        \
-        0.0004691445539106986\\n            }};\\n        };\\n\\n        \
-template<>\\n        struct RulePointData<44>{\\n            static constexpr \
-size_t Rule_=44;\\n            static constexpr size_t \
+   static constexpr c_array<double, point_type_total_> weight_list_={{\\n     \
+           0.00003922616270665293,\\n                \
+0.0004703831750854425,\\n                0.0004678202801282136,\\n            \
+    0.00014378322289799,\\n                0.0002303572493577644,\\n          \
+      0.0002933110752447454,\\n                0.0003402905998359839,\\n      \
+          0.0003759138466870372,\\n                0.0004030638447899798,\\n  \
+              0.0004236591432242212,\\n                0.0004390522656946747,\
+\\n                0.0004502523466626246,\\n                \
+0.0004580577727783541,\\n                0.00046313916166159,\\n              \
+  0.0004660928953698676,\\n                0.0004674751807936954,\\n          \
+      0.0004676414903932919,\\n                0.000467408649234787,\\n       \
+         0.0004674928539483208,\\n                0.0004680748979686447,\\n   \
+             0.000469044980638904,\\n                \
+0.0004699877075860819,\\n                0.0002099942281069176,\\n            \
+    0.0003172269150712804,\\n                0.0003832051358546523,\\n        \
+        0.0004252193818146985,\\n                0.0004513807963755,\\n       \
+         0.0004657797469114177,\\n                0.0002733362800522836,\\n   \
+             0.0003235485368463559,\\n                \
+0.0003624908726013453,\\n                0.0003925540070712828,\\n            \
+    0.0004156129781116236,\\n                0.0004330644984623263,\\n        \
+        0.0004459677725921313,\\n                0.0004551593004456794,\\n    \
+            0.0004613341462749919,\\n                \
+0.0004651019618269806,\\n                0.0004670249536100624,\\n            \
+    0.0003549555576441708,\\n                0.000385610824524901,\\n         \
+       0.0004098622845756882,\\n                0.000428632860426895,\\n      \
+          0.0004427802198993945,\\n                0.0004530473511488561,\\n  \
+              0.0004600805475703138,\\n                0.0004644599059958017,\
+\\n                0.0004667274455712509,\\n                \
+0.0004069360518020357,\\n                0.0004260442819919196,\\n            \
+    0.0004408678508029063,\\n                0.0004518748115548598,\\n        \
+        0.0004595564875375116,\\n                0.0004643988774315845,\\n    \
+            0.0004668827491646946,\\n                \
+0.0004400541823741973,\\n                0.0004514512890193798,\\n            \
+    0.0004596198627347548,\\n                0.0004648659016801782,\\n        \
+        0.0004675502017157672,\\n                0.0004598494476455523,\\n    \
+            0.0004654916955152048,\\n                \
+0.0004684709779505136,\\n                0.0004691445539106986\\n            \
+}};\\n        };\\n\\n        template<>\\n        struct \
+RulePointData<44>{\\n            static constexpr size_t Rule_=44;\\n         \
+   static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
@@ -2039,9 +2043,9 @@ LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{        0.5773502691896257,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{        0.5773502691896257,        \
 0.5773502691896257,        0.5773502691896257}},\\n              {{       \
 0.02065562538818703,       0.02065562538818703,         \
 0.999573254083784}},\\n              {{       0.05250918173022379,       \
@@ -2148,43 +2152,43 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.6167551880377548,       0.04266398851548864,        \
 0.7859979784404436}},\\n              {{        0.6607195418355383,        \
 0.0855192581423835,         0.745745361047196}}\\n            }};\\n          \
-  static constexpr c_array<double, point_type_total_> weight_list={{\\n       \
-         0.00002998675149888161,\\n                0.0004077860529495355,\\n  \
-              0.0001185349192520667,\\n                0.0001913408643425751,\
-\\n                0.0002452886577209898,\\n                \
-0.0002862408183288702,\\n                0.0003178032258257357,\\n            \
-    0.000342294566763369,\\n                0.0003612790520235922,\\n         \
-       0.0003758638229818522,\\n                0.0003868711798859954,\\n     \
-           0.0003949429933189938,\\n                0.0004006068107541156,\\n \
-               0.0004043192149672723,\\n                \
-0.0004064947495808077,\\n                0.0004075245619813152,\\n            \
-    0.0004076423540893566,\\n                0.0004074280862251555,\\n        \
-        0.0004074163756012244,\\n                0.0004077647795071246,\\n    \
-            0.000408451755278253,\\n                0.0004092468459224053,\\n \
-               0.0004097872687240906,\\n                \
-0.0001738986811745028,\\n                0.0002659616045280191,\\n            \
-    0.0003240596008171532,\\n                0.0003621195964432943,\\n        \
-        0.0003868838330760539,\\n                0.0004018911532693111,\\n    \
-            0.0004089929432983252,\\n                \
-0.0002279907527706409,\\n                0.0002715205490578897,\\n            \
-    0.0003057917896703976,\\n                0.0003326913052452555,\\n        \
-        0.0003537334711890038,\\n                0.000370056750078313,\\n     \
-           0.0003825245372589123,\\n                0.0003918125171518295,\\n \
-               0.0003984720419937579,\\n                \
-0.0004029746003338212,\\n                0.0004057428632156627,\\n            \
-    0.0004071719274114857,\\n                0.0002990236950664119,\\n        \
-        0.0003262951734212878,\\n                0.0003482634608242413,\\n    \
-            0.0003656596681700892,\\n                \
-0.0003791740467794218,\\n                0.0003894034450156905,\\n            \
-    0.000396860024550837,\\n                0.000401993135142005,\\n          \
-      0.0004052108801278599,\\n                0.0004068978613940933,\\n      \
-          0.0003454275351319703,\\n                0.000362996353700792,\\n   \
-             0.0003770187233889874,\\n                \
-0.0003878608613694378,\\n                0.0003959065270221274,\\n            \
-    0.000401528697546357,\\n                0.0004050866785614716,\\n         \
-       0.0004069320185051913,\\n                0.0003760120964062763,\\n     \
-           0.0003870969564418064,\\n                0.0003955287790534055,\\n \
-               0.0004015361911302668,\\n                \
+  static constexpr c_array<double, point_type_total_> weight_list_={{\\n      \
+          0.00002998675149888161,\\n                0.0004077860529495355,\\n \
+               0.0001185349192520667,\\n                \
+0.0001913408643425751,\\n                0.0002452886577209898,\\n            \
+    0.0002862408183288702,\\n                0.0003178032258257357,\\n        \
+        0.000342294566763369,\\n                0.0003612790520235922,\\n     \
+           0.0003758638229818522,\\n                0.0003868711798859954,\\n \
+               0.0003949429933189938,\\n                \
+0.0004006068107541156,\\n                0.0004043192149672723,\\n            \
+    0.0004064947495808077,\\n                0.0004075245619813152,\\n        \
+        0.0004076423540893566,\\n                0.0004074280862251555,\\n    \
+            0.0004074163756012244,\\n                \
+0.0004077647795071246,\\n                0.000408451755278253,\\n             \
+   0.0004092468459224053,\\n                0.0004097872687240906,\\n         \
+       0.0001738986811745028,\\n                0.0002659616045280191,\\n     \
+           0.0003240596008171532,\\n                0.0003621195964432943,\\n \
+               0.0003868838330760539,\\n                \
+0.0004018911532693111,\\n                0.0004089929432983252,\\n            \
+    0.0002279907527706409,\\n                0.0002715205490578897,\\n        \
+        0.0003057917896703976,\\n                0.0003326913052452555,\\n    \
+            0.0003537334711890038,\\n                0.000370056750078313,\\n \
+               0.0003825245372589123,\\n                \
+0.0003918125171518295,\\n                0.0003984720419937579,\\n            \
+    0.0004029746003338212,\\n                0.0004057428632156627,\\n        \
+        0.0004071719274114857,\\n                0.0002990236950664119,\\n    \
+            0.0003262951734212878,\\n                \
+0.0003482634608242413,\\n                0.0003656596681700892,\\n            \
+    0.0003791740467794218,\\n                0.0003894034450156905,\\n        \
+        0.000396860024550837,\\n                0.000401993135142005,\\n      \
+          0.0004052108801278599,\\n                0.0004068978613940933,\\n  \
+              0.0003454275351319703,\\n                \
+0.000362996353700792,\\n                0.0003770187233889874,\\n             \
+   0.0003878608613694378,\\n                0.0003959065270221274,\\n         \
+       0.000401528697546357,\\n                0.0004050866785614716,\\n      \
+          0.0004069320185051913,\\n                0.0003760120964062763,\\n  \
+              0.0003870969564418064,\\n                0.0003955287790534055,\
+\\n                0.0004015361911302668,\\n                \
 0.0004053836986719547,\\n                0.0004073578673299116,\\n            \
     0.0003954628379231406,\\n                0.000401764550884753,\\n         \
        0.0004059030348651294,\\n                0.0004080565809484879,\\n     \
@@ -2193,32 +2197,32 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 RulePointData<47>{\\n            static constexpr size_t Rule_=47;\\n         \
    static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN12_0AA,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN12_0BB,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
@@ -2275,9 +2279,9 @@ LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{                        0.,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{                        0.,        \
 0.7071067811865476,        0.7071067811865476}},\\n              {{        \
 0.5773502691896257,        0.5773502691896257,        \
 0.5773502691896257}},\\n              {{       0.01886108518723392,       \
@@ -2398,7 +2402,7 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.1199671308754309,        0.7408510606648127}},\\n              {{        \
 0.6656263089489130,        0.0401595595780597,        0.7452038825781456}}\\n \
            }};\\n            static constexpr c_array<double, \
-point_type_total_> weight_list={{\\n                \
+point_type_total_> weight_list_={{\\n                \
 0.00002599095953754734,\\n                0.000360313408968754,\\n            \
     0.0003586067974412446,\\n                0.0000983152847438588,\\n        \
         0.000160502310795445,\\n                0.0002072200131464099,\\n     \
@@ -2448,33 +2452,33 @@ point_type_total_> weight_list={{\\n                \
 RulePointData<50>{\\n            static constexpr size_t Rule_=50;\\n         \
    static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
@@ -2539,9 +2543,9 @@ LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{        0.5773502691896257,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{        0.5773502691896257,        \
 0.5773502691896257,        0.5773502691896257}},\\n              {{       \
 0.01721420832906233,       0.01721420832906233,          \
 0.99970362711316}},\\n              {{        0.0440887537498177,        \
@@ -2675,34 +2679,34 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.6278573968375105,        0.0376755993024572,        \
 0.7774160008988917}},\\n              {{        0.6665611711264577,       \
 0.07548443301360158,        0.7416187062899239}}\\n            }};\\n         \
-   static constexpr c_array<double, point_type_total_> weight_list={{\\n      \
-          0.0000204038273082633,\\n                0.0003178149703889543,\\n  \
-              0.0000828811512807611,\\n                0.0001360883192522954,\
-\\n                0.0001766854454542662,\\n                \
-0.0002083153161230153,\\n                0.0002333279544657158,\\n            \
-    0.0002532809539930247,\\n                0.0002692472184211158,\\n        \
-        0.0002819949946811884,\\n                0.000292095359397303,\\n     \
-           0.0002999889782948351,\\n                0.0003060292120496901,\\n \
-               0.0003105109167522192,\\n                \
-0.0003136902387550311,\\n                0.0003157984652454632,\\n            \
-    0.0003170516518425421,\\n                0.0003176568425633755,\\n        \
-        0.0003177198411207062,\\n                0.0003175519492394732,\\n    \
-            0.0003174654952634756,\\n                \
-0.0003175676415467654,\\n                0.000317892341783541,\\n             \
-   0.0003183788287531909,\\n                0.0003188755151918807,\\n         \
-       0.0003191916889313849,\\n                0.0001231779611744508,\\n     \
-           0.000192466137383988,\\n                0.0002380881867403424,\\n  \
-              0.0002693100663037885,\\n                0.0002908673382834366,\
-\\n                0.0003053914619381535,\\n                \
-0.0003143916684147777,\\n                0.0003187042244055363,\\n            \
-    0.000163521953586979,\\n                0.000196810991769607,\\n          \
-      0.0002236754342249974,\\n                0.0002453186687017181,\\n      \
-          0.0002627551791580541,\\n                0.000276765486015222,\\n   \
-             0.0002879467027765894,\\n                \
-0.0002967639918918702,\\n                0.0003035900684660351,\\n            \
-    0.0003087338237298308,\\n                0.0003124608838860168,\\n        \
-        0.0003150084294226743,\\n                0.0003165958398598401,\\n    \
-            0.0003174320440957373,\\n                \
+   static constexpr c_array<double, point_type_total_> weight_list_={{\\n     \
+           0.0000204038273082633,\\n                0.0003178149703889543,\\n \
+               0.0000828811512807611,\\n                \
+0.0001360883192522954,\\n                0.0001766854454542662,\\n            \
+    0.0002083153161230153,\\n                0.0002333279544657158,\\n        \
+        0.0002532809539930247,\\n                0.0002692472184211158,\\n    \
+            0.0002819949946811884,\\n                0.000292095359397303,\\n \
+               0.0002999889782948351,\\n                \
+0.0003060292120496901,\\n                0.0003105109167522192,\\n            \
+    0.0003136902387550311,\\n                0.0003157984652454632,\\n        \
+        0.0003170516518425421,\\n                0.0003176568425633755,\\n    \
+            0.0003177198411207062,\\n                \
+0.0003175519492394732,\\n                0.0003174654952634756,\\n            \
+    0.0003175676415467654,\\n                0.000317892341783541,\\n         \
+       0.0003183788287531909,\\n                0.0003188755151918807,\\n     \
+           0.0003191916889313849,\\n                0.0001231779611744508,\\n \
+               0.000192466137383988,\\n                0.0002380881867403424,\
+\\n                0.0002693100663037885,\\n                \
+0.0002908673382834366,\\n                0.0003053914619381535,\\n            \
+    0.0003143916684147777,\\n                0.0003187042244055363,\\n        \
+        0.000163521953586979,\\n                0.000196810991769607,\\n      \
+          0.0002236754342249974,\\n                0.0002453186687017181,\\n  \
+              0.0002627551791580541,\\n                \
+0.000276765486015222,\\n                0.0002879467027765894,\\n             \
+   0.0002967639918918702,\\n                0.0003035900684660351,\\n         \
+       0.0003087338237298308,\\n                0.0003124608838860168,\\n     \
+           0.0003150084294226743,\\n                0.0003165958398598401,\\n \
+               0.0003174320440957373,\\n                \
 0.0002182188909812599,\\n                0.0002399727933921445,\\n            \
     0.0002579796133514653,\\n                0.0002727114052623535,\\n        \
         0.0002846327656281355,\\n                0.0002941491102051334,\\n    \
@@ -2730,35 +2734,35 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 RulePointData<53>{\\n            static constexpr size_t Rule_=53;\\n         \
    static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN12_0AA,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN12_0BB,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
@@ -2831,9 +2835,9 @@ LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{                        0.,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{                        0.,        \
 0.7071067811865476,        0.7071067811865476}},\\n              {{        \
 0.5773502691896257,        0.5773502691896257,        \
 0.5773502691896257}},\\n              {{       0.01587876419858352,       \
@@ -2982,9 +2986,9 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.6666296011353230,        0.1067259792282730,        \
 0.7377089807288009}},\\n              {{        0.6703715271049922,       \
 0.03569455268820809,        0.7411665902854158}}\\n            }};\\n         \
-   static constexpr c_array<double, point_type_total_> weight_list={{\\n      \
-          0.0000180739525219692,\\n                0.0002848008782238827,\\n  \
-              0.0002836065837530581,\\n                \
+   static constexpr c_array<double, point_type_total_> weight_list_={{\\n     \
+           0.0000180739525219692,\\n                0.0002848008782238827,\\n \
+               0.0002836065837530581,\\n                \
 0.00007013149266673815,\\n                0.0001162798021956766,\\n           \
      0.0001518728583972105,\\n                0.0001798796108216934,\\n       \
          0.0002022593385972785,\\n                0.0002203093105575464,\\n   \
@@ -3042,36 +3046,36 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 template<>\\n        struct RulePointData<56>{\\n            static constexpr \
 size_t Rule_=56;\\n            static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
@@ -3153,9 +3157,9 @@ LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{        0.5773502691896257,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{        0.5773502691896257,        \
 0.5773502691896257,        0.5773502691896257}},\\n              {{       \
 0.01462896151831013,       0.01462896151831013,           \
 0.9997859705806}},\\n              {{       0.03769840812493139,       \
@@ -3319,104 +3323,104 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.6365384364585819,       0.03372799460737052,         \
 0.770507132537155}},\\n              {{        0.6710994302899275,       \
 0.06755249309678028,        0.7382832893550715}}\\n            }};\\n         \
-   static constexpr c_array<double, point_type_total_> weight_list={{\\n      \
-          0.00001449063022537883,\\n                0.0002546377329828424,\\n \
-               0.00006018432961087497,\\n                \
-0.0001002286583263673,\\n                0.0001315222931028093,\\n            \
-    0.0001564213746876724,\\n                0.0001765118841507736,\\n        \
-        0.000192873709931108,\\n                0.000206265853426327,\\n      \
-          0.0002172395445953787,\\n                0.0002262076188876047,\\n  \
-              0.0002334885699462397,\\n                0.0002393355273179203,\
-\\n                0.0002439559200468863,\\n                \
-0.0002475251866060002,\\n                0.0002501965558158773,\\n            \
-    0.0002521081407925925,\\n                0.0002533881002388081,\\n        \
-        0.0002541582900848261,\\n                0.000254536573752586,\\n     \
-           0.00025457269930668,\\n                0.0002544456197465555,\\n   \
-             0.0002543481596881064,\\n                \
-0.0002543506451429194,\\n                0.0002544905675493763,\\n            \
-    0.0002547611407344429,\\n                0.0002551060375448869,\\n        \
-        0.0002554291933816039,\\n                0.0002556255710686344,\\n    \
-            0.000090413396951182,\\n                0.0001438426330079022,\\n \
-               0.0001802523089820518,\\n                \
-0.0002060052290565496,\\n                0.0002245002248967466,\\n            \
-    0.000237705984773115,\\n                0.0002468118955882525,\\n         \
-       0.0002525410872966528,\\n                0.0002553101409933397,\\n     \
-           0.0001212879733668632,\\n                0.0001472872881270931,\\n \
-               0.0001686846601010828,\\n                \
-0.0001862698414660208,\\n                0.0002007430956991861,\\n            \
-    0.0002126568125394796,\\n                0.0002224394603372113,\\n        \
-        0.0002304264522673135,\\n                0.0002368854288424087,\\n    \
-            0.0002420352089461772,\\n                \
-0.0002460597113081295,\\n                0.0002491181912257687,\\n            \
-    0.0002513528194205857,\\n                0.000252894309669322,\\n         \
-       0.0002538660368488136,\\n                0.0002543868648299022,\\n     \
-           0.0001642595537825183,\\n                0.0001818246659849308,\\n \
-               0.000196656564949242,\\n                0.0002090677905657992,\
-\\n                0.0002193820409510504,\\n                \
-0.0002278870827661928,\\n                0.000234828319228209,\\n             \
-   0.0002404139755581477,\\n                0.0002448227407760734,\\n         \
-       0.0002482110455592573,\\n                0.0002507192397774103,\\n     \
-           0.000252476596853488,\\n                0.0002536052388539425,\\n  \
-              0.0002542230588033068,\\n                0.0001944817013047896,\
-\\n                0.0002067862362746635,\\n                \
-0.0002172440734649114,\\n                0.0002260125991723423,\\n            \
-    0.0002332655008689524,\\n                0.0002391699681532458,\\n        \
-        0.0002438801528273928,\\n                0.0002475370504260665,\\n    \
-            0.0002502707235640573,\\n                \
-0.0002522031701054241,\\n                0.0002534511269978784,\\n            \
-    0.0002541284914955151,\\n                0.0002161509250688394,\\n        \
-        0.0002248778513437852,\\n                0.0002322388803404617,\\n    \
-            0.0002383265471001355,\\n                \
-0.0002432476675019525,\\n                0.0002471122223750674,\\n            \
-    0.000250029175248687,\\n                0.0002521055942764682,\\n         \
-       0.0002534472785575503,\\n                0.0002541599713080122,\\n     \
-           0.0002317380975862936,\\n                0.0002378550733719775,\\n \
-               0.0002428884456739118,\\n                \
-0.0002469002655757292,\\n                0.0002499657574265851,\\n            \
-    0.0002521676168486082,\\n                0.0002535935662645334,\\n        \
-        0.0002543356743363214,\\n                0.0002427353285201535,\\n    \
-            0.0002468258039744386,\\n                0.000250006095644031,\\n \
-               0.0002523238365420979,\\n                \
-0.0002538399260252846,\\n                0.0002546255927268069,\\n            \
-    0.0002500583360048449,\\n                0.0002524777638260203,\\n        \
-        0.0002540951193860657,\\n                0.0002549524085027472,\\n    \
-            0.0002542569507009158,\\n                0.0002552114127580376\\n \
-           }};\\n        };\\n\\n        template<>\\n        struct \
-RulePointData<59>{\\n            static constexpr size_t Rule_=59;\\n         \
-   static constexpr size_t \
+   static constexpr c_array<double, point_type_total_> weight_list_={{\\n     \
+           0.00001449063022537883,\\n                \
+0.0002546377329828424,\\n                0.00006018432961087497,\\n           \
+     0.0001002286583263673,\\n                0.0001315222931028093,\\n       \
+         0.0001564213746876724,\\n                0.0001765118841507736,\\n   \
+             0.000192873709931108,\\n                0.000206265853426327,\\n \
+               0.0002172395445953787,\\n                \
+0.0002262076188876047,\\n                0.0002334885699462397,\\n            \
+    0.0002393355273179203,\\n                0.0002439559200468863,\\n        \
+        0.0002475251866060002,\\n                0.0002501965558158773,\\n    \
+            0.0002521081407925925,\\n                \
+0.0002533881002388081,\\n                0.0002541582900848261,\\n            \
+    0.000254536573752586,\\n                0.00025457269930668,\\n           \
+     0.0002544456197465555,\\n                0.0002543481596881064,\\n       \
+         0.0002543506451429194,\\n                0.0002544905675493763,\\n   \
+             0.0002547611407344429,\\n                \
+0.0002551060375448869,\\n                0.0002554291933816039,\\n            \
+    0.0002556255710686344,\\n                0.000090413396951182,\\n         \
+       0.0001438426330079022,\\n                0.0001802523089820518,\\n     \
+           0.0002060052290565496,\\n                0.0002245002248967466,\\n \
+               0.000237705984773115,\\n                0.0002468118955882525,\
+\\n                0.0002525410872966528,\\n                \
+0.0002553101409933397,\\n                0.0001212879733668632,\\n            \
+    0.0001472872881270931,\\n                0.0001686846601010828,\\n        \
+        0.0001862698414660208,\\n                0.0002007430956991861,\\n    \
+            0.0002126568125394796,\\n                \
+0.0002224394603372113,\\n                0.0002304264522673135,\\n            \
+    0.0002368854288424087,\\n                0.0002420352089461772,\\n        \
+        0.0002460597113081295,\\n                0.0002491181912257687,\\n    \
+            0.0002513528194205857,\\n                0.000252894309669322,\\n \
+               0.0002538660368488136,\\n                \
+0.0002543868648299022,\\n                0.0001642595537825183,\\n            \
+    0.0001818246659849308,\\n                0.000196656564949242,\\n         \
+       0.0002090677905657992,\\n                0.0002193820409510504,\\n     \
+           0.0002278870827661928,\\n                0.000234828319228209,\\n  \
+              0.0002404139755581477,\\n                0.0002448227407760734,\
+\\n                0.0002482110455592573,\\n                \
+0.0002507192397774103,\\n                0.000252476596853488,\\n             \
+   0.0002536052388539425,\\n                0.0002542230588033068,\\n         \
+       0.0001944817013047896,\\n                0.0002067862362746635,\\n     \
+           0.0002172440734649114,\\n                0.0002260125991723423,\\n \
+               0.0002332655008689524,\\n                \
+0.0002391699681532458,\\n                0.0002438801528273928,\\n            \
+    0.0002475370504260665,\\n                0.0002502707235640573,\\n        \
+        0.0002522031701054241,\\n                0.0002534511269978784,\\n    \
+            0.0002541284914955151,\\n                \
+0.0002161509250688394,\\n                0.0002248778513437852,\\n            \
+    0.0002322388803404617,\\n                0.0002383265471001355,\\n        \
+        0.0002432476675019525,\\n                0.0002471122223750674,\\n    \
+            0.000250029175248687,\\n                0.0002521055942764682,\\n \
+               0.0002534472785575503,\\n                \
+0.0002541599713080122,\\n                0.0002317380975862936,\\n            \
+    0.0002378550733719775,\\n                0.0002428884456739118,\\n        \
+        0.0002469002655757292,\\n                0.0002499657574265851,\\n    \
+            0.0002521676168486082,\\n                \
+0.0002535935662645334,\\n                0.0002543356743363214,\\n            \
+    0.0002427353285201535,\\n                0.0002468258039744386,\\n        \
+        0.000250006095644031,\\n                0.0002523238365420979,\\n     \
+           0.0002538399260252846,\\n                0.0002546255927268069,\\n \
+               0.0002500583360048449,\\n                \
+0.0002524777638260203,\\n                0.0002540951193860657,\\n            \
+    0.0002549524085027472,\\n                0.0002542569507009158,\\n        \
+        0.0002552114127580376\\n            }};\\n        };\\n\\n        \
+template<>\\n        struct RulePointData<59>{\\n            static constexpr \
+size_t Rule_=59;\\n            static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN12_0AA,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN12_0BB,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
@@ -3507,9 +3511,9 @@ LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{                        0.,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{                        0.,        \
 0.7071067811865476,        0.7071067811865476}},\\n              {{        \
 0.5773502691896257,        0.5773502691896257,        \
 0.5773502691896257}},\\n              {{       0.02335728608887064,       \
@@ -3690,112 +3694,112 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.0960980507700291,        0.7350940280592361}},\\n              {{        \
 0.6741354429572275,       0.03211853196273233,        0.7379090760069439}}\\n \
            }};\\n            static constexpr c_array<double, \
-point_type_total_> weight_list={{\\n                0.0000968752187942071,\\n \
-               0.0002307897895367918,\\n                \
-0.0002297310852498558,\\n                0.00007386265944001918,\\n           \
-     0.0000825797769854221,\\n                0.0000970604476205763,\\n       \
-         0.0001302393847117003,\\n                0.0001541957004600968,\\n   \
-             0.0001704459770092199,\\n                \
-0.0001827374890942906,\\n                0.0001926360817436107,\\n            \
-    0.0002008010239494833,\\n                0.0002075635983209176,\\n        \
-        0.0002131306638690909,\\n                0.0002176562329937334,\\n    \
-            0.0002212682262991018,\\n                \
-0.0002240799515668565,\\n                0.0002261959816187525,\\n            \
-    0.0002277156368808855,\\n                0.0002287351772128336,\\n        \
-        0.0002293490814084085,\\n                0.0002296505312376273,\\n    \
-            0.0002296793832318756,\\n                \
-0.0002295785443842974,\\n                0.0002295017931529102,\\n            \
-    0.0002295059638184868,\\n                0.0002296232343237362,\\n        \
-        0.0002298530178740771,\\n                0.0002301579790280501,\\n    \
-            0.0002304690404996514,\\n                \
-0.0002307027995907101,\\n                0.0000931227469667109,\\n            \
-    0.0001199919385876926,\\n                0.000159803913887769,\\n         \
-       0.00018222537635749,\\n                0.000198857959365504,\\n        \
-        0.0002112620102533307,\\n                0.0002201594887699007,\\n    \
-            0.0002261622590895036,\\n                \
-0.0002296458453435705,\\n                0.0001006006990267,\\n               \
- 0.0001227676689635876,\\n                0.0001467864280270117,\\n           \
-     0.0001644178912101232,\\n                0.0001777664890718961,\\n       \
-         0.000188482566451669,\\n                0.0001973269246453848,\\n    \
-            0.0002046767775855328,\\n                \
-0.0002107600125918041,\\n                0.0002157416362266829,\\n            \
-    0.0002197557816920721,\\n                0.0002229192611835437,\\n        \
-        0.0002253385110212775,\\n                0.0002271137107548774,\\n    \
-            0.0002283414092917525,\\n                \
-0.0002291161673130077,\\n                0.0002295313908576598,\\n            \
-    0.0001438204721359031,\\n                0.0001607738025495257,\\n        \
-        0.0001741483853528379,\\n                0.0001851918467519151,\\n    \
-            0.0001944628638070613,\\n                \
-0.0002022495446275152,\\n                0.0002087462382438515,\\n            \
-    0.0002141074754818308,\\n                0.0002184640913748162,\\n        \
-        0.0002219309165220329,\\n                0.0002246123118340624,\\n    \
-            0.0002266062766915125,\\n                \
-0.0002280072952230796,\\n                0.0002289082025202583,\\n            \
-    0.0002294012695120025,\\n                0.0001722434488736947,\\n        \
-        0.0001830237421455091,\\n                0.0001923855349997633,\\n    \
-            0.0002004067861936271,\\n                \
-0.0002071817297354263,\\n                0.0002128250834102103,\\n            \
-    0.0002174513719440102,\\n                0.0002211661839150214,\\n        \
-        0.0002240665257813102,\\n                0.000226243951663262,\\n     \
-           0.0002277874557231869,\\n                0.0002287854314454994,\\n \
-               0.0002293268499615575,\\n                \
-0.0001912628201529828,\\n                0.0001992499672238701,\\n            \
-    0.0002061275533454027,\\n                0.0002119318215968572,\\n        \
-        0.0002167416581882652,\\n                0.00022064307305166,\\n      \
-          0.0002237186938699523,\\n                0.0002260480075032884,\\n  \
-              0.0002277098884558542,\\n                0.0002287845715109671,\
-\\n                0.0002293547268236294,\\n                \
-0.0002056073839852528,\\n                0.0002114235865831876,\\n            \
-    0.0002163175629770551,\\n                0.000220339215811165,\\n         \
-       0.0002235473176847839,\\n                0.0002260024141501235,\\n     \
-           0.0002277675929329182,\\n                0.0002289102112284834,\\n \
-               0.0002295027954625118,\\n                \
-0.0002161281589879993,\\n                0.0002201980477395102,\\n            \
-    0.0002234952066593166,\\n                0.0002260540098520838,\\n        \
-        0.0002279157981899988,\\n                0.0002291296918565571,\\n    \
-            0.0002297533752536649,\\n                \
-0.0002234927356465995,\\n                0.0002261288012985219,\\n            \
-    0.0002280818160923688,\\n                0.0002293773295180159,\\n        \
-        0.0002300528767338634,\\n                0.0002281893855065666,\\n    \
-            0.0002295720444840727,\\n                \
-0.0002303227649026753,\\n                0.0002304831913227114\\n            \
-}};\\n        };\\n\\n        template<>\\n        struct \
+point_type_total_> weight_list_={{\\n                \
+0.0000968752187942071,\\n                0.0002307897895367918,\\n            \
+    0.0002297310852498558,\\n                0.00007386265944001918,\\n       \
+         0.0000825797769854221,\\n                0.0000970604476205763,\\n   \
+             0.0001302393847117003,\\n                \
+0.0001541957004600968,\\n                0.0001704459770092199,\\n            \
+    0.0001827374890942906,\\n                0.0001926360817436107,\\n        \
+        0.0002008010239494833,\\n                0.0002075635983209176,\\n    \
+            0.0002131306638690909,\\n                \
+0.0002176562329937334,\\n                0.0002212682262991018,\\n            \
+    0.0002240799515668565,\\n                0.0002261959816187525,\\n        \
+        0.0002277156368808855,\\n                0.0002287351772128336,\\n    \
+            0.0002293490814084085,\\n                \
+0.0002296505312376273,\\n                0.0002296793832318756,\\n            \
+    0.0002295785443842974,\\n                0.0002295017931529102,\\n        \
+        0.0002295059638184868,\\n                0.0002296232343237362,\\n    \
+            0.0002298530178740771,\\n                \
+0.0002301579790280501,\\n                0.0002304690404996514,\\n            \
+    0.0002307027995907101,\\n                0.0000931227469667109,\\n        \
+        0.0001199919385876926,\\n                0.000159803913887769,\\n     \
+           0.00018222537635749,\\n                0.000198857959365504,\\n    \
+            0.0002112620102533307,\\n                \
+0.0002201594887699007,\\n                0.0002261622590895036,\\n            \
+    0.0002296458453435705,\\n                0.0001006006990267,\\n           \
+     0.0001227676689635876,\\n                0.0001467864280270117,\\n       \
+         0.0001644178912101232,\\n                0.0001777664890718961,\\n   \
+             0.000188482566451669,\\n                \
+0.0001973269246453848,\\n                0.0002046767775855328,\\n            \
+    0.0002107600125918041,\\n                0.0002157416362266829,\\n        \
+        0.0002197557816920721,\\n                0.0002229192611835437,\\n    \
+            0.0002253385110212775,\\n                \
+0.0002271137107548774,\\n                0.0002283414092917525,\\n            \
+    0.0002291161673130077,\\n                0.0002295313908576598,\\n        \
+        0.0001438204721359031,\\n                0.0001607738025495257,\\n    \
+            0.0001741483853528379,\\n                \
+0.0001851918467519151,\\n                0.0001944628638070613,\\n            \
+    0.0002022495446275152,\\n                0.0002087462382438515,\\n        \
+        0.0002141074754818308,\\n                0.0002184640913748162,\\n    \
+            0.0002219309165220329,\\n                \
+0.0002246123118340624,\\n                0.0002266062766915125,\\n            \
+    0.0002280072952230796,\\n                0.0002289082025202583,\\n        \
+        0.0002294012695120025,\\n                0.0001722434488736947,\\n    \
+            0.0001830237421455091,\\n                \
+0.0001923855349997633,\\n                0.0002004067861936271,\\n            \
+    0.0002071817297354263,\\n                0.0002128250834102103,\\n        \
+        0.0002174513719440102,\\n                0.0002211661839150214,\\n    \
+            0.0002240665257813102,\\n                0.000226243951663262,\\n \
+               0.0002277874557231869,\\n                \
+0.0002287854314454994,\\n                0.0002293268499615575,\\n            \
+    0.0001912628201529828,\\n                0.0001992499672238701,\\n        \
+        0.0002061275533454027,\\n                0.0002119318215968572,\\n    \
+            0.0002167416581882652,\\n                0.00022064307305166,\\n  \
+              0.0002237186938699523,\\n                0.0002260480075032884,\
+\\n                0.0002277098884558542,\\n                \
+0.0002287845715109671,\\n                0.0002293547268236294,\\n            \
+    0.0002056073839852528,\\n                0.0002114235865831876,\\n        \
+        0.0002163175629770551,\\n                0.000220339215811165,\\n     \
+           0.0002235473176847839,\\n                0.0002260024141501235,\\n \
+               0.0002277675929329182,\\n                \
+0.0002289102112284834,\\n                0.0002295027954625118,\\n            \
+    0.0002161281589879993,\\n                0.0002201980477395102,\\n        \
+        0.0002234952066593166,\\n                0.0002260540098520838,\\n    \
+            0.0002279157981899988,\\n                \
+0.0002291296918565571,\\n                0.0002297533752536649,\\n            \
+    0.0002234927356465995,\\n                0.0002261288012985219,\\n        \
+        0.0002280818160923688,\\n                0.0002293773295180159,\\n    \
+            0.0002300528767338634,\\n                \
+0.0002281893855065666,\\n                0.0002295720444840727,\\n            \
+    0.0002303227649026753,\\n                0.0002304831913227114\\n         \
+   }};\\n        };\\n\\n        template<>\\n        struct \
 RulePointData<62>{\\n            static constexpr size_t Rule_=62;\\n         \
    static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
@@ -3896,9 +3900,9 @@ LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{        0.5773502691896257,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{        0.5773502691896257,        \
 0.5773502691896257,        0.5773502691896257}},\\n              {{        \
 0.0230326168626145,        0.0230326168626145,         \
 0.999469357769872}},\\n              {{       0.03757208620162395,       \
@@ -4095,9 +4099,9 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.6435019674426665,       0.03052608357660639,        \
 0.7648355222653374}},\\n              {{        0.6747218676375681,       \
 0.06112185773983089,        0.7355368922345798}}\\n            }};\\n         \
-   static constexpr c_array<double, point_type_total_> weight_list={{\\n      \
-          0.0000908051076430816,\\n                0.0002084824361987793,\\n  \
-              0.00005011105657239616,\\n                \
+   static constexpr c_array<double, point_type_total_> weight_list_={{\\n     \
+           0.0000908051076430816,\\n                0.0002084824361987793,\\n \
+               0.00005011105657239616,\\n                \
 0.00005942520409683853,\\n                0.0000956439482610972,\\n           \
      0.0001185530657126338,\\n                0.0001364510114230331,\\n       \
          0.0001505828825605415,\\n                0.0001619298749867023,\\n   \
@@ -4174,41 +4178,41 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 RulePointData<65>{\\n            static constexpr size_t Rule_=65;\\n         \
    static constexpr size_t \
 point_type_total_=point_type_accum_count(Rule_)[5];\\n            static \
-constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{\\n      \
-          LEBEDEV_POINT_TYPE::OPTRN6_001,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN12_0AA,\\n                \
+constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{\\n     \
+           LEBEDEV_POINT_TYPE::OPTRN6_00C,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN12_0BB,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN8_AAA,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
-LEBEDEV_POINT_TYPE::OPTRN24_AAB,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
+LEBEDEV_POINT_TYPE::OPTRN24_AAC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN24_AB0,\\n                \
@@ -4319,9 +4323,9 @@ LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC,\\n                \
 LEBEDEV_POINT_TYPE::OPTRN48_ABC\\n            }};\\n            static \
-constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
-         {{                        0.,                        0.,             \
-           1.}},\\n              {{                        0.,        \
+constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{\\n      \
+        {{                        0.,                        0.,              \
+          1.}},\\n              {{                        0.,        \
 0.7071067811865476,        0.7071067811865476}},\\n              {{        \
 0.5773502691896257,        0.5773502691896257,        \
 0.5773502691896257}},\\n              {{       0.01182361662400277,       \
@@ -4536,103 +4540,104 @@ constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{\\n       \
 0.6747258588365477,        0.0874038489988472,        \
 0.7328748751304481}},\\n              {{        0.6772135750395347,       \
 0.02919946135808105,        0.7352068860113937}}\\n            }};\\n         \
-   static constexpr c_array<double, point_type_total_> weight_list={{\\n      \
-          0.00000973534794617549,\\n                0.0001907581241803167,\\n \
-               0.0001901059546737578,\\n                \
-0.00003926424538919213,\\n                0.00006667905467294383,\\n          \
-      0.0000886889131501914,\\n                0.0001066306000958872,\\n      \
-          0.0001214506743336128,\\n                0.0001338054681640871,\\n  \
-              0.0001441677023628504,\\n                0.0001528880200826557,\
-\\n                0.0001602330623773609,\\n                \
-0.0001664102653445244,\\n                0.0001715845854011323,\\n            \
-    0.0001758901000133069,\\n                0.0001794382485256736,\\n        \
-        0.0001823238106757407,\\n                0.0001846293252959976,\\n    \
-            0.0001864284079323098,\\n                \
-0.0001877882694626914,\\n                0.0001887716321852025,\\n            \
-    0.0001894381638175673,\\n                0.0001898454899533629,\\n        \
-        0.0001900497929577815,\\n                0.0001900671501924092,\\n    \
-            0.000189983755553351,\\n                0.0001899014113156229,\\n \
-               0.0001898581257705106,\\n                \
-0.0001898804756095753,\\n                0.0001899793610426402,\\n            \
-    0.0001901464554844117,\\n                0.0001903533246259542,\\n        \
-        0.0001905556158463228,\\n                0.0001907037155663528,\\n    \
-            0.00005992997844249965,\\n                \
-0.0000974905938245698,\\n                0.0001241680804599158,\\n            \
-    0.000143762615429936,\\n                0.0001584200054793902,\\n         \
-       0.0001694436550982744,\\n                0.0001776617014018108,\\n     \
-           0.0001836132434440077,\\n                0.0001876494727075983,\\n \
-               0.0001899906535336482,\\n                \
-0.0000814325282076735,\\n                0.0000999885989088773,\\n            \
-    0.0001156199403068359,\\n                0.0001287632092635513,\\n        \
-        0.0001398378643365139,\\n                0.0001491876468417391,\\n    \
-            0.0001570855679175456,\\n                \
-0.0001637483948103775,\\n                0.0001693500566632843,\\n            \
-    0.0001740322769393633,\\n                0.0001779126637278296,\\n        \
-        0.0001810908108835412,\\n                0.000183652913260019,\\n     \
-           0.0001856752841777379,\\n                0.0001872270566606832,\\n \
-               0.0001883722645591307,\\n                \
-0.0001891714324525297,\\n                0.0001896827480450146,\\n            \
-    0.0001899628417059528,\\n                0.0001123301829001669,\\n        \
-        0.0001253698826711277,\\n                0.0001366266117678531,\\n    \
-            0.0001462736856106918,\\n                \
-0.0001545076466685412,\\n                0.0001615096280814007,\\n            \
-    0.0001674366639741759,\\n                0.00017242250024379,\\n          \
-      0.0001765810822987288,\\n                0.0001800104126010751,\\n      \
-          0.0001827960437331284,\\n                0.0001850140300716308,\\n  \
-              0.0001867333507394938,\\n                0.0001880178688638289,\
-\\n                0.0001889278925654758,\\n                \
-0.0001895213832507346,\\n                0.000189854827739742,\\n             \
-   0.0001349105935937341,\\n                0.0001444060068369326,\\n         \
-       0.0001526797390930008,\\n                0.0001598208771406474,\\n     \
-           0.0001659354368615331,\\n                0.000171127991094644,\\n  \
-              0.000175495272560144,\\n                \
-0.0001791247850802529,\\n                0.0001820954300877716,\\n            \
-    0.0001844788524548449,\\n                0.000186340948170622,\\n         \
-       0.0001877433008795068,\\n                0.0001887444543705232,\\n     \
-           0.0001894009829375006,\\n                0.0001897683345035198,\\n \
-               0.0001517327037467653,\\n                \
-0.0001587740557483543,\\n                0.0001649093382274097,\\n            \
-    0.0001701915216193265,\\n                0.0001746847753144065,\\n        \
-        0.000178455551200757,\\n                0.0001815687562112174,\\n     \
-           0.0001840864370663302,\\n                0.0001860676785390006,\\n \
-               0.0001875690583743703,\\n                \
-0.0001886453236347225,\\n                0.0001893501123329645,\\n            \
-    0.0001897366184519868,\\n                0.0001643908815152736,\\n        \
-        0.0001696300350907768,\\n                0.0001741553103844483,\\n    \
-            0.0001780015282386092,\\n                \
-0.0001812116787077125,\\n                0.0001838323158085421,\\n            \
-    0.0001859113119837737,\\n                0.0001874969220221698,\\n        \
-        0.0001886375612681076,\\n                0.0001893819575809276,\\n    \
-            0.0001897794748256767,\\n                \
-0.0001738963926584846,\\n                0.0001777442359873466,\\n            \
-    0.0001810010815068719,\\n                0.0001836920318248129,\\n        \
-        0.0001858489473214328,\\n                0.0001875079342496592,\\n    \
-            0.000188708023910231,\\n                0.0001894905752176822,\\n \
-               0.0001898991061200695,\\n                \
-0.0001809065016458791,\\n                0.0001836297121596799,\\n            \
-    0.0001858426916241869,\\n                0.0001875654101134641,\\n        \
-        0.0001888240751833503,\\n                0.0001896497383866979,\\n    \
-            0.0001900775530219121,\\n                \
-0.0001858525041478814,\\n                0.0001876248690077947,\\n            \
-    0.0001889404439064607,\\n                0.000189816853926529,\\n         \
-       0.0001902779940661772,\\n                0.0001890125641731815,\\n     \
-           0.0001899434637795751,\\n                0.0001904520856831751,\\n \
-               0.0001905534498734563\\n            }};\\n        };\\n\"\>"], \
-"Output",
+   static constexpr c_array<double, point_type_total_> weight_list_={{\\n     \
+           0.00000973534794617549,\\n                \
+0.0001907581241803167,\\n                0.0001901059546737578,\\n            \
+    0.00003926424538919213,\\n                0.00006667905467294383,\\n      \
+          0.0000886889131501914,\\n                0.0001066306000958872,\\n  \
+              0.0001214506743336128,\\n                0.0001338054681640871,\
+\\n                0.0001441677023628504,\\n                \
+0.0001528880200826557,\\n                0.0001602330623773609,\\n            \
+    0.0001664102653445244,\\n                0.0001715845854011323,\\n        \
+        0.0001758901000133069,\\n                0.0001794382485256736,\\n    \
+            0.0001823238106757407,\\n                \
+0.0001846293252959976,\\n                0.0001864284079323098,\\n            \
+    0.0001877882694626914,\\n                0.0001887716321852025,\\n        \
+        0.0001894381638175673,\\n                0.0001898454899533629,\\n    \
+            0.0001900497929577815,\\n                \
+0.0001900671501924092,\\n                0.000189983755553351,\\n             \
+   0.0001899014113156229,\\n                0.0001898581257705106,\\n         \
+       0.0001898804756095753,\\n                0.0001899793610426402,\\n     \
+           0.0001901464554844117,\\n                0.0001903533246259542,\\n \
+               0.0001905556158463228,\\n                \
+0.0001907037155663528,\\n                0.00005992997844249965,\\n           \
+     0.0000974905938245698,\\n                0.0001241680804599158,\\n       \
+         0.000143762615429936,\\n                0.0001584200054793902,\\n    \
+            0.0001694436550982744,\\n                \
+0.0001776617014018108,\\n                0.0001836132434440077,\\n            \
+    0.0001876494727075983,\\n                0.0001899906535336482,\\n        \
+        0.0000814325282076735,\\n                0.0000999885989088773,\\n    \
+            0.0001156199403068359,\\n                \
+0.0001287632092635513,\\n                0.0001398378643365139,\\n            \
+    0.0001491876468417391,\\n                0.0001570855679175456,\\n        \
+        0.0001637483948103775,\\n                0.0001693500566632843,\\n    \
+            0.0001740322769393633,\\n                \
+0.0001779126637278296,\\n                0.0001810908108835412,\\n            \
+    0.000183652913260019,\\n                0.0001856752841777379,\\n         \
+       0.0001872270566606832,\\n                0.0001883722645591307,\\n     \
+           0.0001891714324525297,\\n                0.0001896827480450146,\\n \
+               0.0001899628417059528,\\n                \
+0.0001123301829001669,\\n                0.0001253698826711277,\\n            \
+    0.0001366266117678531,\\n                0.0001462736856106918,\\n        \
+        0.0001545076466685412,\\n                0.0001615096280814007,\\n    \
+            0.0001674366639741759,\\n                0.00017242250024379,\\n  \
+              0.0001765810822987288,\\n                0.0001800104126010751,\
+\\n                0.0001827960437331284,\\n                \
+0.0001850140300716308,\\n                0.0001867333507394938,\\n            \
+    0.0001880178688638289,\\n                0.0001889278925654758,\\n        \
+        0.0001895213832507346,\\n                0.000189854827739742,\\n     \
+           0.0001349105935937341,\\n                0.0001444060068369326,\\n \
+               0.0001526797390930008,\\n                \
+0.0001598208771406474,\\n                0.0001659354368615331,\\n            \
+    0.000171127991094644,\\n                0.000175495272560144,\\n          \
+      0.0001791247850802529,\\n                0.0001820954300877716,\\n      \
+          0.0001844788524548449,\\n                0.000186340948170622,\\n   \
+             0.0001877433008795068,\\n                \
+0.0001887444543705232,\\n                0.0001894009829375006,\\n            \
+    0.0001897683345035198,\\n                0.0001517327037467653,\\n        \
+        0.0001587740557483543,\\n                0.0001649093382274097,\\n    \
+            0.0001701915216193265,\\n                \
+0.0001746847753144065,\\n                0.000178455551200757,\\n             \
+   0.0001815687562112174,\\n                0.0001840864370663302,\\n         \
+       0.0001860676785390006,\\n                0.0001875690583743703,\\n     \
+           0.0001886453236347225,\\n                0.0001893501123329645,\\n \
+               0.0001897366184519868,\\n                \
+0.0001643908815152736,\\n                0.0001696300350907768,\\n            \
+    0.0001741553103844483,\\n                0.0001780015282386092,\\n        \
+        0.0001812116787077125,\\n                0.0001838323158085421,\\n    \
+            0.0001859113119837737,\\n                \
+0.0001874969220221698,\\n                0.0001886375612681076,\\n            \
+    0.0001893819575809276,\\n                0.0001897794748256767,\\n        \
+        0.0001738963926584846,\\n                0.0001777442359873466,\\n    \
+            0.0001810010815068719,\\n                \
+0.0001836920318248129,\\n                0.0001858489473214328,\\n            \
+    0.0001875079342496592,\\n                0.000188708023910231,\\n         \
+       0.0001894905752176822,\\n                0.0001898991061200695,\\n     \
+           0.0001809065016458791,\\n                0.0001836297121596799,\\n \
+               0.0001858426916241869,\\n                \
+0.0001875654101134641,\\n                0.0001888240751833503,\\n            \
+    0.0001896497383866979,\\n                0.0001900775530219121,\\n        \
+        0.0001858525041478814,\\n                0.0001876248690077947,\\n    \
+            0.0001889404439064607,\\n                0.000189816853926529,\\n \
+               0.0001902779940661772,\\n                \
+0.0001890125641731815,\\n                0.0001899434637795751,\\n            \
+    0.0001904520856831751,\\n                0.0001905534498734563\\n         \
+   }};\\n        };\\n\"\>"], "Output",
  CellChangeTimes->{
   3.8390368001635475`*^9, 3.8390368444290285`*^9, 3.8390544464929047`*^9, 
    3.8390545872917767`*^9, {3.8390546898447323`*^9, 3.839054708714839*^9}, 
    3.8390547821036515`*^9, 3.8390548991225195`*^9, 3.839054951797759*^9, 
-   3.8390552604784813`*^9, 3.8390553629755793`*^9, 3.839056466494013*^9},
- CellLabel->"Out[19]=",ExpressionUUID->"87d0b927-f667-4c05-9b1c-cfd2c622a39d"]
+   3.8390552604784813`*^9, 3.8390553629755793`*^9, 3.839056466494013*^9, 
+   3.8392814606792293`*^9, 3.8399227842717032`*^9, 3.839993847250369*^9},
+ CellLabel->"Out[79]=",ExpressionUUID->"be3ccb46-924b-4118-80f4-ed2fa88b37a8"]
 }, Open  ]]
 },
-WindowSize->{1918.5, 1047.},
-WindowMargins->{{1440, Automatic}, {Automatic, 0}},
+WindowSize->{1920., 1017.75},
+WindowMargins->{{1437, Automatic}, {Automatic, -3}},
 FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (2020\:5e743\:670814\
 \:65e5)",
 StyleDefinitions->"Default.nb",
-ExpressionUUID->"10ae823e-2468-4014-a1cf-7521bc37e83a"
+ExpressionUUID->"a416d227-5224-420a-a0cb-af9215599171"
 ]
 (* End of Notebook Content *)
 
@@ -4646,10 +4651,10 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[558, 20, 1207, 32, 150, "Input",ExpressionUUID->"344e81e8-bb6e-4ebc-a469-28360f2f3498"],
-Cell[1768, 54, 15484, 392, 2294, "Input",ExpressionUUID->"b03bdd55-6bd4-4c03-b399-b9c015309706"],
+Cell[1768, 54, 15640, 395, 2275, "Input",ExpressionUUID->"b03bdd55-6bd4-4c03-b399-b9c015309706"],
 Cell[CellGroupData[{
-Cell[17277, 450, 840, 20, 43, "Input",ExpressionUUID->"4d8b9e3f-7211-4ac1-a1e6-04b0f0007690"],
-Cell[18120, 472, 274785, 4154, 79645, "Output",ExpressionUUID->"87d0b927-f667-4c05-9b1c-cfd2c622a39d"]
+Cell[17433, 453, 840, 20, 43, "Input",ExpressionUUID->"4d8b9e3f-7211-4ac1-a1e6-04b0f0007690"],
+Cell[18276, 475, 274893, 4156, 79645, "Output",ExpressionUUID->"be3ccb46-924b-4118-80f4-ed2fa88b37a8"]
 }, Open  ]]
 }
 ]

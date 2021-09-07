@@ -23,13 +23,13 @@ namespace lebedev{
         struct RulePointData<1>{
             static constexpr size_t Rule_=1;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.1666666666666667
             }};
         };
@@ -38,15 +38,15 @@ namespace lebedev{
         struct RulePointData<2>{
             static constexpr size_t Rule_=2;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.06666666666666668,
                 0.07500000000000001
             }};
@@ -56,17 +56,17 @@ namespace lebedev{
         struct RulePointData<3>{
             static constexpr size_t Rule_=3;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
-                LEBEDEV_POINT_TYPE::OPTRN12_0AA,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
+                LEBEDEV_POINT_TYPE::OPTRN12_0BB,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{                        0.,        0.7071067811865476,        0.7071067811865476}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.04761904761904762,
                 0.0380952380952381,
                 0.03214285714285714
@@ -77,17 +77,17 @@ namespace lebedev{
         struct RulePointData<4>{
             static constexpr size_t Rule_=4;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
               {{        0.4597008433809831,        0.8880738339771152,                        0.}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.00952380952380952,
                 0.03214285714285714,
                 0.02857142857142857
@@ -98,19 +98,19 @@ namespace lebedev{
         struct RulePointData<5>{
             static constexpr size_t Rule_=5;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
-                LEBEDEV_POINT_TYPE::OPTRN12_0AA,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
+                LEBEDEV_POINT_TYPE::OPTRN12_0BB,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{                        0.,        0.7071067811865476,        0.7071067811865476}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
               {{        0.3015113445777636,        0.3015113445777636,        0.9045340337332909}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.0126984126984127,
                 0.02257495590828924,
                 0.02109375,
@@ -122,21 +122,21 @@ namespace lebedev{
         struct RulePointData<6>{
             static constexpr size_t Rule_=6;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
-                LEBEDEV_POINT_TYPE::OPTRN12_0AA,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
+                LEBEDEV_POINT_TYPE::OPTRN12_0BB,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{                        0.,        0.7071067811865476,        0.7071067811865476}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
               {{        0.4803844614152614,        0.4803844614152614,        0.7337993857053428}},
               {{        0.3207726489807764,        0.9471562213625879,                        0.}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.0005130671797338464,
                 0.01660406956574204,
                 -0.02958603896103896,
@@ -149,21 +149,21 @@ namespace lebedev{
         struct RulePointData<7>{
             static constexpr size_t Rule_=7;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
               {{        0.3696028464541502,        0.3696028464541502,        0.8525183117012676}},
               {{        0.6943540066026664,        0.6943540066026664,         0.189063552885395}},
               {{        0.3742430390903412,        0.9273306571511725,                        0.}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.01154401154401154,
                 0.01194390908585628,
                 0.0111105557106034,
@@ -176,15 +176,15 @@ namespace lebedev{
         struct RulePointData<8>{
             static constexpr size_t Rule_=8;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
               {{        0.1851156353447362,        0.1851156353447362,       0.96512403508659409}},
@@ -192,7 +192,7 @@ namespace lebedev{
               {{        0.3956894730559419,        0.3956894730559419,        0.8287699812525922}},
               {{        0.4783690288121502,        0.8781589106040661,                        0.}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.003828270494937163,
                 0.00979373751248751,
                 0.00821173728319111,
@@ -206,16 +206,16 @@ namespace lebedev{
         struct RulePointData<9>{
             static constexpr size_t Rule_=9;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
-                LEBEDEV_POINT_TYPE::OPTRN12_0AA,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
+                LEBEDEV_POINT_TYPE::OPTRN12_0BB,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{                        0.,        0.7071067811865476,        0.7071067811865476}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
@@ -224,7 +224,7 @@ namespace lebedev{
               {{        0.1574676672039082,        0.1574676672039082,       0.97488864367717323}},
               {{        0.1403553811713183,        0.4493328323269557,        0.8822700112603227}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.0005996313688621381,
                 0.007372999718620756,
                 0.007210515360144488,
@@ -239,17 +239,17 @@ namespace lebedev{
         struct RulePointData<10>{
             static constexpr size_t Rule_=10;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
-                LEBEDEV_POINT_TYPE::OPTRN12_0AA,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
+                LEBEDEV_POINT_TYPE::OPTRN12_0BB,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{                        0.,        0.7071067811865476,        0.7071067811865476}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
@@ -259,7 +259,7 @@ namespace lebedev{
               {{        0.2613931360335988,       0.96523242197644838,                        0.}},
               {{        0.4990453161796037,        0.1446630744325115,        0.8544158046846588}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.005544842902037363,
                 0.006071332770670752,
                 0.006383674773515093,
@@ -275,18 +275,18 @@ namespace lebedev{
         struct RulePointData<11>{
             static constexpr size_t Rule_=11;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
-                LEBEDEV_POINT_TYPE::OPTRN12_0AA,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
+                LEBEDEV_POINT_TYPE::OPTRN12_0BB,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{                        0.,        0.7071067811865476,        0.7071067811865476}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
@@ -297,7 +297,7 @@ namespace lebedev{
               {{        0.3457702197611283,        0.9383192181375915,                        0.}},
               {{        0.1590417105383530,        0.8360360154824589,         0.525118572443642}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.001782340447244611,
                 0.005716905949977102,
                 0.005573383178848736,
@@ -314,19 +314,19 @@ namespace lebedev{
         struct RulePointData<12>{
             static constexpr size_t Rule_=12;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
               {{        0.4492044687397611,        0.4492044687397611,        0.7722892531483641}},
@@ -338,7 +338,7 @@ namespace lebedev{
               {{        0.3545877390518688,        0.9350227458805929,                        0.}},
               {{        0.2272181808998187,        0.4864661535886647,        0.8436365210688943}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 -0.05522639919727324,
                 0.004450274607445226,
                 0.004496841067921404,
@@ -356,20 +356,20 @@ namespace lebedev{
         struct RulePointData<13>{
             static constexpr size_t Rule_=13;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
-                LEBEDEV_POINT_TYPE::OPTRN12_0AA,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
+                LEBEDEV_POINT_TYPE::OPTRN12_0BB,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{                        0.,        0.7071067811865476,        0.7071067811865476}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
@@ -382,7 +382,7 @@ namespace lebedev{
               {{        0.3233484542692899,        0.1153112011009701,        0.9392279297499157}},
               {{        0.2314790158712601,        0.5244939240922365,        0.8193433888191203}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 -0.001313769127326952,
                 -0.002522728704859336,
                 0.004186853881700584,
@@ -401,21 +401,21 @@ namespace lebedev{
         struct RulePointData<14>{
             static constexpr size_t Rule_=14;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
               {{        0.3515640345570105,        0.3515640345570105,        0.8676436245440833}},
@@ -429,7 +429,7 @@ namespace lebedev{
               {{        0.2510034751770465,        0.8000727494073952,         0.544867737258077}},
               {{        0.1233548532583327,        0.4127724083168531,        0.9024425295330004}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.000854591172512815,
                 0.003599119285025571,
                 0.003449788424305883,
@@ -449,22 +449,22 @@ namespace lebedev{
         struct RulePointData<15>{
             static constexpr size_t Rule_=15;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
               {{        0.7068965463912316,        0.7068965463912316,          0.02438330166935}},
@@ -479,7 +479,7 @@ namespace lebedev{
               {{        0.0968412145510396,        0.8280801506686862,        0.5521820743493993}},
               {{        0.1833434647041659,        0.9074658265305127,         0.378009189874487}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.003006796749453936,
                 0.003050627745650771,
                 0.001621104600288991,
@@ -500,17 +500,17 @@ namespace lebedev{
         struct RulePointData<17>{
             static constexpr size_t Rule_=17;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
-                LEBEDEV_POINT_TYPE::OPTRN12_0AA,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
+                LEBEDEV_POINT_TYPE::OPTRN12_0BB,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
@@ -518,7 +518,7 @@ namespace lebedev{
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{                        0.,        0.7071067811865476,        0.7071067811865476}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
@@ -536,7 +536,7 @@ namespace lebedev{
               {{        0.5550152361076807,        0.7717462626915901,         0.310428403516654}},
               {{        0.9371809858553722,        0.3344363145343455,         0.099217696364293}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.0005265897968224436,
                 0.002548219972002607,
                 0.002512317418927307,
@@ -560,18 +560,18 @@ namespace lebedev{
         struct RulePointData<20>{
             static constexpr size_t Rule_=20;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
@@ -582,7 +582,7 @@ namespace lebedev{
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
               {{        0.7040954938227469,        0.7040954938227469,          0.09219040707690}},
@@ -604,7 +604,7 @@ namespace lebedev{
               {{        0.2778673190586244,        0.0821302158193251,         0.957102074310073}},
               {{        0.5033564271075117,        0.0899920584207488,         0.859379855890721}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.0003095121295306187,
                 0.001852379698597489,
                 0.001871790639277744,
@@ -632,20 +632,20 @@ namespace lebedev{
         struct RulePointData<23>{
             static constexpr size_t Rule_=23;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
-                LEBEDEV_POINT_TYPE::OPTRN12_0AA,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
+                LEBEDEV_POINT_TYPE::OPTRN12_0BB,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
@@ -659,7 +659,7 @@ namespace lebedev{
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{                        0.,        0.7071067811865476,        0.7071067811865476}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
@@ -686,7 +686,7 @@ namespace lebedev{
               {{        0.3062936666210730,        0.4908826589037616,        0.8156092232039754}},
               {{        0.3822477379524787,        0.5648768149099500,        0.7313007936597657}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.0002192942088181184,
                 0.00143643361731908,
                 0.001421940344335877,
@@ -719,21 +719,21 @@ namespace lebedev{
         struct RulePointData<26>{
             static constexpr size_t Rule_=26;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
@@ -751,7 +751,7 @@ namespace lebedev{
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
               {{       0.04292963545341347,       0.04292963545341347,         0.998155345023847}},
@@ -783,7 +783,7 @@ namespace lebedev{
               {{        0.2087307061103274,        0.5348666438135476,        0.8187485362810218}},
               {{        0.4055122137872836,        0.5674997546074373,        0.7165918454670238}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.0001438294190527431,
                 0.001125772288287004,
                 0.000494802934194924,
@@ -821,23 +821,23 @@ namespace lebedev{
         struct RulePointData<29>{
             static constexpr size_t Rule_=29;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
-                LEBEDEV_POINT_TYPE::OPTRN12_0AA,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
+                LEBEDEV_POINT_TYPE::OPTRN12_0BB,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
@@ -859,7 +859,7 @@ namespace lebedev{
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{                        0.,        0.7071067811865476,        0.7071067811865476}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
@@ -897,7 +897,7 @@ namespace lebedev{
               {{        0.7344305757559503,        0.6031161693096310,         0.311227594714961}},
               {{        0.7043837184021765,        0.5693702498468441,         0.423864478152234}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.0001105189233267572,
                 0.000920523273809074,
                 0.000913315978644356,
@@ -941,24 +941,24 @@ namespace lebedev{
         struct RulePointData<32>{
             static constexpr size_t Rule_=32;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
@@ -985,7 +985,7 @@ namespace lebedev{
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
               {{       0.03229290663413854,       0.03229290663413854,         0.998956623864238}},
@@ -1029,7 +1029,7 @@ namespace lebedev{
               {{        0.6419978471082389,        0.1164174423140873,        0.7578164312242329}},
               {{        0.5817218061802611,       0.05797589531445219,         0.811319009870262}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.00007777160743261247,
                 0.0007557646413004702,
                 0.0002841633806090617,
@@ -1079,26 +1079,26 @@ namespace lebedev{
         struct RulePointData<35>{
             static constexpr size_t Rule_=35;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
-                LEBEDEV_POINT_TYPE::OPTRN12_0AA,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
+                LEBEDEV_POINT_TYPE::OPTRN12_0BB,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
@@ -1130,7 +1130,7 @@ namespace lebedev{
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{                        0.,        0.7071067811865476,        0.7071067811865476}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
@@ -1181,7 +1181,7 @@ namespace lebedev{
               {{        0.6426246321215801,        0.1594171564034221,        0.7494129385291201}},
               {{        0.6511904367376113,        0.0535478953656554,        0.7570228781241607}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.00006309049437420978,
                 0.0006398287705571748,
                 0.0006357185073530722,
@@ -1238,27 +1238,27 @@ namespace lebedev{
         struct RulePointData<38>{
             static constexpr size_t Rule_=38;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
@@ -1296,7 +1296,7 @@ namespace lebedev{
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
               {{       0.02540835336814348,       0.02540835336814348,         0.999354207054856}},
@@ -1354,7 +1354,7 @@ namespace lebedev{
               {{        0.6020628374713980,       0.04916375015738109,        0.7969336643700977}},
               {{        0.6529222529856881,        0.0986162154012701,        0.7509776119272954}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.00004656031899197432,
                 0.0005421549195295507,
                 0.0001778522133346554,
@@ -1418,29 +1418,29 @@ namespace lebedev{
         struct RulePointData<41>{
             static constexpr size_t Rule_=41;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
-                LEBEDEV_POINT_TYPE::OPTRN12_0AA,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
+                LEBEDEV_POINT_TYPE::OPTRN12_0BB,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
@@ -1484,7 +1484,7 @@ namespace lebedev{
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{                        0.,        0.7071067811865476,        0.7071067811865476}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
@@ -1550,7 +1550,7 @@ namespace lebedev{
               {{        0.6532272537379033,        0.1369294213140155,        0.7446774392665899}},
               {{        0.6594761494500487,       0.04589901487275583,        0.7503229229740002}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.00003922616270665293,
                 0.0004703831750854425,
                 0.0004678202801282136,
@@ -1622,30 +1622,30 @@ namespace lebedev{
         struct RulePointData<44>{
             static constexpr size_t Rule_=44;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
@@ -1696,7 +1696,7 @@ namespace lebedev{
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
               {{       0.02065562538818703,       0.02065562538818703,         0.999573254083784}},
@@ -1770,7 +1770,7 @@ namespace lebedev{
               {{        0.6167551880377548,       0.04266398851548864,        0.7859979784404436}},
               {{        0.6607195418355383,        0.0855192581423835,         0.745745361047196}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.00002998675149888161,
                 0.0004077860529495355,
                 0.0001185349192520667,
@@ -1850,32 +1850,32 @@ namespace lebedev{
         struct RulePointData<47>{
             static constexpr size_t Rule_=47;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
-                LEBEDEV_POINT_TYPE::OPTRN12_0AA,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
+                LEBEDEV_POINT_TYPE::OPTRN12_0BB,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
@@ -1933,7 +1933,7 @@ namespace lebedev{
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{                        0.,        0.7071067811865476,        0.7071067811865476}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
@@ -2016,7 +2016,7 @@ namespace lebedev{
               {{        0.6608688171046802,        0.1199671308754309,        0.7408510606648127}},
               {{        0.6656263089489130,        0.0401595595780597,        0.7452038825781456}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.00002599095953754734,
                 0.000360313408968754,
                 0.0003586067974412446,
@@ -2105,33 +2105,33 @@ namespace lebedev{
         struct RulePointData<50>{
             static constexpr size_t Rule_=50;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
@@ -2197,7 +2197,7 @@ namespace lebedev{
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
               {{       0.01721420832906233,       0.01721420832906233,          0.99970362711316}},
@@ -2289,7 +2289,7 @@ namespace lebedev{
               {{        0.6278573968375105,        0.0376755993024572,        0.7774160008988917}},
               {{        0.6665611711264577,       0.07548443301360158,        0.7416187062899239}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.0000204038273082633,
                 0.0003178149703889543,
                 0.0000828811512807611,
@@ -2387,35 +2387,35 @@ namespace lebedev{
         struct RulePointData<53>{
             static constexpr size_t Rule_=53;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
-                LEBEDEV_POINT_TYPE::OPTRN12_0AA,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
+                LEBEDEV_POINT_TYPE::OPTRN12_0BB,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
@@ -2489,7 +2489,7 @@ namespace lebedev{
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{                        0.,        0.7071067811865476,        0.7071067811865476}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
@@ -2591,7 +2591,7 @@ namespace lebedev{
               {{        0.6666296011353230,        0.1067259792282730,        0.7377089807288009}},
               {{        0.6703715271049922,       0.03569455268820809,        0.7411665902854158}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.0000180739525219692,
                 0.0002848008782238827,
                 0.0002836065837530581,
@@ -2699,36 +2699,36 @@ namespace lebedev{
         struct RulePointData<56>{
             static constexpr size_t Rule_=56;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
@@ -2811,7 +2811,7 @@ namespace lebedev{
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
               {{       0.01462896151831013,       0.01462896151831013,           0.9997859705806}},
@@ -2923,7 +2923,7 @@ namespace lebedev{
               {{        0.6365384364585819,       0.03372799460737052,         0.770507132537155}},
               {{        0.6710994302899275,       0.06755249309678028,        0.7382832893550715}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.00001449063022537883,
                 0.0002546377329828424,
                 0.00006018432961087497,
@@ -3041,38 +3041,38 @@ namespace lebedev{
         struct RulePointData<59>{
             static constexpr size_t Rule_=59;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
-                LEBEDEV_POINT_TYPE::OPTRN12_0AA,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
+                LEBEDEV_POINT_TYPE::OPTRN12_0BB,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
@@ -3164,7 +3164,7 @@ namespace lebedev{
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{                        0.,        0.7071067811865476,        0.7071067811865476}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
@@ -3287,7 +3287,7 @@ namespace lebedev{
               {{        0.6711199107088448,        0.0960980507700291,        0.7350940280592361}},
               {{        0.6741354429572275,       0.03211853196273233,        0.7379090760069439}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.0000968752187942071,
                 0.0002307897895367918,
                 0.0002297310852498558,
@@ -3416,39 +3416,39 @@ namespace lebedev{
         struct RulePointData<62>{
             static constexpr size_t Rule_=62;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
@@ -3550,7 +3550,7 @@ namespace lebedev{
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
               {{        0.0230326168626145,        0.0230326168626145,         0.999469357769872}},
@@ -3684,7 +3684,7 @@ namespace lebedev{
               {{        0.6435019674426665,       0.03052608357660639,        0.7648355222653374}},
               {{        0.6747218676375681,       0.06112185773983089,        0.7355368922345798}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.0000908051076430816,
                 0.0002084824361987793,
                 0.00005011105657239616,
@@ -3824,41 +3824,41 @@ namespace lebedev{
         struct RulePointData<65>{
             static constexpr size_t Rule_=65;
             static constexpr size_t point_type_total_=point_type_accum_count(Rule_)[5];
-            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list={{
-                LEBEDEV_POINT_TYPE::OPTRN6_001,
-                LEBEDEV_POINT_TYPE::OPTRN12_0AA,
+            static constexpr c_array<LEBEDEV_POINT_TYPE, point_type_total_> type_list_={{
+                LEBEDEV_POINT_TYPE::OPTRN6_00C,
+                LEBEDEV_POINT_TYPE::OPTRN12_0BB,
                 LEBEDEV_POINT_TYPE::OPTRN8_AAA,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
-                LEBEDEV_POINT_TYPE::OPTRN24_AAB,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
+                LEBEDEV_POINT_TYPE::OPTRN24_AAC,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
                 LEBEDEV_POINT_TYPE::OPTRN24_AB0,
@@ -3970,7 +3970,7 @@ namespace lebedev{
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC,
                 LEBEDEV_POINT_TYPE::OPTRN48_ABC
             }};
-            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list={{
+            static constexpr c_array<c_array<double, 3>, point_type_total_> pos_list_={{
               {{                        0.,                        0.,                        1.}},
               {{                        0.,        0.7071067811865476,        0.7071067811865476}},
               {{        0.5773502691896257,        0.5773502691896257,        0.5773502691896257}},
@@ -4116,7 +4116,7 @@ namespace lebedev{
               {{        0.6747258588365477,        0.0874038489988472,        0.7328748751304481}},
               {{        0.6772135750395347,       0.02919946135808105,        0.7352068860113937}}
             }};
-            static constexpr c_array<double, point_type_total_> weight_list={{
+            static constexpr c_array<double, point_type_total_> weight_list_={{
                 0.00000973534794617549,
                 0.0001907581241803167,
                 0.0001901059546737578,

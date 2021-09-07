@@ -2,7 +2,8 @@
 
 #include "detail/point_type.h"
 #include "detail/rule_info.h"
-#include <detail/rule_point_data.h>
+#include "detail/rule_point_data.h"
+#include "detail/rule_point_expand.h"
 
 namespace lebedev{
     using detail::LEBEDEV_POINT_TYPE;
@@ -23,14 +24,26 @@ namespace lebedev{
 
         using PointData=detail::RulePointData<Rule>;
 
+        template<LEBEDEV_POINT_TYPE Type, size_t index, 
+            typename = typename std::enable_if_t<
+                std::greater<size_t>()(point_type_count_[static_cast<size_t>(Type)], index)
+            >
+        >
+        struct UniquePoint{
+            static constexpr size_t type_id_=static_cast<size_t>(Type);
+            static constexpr size_t point_id_=index+(type_id_>0?point_type_accum_count_[type_id_-1]:0);
+            static constexpr c_array<double, 3> pos_= PointData::pos_list_[point_id_];
+            static constexpr double weight_=PointData::weight_list_[point_id_];
+        };
+
     private:
         //obtain the type of corresponding unique Lebdev point, namely equivalent points under octahedra group is considered as one
         //index should be less than point_type_total_
         static constexpr LEBEDEV_POINT_TYPE point_type(size_t index) {
-            if (index < point_type_accum_count_[0]) return LEBEDEV_POINT_TYPE::OPTRN6_001;
-            if (index < point_type_accum_count_[1]) return LEBEDEV_POINT_TYPE::OPTRN12_0AA;
+            if (index < point_type_accum_count_[0]) return LEBEDEV_POINT_TYPE::OPTRN6_00C;
+            if (index < point_type_accum_count_[1]) return LEBEDEV_POINT_TYPE::OPTRN12_0BB;
             if (index < point_type_accum_count_[2]) return LEBEDEV_POINT_TYPE::OPTRN8_AAA;
-            if (index < point_type_accum_count_[3]) return LEBEDEV_POINT_TYPE::OPTRN24_AAB;
+            if (index < point_type_accum_count_[3]) return LEBEDEV_POINT_TYPE::OPTRN24_AAC;
             if (index < point_type_accum_count_[4]) return LEBEDEV_POINT_TYPE::OPTRN24_AB0;
             if (index < point_type_accum_count_[5]) return LEBEDEV_POINT_TYPE::OPTRN48_ABC;
             return LEBEDEV_POINT_TYPE::OPTRN0_EMPTY;

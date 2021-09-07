@@ -124,7 +124,9 @@ namespace lebedev {
 		};
 
 		inline constexpr size_t point_type_multiplicity(LEBEDEV_POINT_TYPE PType) {
-			return LebedevRuleInfo::point_type_multiplicity_[static_cast<size_t>(PType)];
+			auto index=static_cast<size_t>(PType);
+			if ( index<6 ) return LebedevRuleInfo::point_type_multiplicity_[static_cast<size_t>(PType)];
+			else return 0;
 		}
 
         inline constexpr bool if_available(size_t rule) {

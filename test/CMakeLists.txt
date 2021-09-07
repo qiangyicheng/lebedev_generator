@@ -14,11 +14,13 @@ enable_testing()
 add_executable(
   lebedev_info_test
   lebedev_info_test.cpp
+  lebedev_info_test_helper.h
 )
 
 target_link_libraries(lebedev_info_test
   PRIVATE 
   ${PROJECT_NAME}
+  support
   gtest_main
 )
 
