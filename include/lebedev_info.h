@@ -4,6 +4,7 @@
 #include "detail/rule_info.h"
 #include "detail/rule_point_data.h"
 #include "detail/rule_point_expand.h"
+#include "detail/rule_point_summarize.h"
 
 namespace lebedev{
     using detail::LEBEDEV_POINT_TYPE;

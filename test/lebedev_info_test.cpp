@@ -1,5 +1,7 @@
 //c++ headers
 #include <type_traits>
+#include <cmath>
+#include <iomanip>
 
 //gtest headers
 #include <gtest/gtest.h>
@@ -87,7 +89,7 @@ TEST(LebedevInfoTest, GenOH0BB)
   using namespace lebedev::detail;
   
   constexpr LEBEDEV_POINT_TYPE Type = LEBEDEV_POINT_TYPE::OPTRN12_0BB;
-  constexpr size_t pick_rule=10;
+  constexpr size_t pick_rule=65;
   constexpr size_t pick_index=0;
 
   constexpr c_array<double, 3> p = lebedev::LebedevInfo<pick_rule>::UniquePoint<Type,pick_index>::pos_;
@@ -103,7 +105,7 @@ TEST(LebedevInfoTest, GenOHAAA)
   using namespace lebedev::detail;
   
   constexpr LEBEDEV_POINT_TYPE Type = LEBEDEV_POINT_TYPE::OPTRN8_AAA;
-  constexpr size_t pick_rule=10;
+  constexpr size_t pick_rule=65;
   constexpr size_t pick_index=0;
 
   constexpr c_array<double, 3> p = lebedev::LebedevInfo<pick_rule>::UniquePoint<Type,pick_index>::pos_;
@@ -119,14 +121,14 @@ TEST(LebedevInfoTest, GenOHAAC)
   using namespace lebedev::detail;
   
   constexpr LEBEDEV_POINT_TYPE Type = LEBEDEV_POINT_TYPE::OPTRN24_AAC;
-  constexpr size_t pick_rule=10;
+  constexpr size_t pick_rule=65;
   constexpr size_t pick_index=0;
 
   constexpr c_array<double, 3> p = lebedev::LebedevInfo<pick_rule>::UniquePoint<Type,pick_index>::pos_;
 
   constexpr auto points = point_expand<Type>(p);
   auto ref_points = get_reference_genoh_results<Type>(p);
-
+  
   EXPECT_EQ(ref_points, points);
 }
 
@@ -135,7 +137,7 @@ TEST(LebedevInfoTest, GenOHAB0)
   using namespace lebedev::detail;
   
   constexpr LEBEDEV_POINT_TYPE Type = LEBEDEV_POINT_TYPE::OPTRN24_AB0;
-  constexpr size_t pick_rule=10;
+  constexpr size_t pick_rule=65;
   constexpr size_t pick_index=0;
 
   constexpr c_array<double, 3> p = lebedev::LebedevInfo<pick_rule>::UniquePoint<Type,pick_index>::pos_;
@@ -151,7 +153,7 @@ TEST(LebedevInfoTest, GenOHABC)
   using namespace lebedev::detail;
   
   constexpr LEBEDEV_POINT_TYPE Type = LEBEDEV_POINT_TYPE::OPTRN48_ABC;
-  constexpr size_t pick_rule=10;
+  constexpr size_t pick_rule=65;
   constexpr size_t pick_index=0;
 
   constexpr c_array<double, 3> p = lebedev::LebedevInfo<pick_rule>::UniquePoint<Type,pick_index>::pos_;
@@ -160,4 +162,13 @@ TEST(LebedevInfoTest, GenOHABC)
   auto ref_points = get_reference_genoh_results<Type>(p);
 
   EXPECT_EQ(ref_points, points);
+}
+
+TEST(LebedevInfoTest, PointDataFull)
+{
+  using namespace lebedev::detail;
+  constexpr size_t rule=23;
+  using RulePointDataFullT=RulePointDataFull<rule>;
+
+  EXPECT_EQ(RulePointDataFullT::pos_list_.size(), point_count(rule)+1);
 }

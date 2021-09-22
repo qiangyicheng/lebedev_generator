@@ -4,4 +4,5 @@ target_sources(${PROJECT_NAME}
     rule_info.h
     rule_point_data.h
     rule_point_expand.h
+    rule_point_summarize.h
 )
