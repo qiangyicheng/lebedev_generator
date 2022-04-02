@@ -81,7 +81,12 @@ TEST(LebedevInfoTest, GenOH00C)
   constexpr auto points = point_expand<Type>(p);
   auto ref_points = get_reference_genoh_results<Type>(p);
 
-  EXPECT_EQ(ref_points, points);
+  for(int i=0; i<point_type_multiplicity(Type); ++i){
+    EXPECT_DOUBLE_EQ(ref_points[i][0], points[i][0]);
+    EXPECT_DOUBLE_EQ(ref_points[i][1], points[i][1]);
+    EXPECT_DOUBLE_EQ(ref_points[i][2], points[i][2]);
+  }
+  // EXPECT_EQ(ref_points, points);
 }
 
 TEST(LebedevInfoTest, GenOH0BB)
@@ -97,7 +102,12 @@ TEST(LebedevInfoTest, GenOH0BB)
   constexpr auto points = point_expand<Type>(p);
   auto ref_points = get_reference_genoh_results<Type>(p);
 
-  EXPECT_EQ(ref_points, points);
+  for(int i=0; i<point_type_multiplicity(Type); ++i){
+    EXPECT_DOUBLE_EQ(ref_points[i][0], points[i][0]);
+    EXPECT_DOUBLE_EQ(ref_points[i][1], points[i][1]);
+    EXPECT_DOUBLE_EQ(ref_points[i][2], points[i][2]);
+  }
+  // EXPECT_EQ(ref_points, points);
 }
 
 TEST(LebedevInfoTest, GenOHAAA)
@@ -113,7 +123,12 @@ TEST(LebedevInfoTest, GenOHAAA)
   constexpr auto points = point_expand<Type>(p);
   auto ref_points = get_reference_genoh_results<Type>(p);
 
-  EXPECT_EQ(ref_points, points);
+  for(int i=0; i<point_type_multiplicity(Type); ++i){
+    EXPECT_DOUBLE_EQ(ref_points[i][0], points[i][0]);
+    EXPECT_DOUBLE_EQ(ref_points[i][1], points[i][1]);
+    EXPECT_DOUBLE_EQ(ref_points[i][2], points[i][2]);
+  }
+  // EXPECT_EQ(ref_points, points);
 }
 
 TEST(LebedevInfoTest, GenOHAAC)
@@ -129,7 +144,12 @@ TEST(LebedevInfoTest, GenOHAAC)
   constexpr auto points = point_expand<Type>(p);
   auto ref_points = get_reference_genoh_results<Type>(p);
   
-  EXPECT_EQ(ref_points, points);
+  for(int i=0; i<point_type_multiplicity(Type); ++i){
+    EXPECT_DOUBLE_EQ(ref_points[i][0], points[i][0]);
+    EXPECT_DOUBLE_EQ(ref_points[i][1], points[i][1]);
+    EXPECT_DOUBLE_EQ(ref_points[i][2], points[i][2]);
+  }
+  // EXPECT_EQ(ref_points, points);
 }
 
 TEST(LebedevInfoTest, GenOHAB0)
@@ -145,7 +165,12 @@ TEST(LebedevInfoTest, GenOHAB0)
   constexpr auto points = point_expand<Type>(p);
   auto ref_points = get_reference_genoh_results<Type>(p);
 
-  EXPECT_EQ(ref_points, points);
+  for(int i=0; i<point_type_multiplicity(Type); ++i){
+    EXPECT_DOUBLE_EQ(ref_points[i][0], points[i][0]);
+    EXPECT_DOUBLE_EQ(ref_points[i][1], points[i][1]);
+    EXPECT_DOUBLE_EQ(ref_points[i][2], points[i][2]);
+  }
+  // EXPECT_EQ(ref_points, points);
 }
 
 TEST(LebedevInfoTest, GenOHABC)
@@ -161,7 +186,12 @@ TEST(LebedevInfoTest, GenOHABC)
   constexpr auto points = point_expand<Type>(p);
   auto ref_points = get_reference_genoh_results<Type>(p);
 
-  EXPECT_EQ(ref_points, points);
+  for(int i=0; i<point_type_multiplicity(Type); ++i){
+    EXPECT_DOUBLE_EQ(ref_points[i][0], points[i][0]);
+    EXPECT_DOUBLE_EQ(ref_points[i][1], points[i][1]);
+    EXPECT_DOUBLE_EQ(ref_points[i][2], points[i][2]);
+  }
+  // EXPECT_EQ(ref_points, points);
 }
 
 TEST(LebedevInfoTest, PointDataFull)
@@ -170,5 +200,5 @@ TEST(LebedevInfoTest, PointDataFull)
   constexpr size_t rule=23;
   using RulePointDataFullT=RulePointDataFull<rule>;
 
-  EXPECT_EQ(RulePointDataFullT::pos_list_.size(), point_count(rule)+1);
+  EXPECT_EQ(RulePointDataFullT::pos_list_.size(), point_count(rule));
 }
