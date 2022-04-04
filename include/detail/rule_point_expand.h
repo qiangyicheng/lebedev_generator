@@ -4,41 +4,47 @@
 
 #include "point_type.h"
 
-namespace lebedev{
-    namespace detail{
+namespace lebedev
+{
+    namespace detail
+    {
         using qutility::c_array::c_array;
 
-        template<LEBEDEV_POINT_TYPE type> 
-        inline constexpr c_array<LEBEDEV_POINT_TYPE, point_type_multiplicity(type)> type_expand() {
+        template <LEBEDEV_POINT_TYPE type>
+        inline constexpr c_array<LEBEDEV_POINT_TYPE, point_type_multiplicity(type)> type_expand()
+        {
             constexpr size_t size = point_type_multiplicity(type);
             c_array<LEBEDEV_POINT_TYPE, size> ans;
 
-            for(size_t itr=0;itr<size;++itr){
-                ans[itr]=type;
+            for (size_t itr = 0; itr < size; ++itr)
+            {
+                ans[itr] = type;
             }
 
             return ans;
         }
 
-        template<LEBEDEV_POINT_TYPE type> 
-        inline constexpr c_array<double, point_type_multiplicity(type)> weight_expand(double const & w ) {
+        template <LEBEDEV_POINT_TYPE type>
+        inline constexpr c_array<double, point_type_multiplicity(type)> weight_expand(double const &w)
+        {
             constexpr size_t size = point_type_multiplicity(type);
             c_array<double, size> ans;
 
-            for(size_t itr=0;itr<size;++itr){
-                ans[itr]=w;
+            for (size_t itr = 0; itr < size; ++itr)
+            {
+                ans[itr] = w;
             }
 
-            return ans;        
+            return ans;
         }
 
-        template<LEBEDEV_POINT_TYPE type> 
-        inline constexpr c_array<c_array<double,3>, point_type_multiplicity(type)> point_expand(c_array<double, 3> const & p ) {return {};}
+        template <LEBEDEV_POINT_TYPE type>
+        inline constexpr c_array<c_array<double, 3>, point_type_multiplicity(type)> point_expand(c_array<double, 3> const &p) { return {}; }
 
-
-        template<>
-        inline constexpr c_array<c_array<double,3>, 6> point_expand<LEBEDEV_POINT_TYPE::OPTRN6_00C>(c_array<double, 3> const & p ){
-            c_array<c_array<double,3>, 6> ans{};
+        template <>
+        inline constexpr c_array<c_array<double, 3>, 6> point_expand<LEBEDEV_POINT_TYPE::OPTRN6_00C>(c_array<double, 3> const &p)
+        {
+            c_array<c_array<double, 3>, 6> ans{};
 
             ans[0][0] = 0;
             ans[0][1] = 0;
@@ -67,10 +73,10 @@ namespace lebedev{
             return ans;
         }
 
-
-        template<>
-        inline constexpr c_array<c_array<double,3>, 12> point_expand<LEBEDEV_POINT_TYPE::OPTRN12_0BB>(c_array<double, 3> const & p ){
-            c_array<c_array<double,3>, 12> ans{};
+        template <>
+        inline constexpr c_array<c_array<double, 3>, 12> point_expand<LEBEDEV_POINT_TYPE::OPTRN12_0BB>(c_array<double, 3> const &p)
+        {
+            c_array<c_array<double, 3>, 12> ans{};
 
             ans[0][0] = 0;
             ans[0][1] = p[1];
@@ -123,10 +129,10 @@ namespace lebedev{
             return ans;
         }
 
-
-        template<>
-        inline constexpr c_array<c_array<double,3>, 8> point_expand<LEBEDEV_POINT_TYPE::OPTRN8_AAA>(c_array<double, 3> const & p ){
-            c_array<c_array<double,3>, 8> ans{};
+        template <>
+        inline constexpr c_array<c_array<double, 3>, 8> point_expand<LEBEDEV_POINT_TYPE::OPTRN8_AAA>(c_array<double, 3> const &p)
+        {
+            c_array<c_array<double, 3>, 8> ans{};
 
             ans[0][0] = p[0];
             ans[0][1] = p[0];
@@ -163,10 +169,10 @@ namespace lebedev{
             return ans;
         }
 
-
-        template<>
-        inline constexpr c_array<c_array<double,3>, 24> point_expand<LEBEDEV_POINT_TYPE::OPTRN24_AAC>(c_array<double, 3> const & p ){
-            c_array<c_array<double,3>, 24> ans{};
+        template <>
+        inline constexpr c_array<c_array<double, 3>, 24> point_expand<LEBEDEV_POINT_TYPE::OPTRN24_AAC>(c_array<double, 3> const &p)
+        {
+            c_array<c_array<double, 3>, 24> ans{};
 
             ans[0][0] = p[0];
             ans[0][1] = p[0];
@@ -267,10 +273,10 @@ namespace lebedev{
             return ans;
         }
 
-
-        template<>
-        inline constexpr c_array<c_array<double,3>, 24> point_expand<LEBEDEV_POINT_TYPE::OPTRN24_AB0>(c_array<double, 3> const & p ){
-            c_array<c_array<double,3>, 24> ans{};
+        template <>
+        inline constexpr c_array<c_array<double, 3>, 24> point_expand<LEBEDEV_POINT_TYPE::OPTRN24_AB0>(c_array<double, 3> const &p)
+        {
+            c_array<c_array<double, 3>, 24> ans{};
 
             ans[0][0] = p[0];
             ans[0][1] = p[1];
@@ -371,10 +377,10 @@ namespace lebedev{
             return ans;
         }
 
-
-        template<>
-        inline constexpr c_array<c_array<double,3>, 48> point_expand<LEBEDEV_POINT_TYPE::OPTRN48_ABC>(c_array<double, 3> const & p ){
-            c_array<c_array<double,3>, 48> ans{};
+        template <>
+        inline constexpr c_array<c_array<double, 3>, 48> point_expand<LEBEDEV_POINT_TYPE::OPTRN48_ABC>(c_array<double, 3> const &p)
+        {
+            c_array<c_array<double, 3>, 48> ans{};
 
             ans[0][0] = p[0];
             ans[0][1] = p[1];
