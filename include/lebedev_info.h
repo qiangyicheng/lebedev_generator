@@ -11,6 +11,7 @@ namespace lebedev
     using detail::c_array;
     using detail::LEBEDEV_POINT_TYPE;
 
+    //Note that Rule starts from 1
     template <size_t Rule>
     struct LebedevInfo
     {
