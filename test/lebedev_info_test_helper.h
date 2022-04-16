@@ -2,7 +2,7 @@
 
 #include <type_traits>
 
-#include "lebedev_info.h"
+#include "lebedev/lebedev_info.h"
 
 template <lebedev::detail::LEBEDEV_POINT_TYPE Type>
 auto get_reference_genoh_results(const lebedev::detail::c_array<double, 3> p)

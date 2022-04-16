@@ -7,7 +7,7 @@
 #include <gtest/gtest.h>
 
 // current project header
-#include "lebedev_info.h"
+#include "lebedev/lebedev_info.h"
 
 // support headers
 #include "sphere_lebedev_rule.hpp"
