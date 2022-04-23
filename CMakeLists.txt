@@ -15,9 +15,11 @@ target_include_directories(${PROJECT_NAME} INTERFACE include/)
 # Note that after qutility is switched to cmake, the following line should be changed
 target_include_directories(${PROJECT_NAME} INTERFACE ~/include/qutility/)
 
+add_subdirectory(generator)
+
 add_subdirectory(include)
 
-
 add_subdirectory(support)
+
 enable_testing()
 add_subdirectory(test)

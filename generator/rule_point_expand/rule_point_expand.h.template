@@ -1,0 +1,46 @@
+#pragma once
+
+#include "qutility/c_array.h"
+
+#include "point_type.h"
+
+namespace lebedev
+{
+    namespace detail
+    {
+        using qutility::c_array::c_array;
+
+        template <LEBEDEV_POINT_TYPE type>
+        inline constexpr c_array<LEBEDEV_POINT_TYPE, point_type_multiplicity(type)> type_expand()
+        {
+            constexpr size_t size = point_type_multiplicity(type);
+            c_array<LEBEDEV_POINT_TYPE, size> ans;
+
+            for (size_t itr = 0; itr < size; ++itr)
+            {
+                ans[itr] = type;
+            }
+
+            return ans;
+        }
+
+        template <LEBEDEV_POINT_TYPE type>
+        inline constexpr c_array<double, point_type_multiplicity(type)> weight_expand(double const &w)
+        {
+            constexpr size_t size = point_type_multiplicity(type);
+            c_array<double, size> ans;
+
+            for (size_t itr = 0; itr < size; ++itr)
+            {
+                ans[itr] = w;
+            }
+
+            return ans;
+        }
+
+        template <LEBEDEV_POINT_TYPE type>
+        inline constexpr c_array<c_array<double, 3>, point_type_multiplicity(type)> point_expand(c_array<double, 3> const &p) { return {}; }
+
+        SECTION_TEMPLATE_POINT_EXPAND
+    }
+}
