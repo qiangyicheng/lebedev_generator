@@ -1,0 +1,56 @@
+set(GROUP_LIST 
+    2D009
+    3D223 3D225 3D229 3D230
+)
+
+string(REPLACE ";" " " GROUP_LIST_SPACE_SEPRATED_STRING "${GROUP_LIST}")
+
+macro(add_prefix_surfix prefix surfix list_name)
+   set(${list_name}_TMP)
+   foreach(l IN LISTS ${list_name})
+      list(APPEND ${list_name}_TMP ${prefix}${l}${surfix} )
+   endforeach()
+
+   set(${list_name} ${${list_name}_TMP})
+   unset(${list_name}_TMP)
+endmacro(add_prefix_surfix)
+
+set(GROUP_INFO_FILENAMES ${GROUP_LIST})
+set(GROUP_INFO_PREFIX group)
+set(GROUP_INFO_SURFIX .cuh)
+add_prefix_surfix(${GROUP_INFO_PREFIX} ${GROUP_INFO_SURFIX} GROUP_INFO_FILENAMES)
+
+if(ENABLE_WOLFRAM_SCRIPT)
+    ##group*.cuh
+    set(CURRENT_TARGET_NAME group_info)
+    set(CURRENT_GENERATOR_DIR ${PROJECT_SOURCE_DIR}/generator/${CURRENT_TARGET_NAME})
+    add_custom_command(
+        OUTPUT 
+            ${GROUP_INFO_FILENAMES}
+        COMMAND 
+            wolframscript -file 
+            ${CURRENT_GENERATOR_DIR}/${CURRENT_TARGET_NAME}.wls 
+            ${CURRENT_GENERATOR_DIR}/${GROUP_INFO_PREFIX}XXX${GROUP_INFO_SURFIX}.template
+            ${CMAKE_CURRENT_SOURCE_DIR}
+            ${GROUP_LIST_SPACE_SEPRATED_STRING}
+        DEPENDS 
+            ${CURRENT_GENERATOR_DIR}/GroupInfoGenerator.wl
+            ${CURRENT_GENERATOR_DIR}/${CURRENT_TARGET_NAME}.wls 
+            ${CURRENT_GENERATOR_DIR}/${GROUP_INFO_PREFIX}XXX${GROUP_INFO_SURFIX}.template
+    VERBATIM
+    )
+    add_custom_target(${CURRENT_TARGET_NAME}
+        DEPENDS 
+            ${GROUP_INFO_FILENAMES}
+            ${WOLFRAM_SCRIPT_TARGET_LIST}
+    )
+    append_wolfram_script_target_list(${CURRENT_TARGET_NAME})
+
+    ##
+    add_dependencies(${PROJECT_NAME} group_info)
+endif()
+
+target_sources(${PROJECT_NAME}
+    INTERFACE
+    #${GROUP_INFO_FILENAMES} ## not included, since the dependency is set by add_dependencies before (which has a private scope)
+)

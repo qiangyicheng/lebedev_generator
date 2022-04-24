@@ -1,4 +1,4 @@
-set(ENABLE_WOLFRAM_SCRIPT False CACHE BOOL "whether WOLFRAM_SCRIPT is enabled")
+set(ENABLE_WOLFRAM_SCRIPT True CACHE BOOL "whether WOLFRAM_SCRIPT is enabled")
 
 if(ENABLE_WOLFRAM_SCRIPT)
     find_program(FOUND_WOLFRAM_SCRIPT wolframscript)

@@ -6,6 +6,12 @@
     2.  Mathematica 11.0, or later
     3.  This file is only launched from console, not from interactive input mode
 *)
+RulePointData::para="Not sufficient parameters. At least `1` required while `2` is received. Received parameters are `3`";
+If[Length[$ScriptCommandLine]<4,
+Message[RulePointData::para,4,Length[$ScriptCommandLine],$ScriptCommandLine];Exit[10],
+Nothing[]
+]
+
 lebedevSrcFilename=($ScriptCommandLine)[[2]];
 templateFilename=($ScriptCommandLine)[[3]];
 template=Import[templateFilename];

@@ -1,0 +1,469 @@
+#pragma once
+
+#include <cuda_runtime.h>
+#include <device_launch_parameters.h>
+
+#include "../lebedev_info.h"
+
+namespace lebedev
+{
+    namespace group__GROUPID__
+    {
+        using lebedev::c_array;
+        using lebedev::LEBEDEV_POINT_TYPE;
+        using lebedev::detail::point_type_multiplicity;
+
+        namespace detail
+        {
+            template <typename SignedT = int>
+            constexpr SignedT operation_number = TEMPLATE_operation_number;
+            template <typename SignedT = int>
+            constexpr c_array<SignedT, 6> fields_required_table = TEMPLATE_fields_required_table;
+            template <typename SignedT = int>
+            constexpr c_array<SignedT, 6> extract_num_table = 
+            {{
+                (SignedT)point_type_multiplicity(LEBEDEV_POINT_TYPE::OPTRN6_00C),
+                (SignedT)point_type_multiplicity(LEBEDEV_POINT_TYPE::OPTRN12_0BB),
+                (SignedT)point_type_multiplicity(LEBEDEV_POINT_TYPE::OPTRN8_AAA),
+                (SignedT)point_type_multiplicity(LEBEDEV_POINT_TYPE::OPTRN24_AAC),
+                (SignedT)point_type_multiplicity(LEBEDEV_POINT_TYPE::OPTRN24_AB0),
+                (SignedT)point_type_multiplicity(LEBEDEV_POINT_TYPE::OPTRN48_ABC)
+            }};
+            template <typename SignedT = int>
+            constexpr c_array<SignedT, 6> reconstruct_num_table = {{__GROUPRANKEX_0__, __GROUPRANKEX_1__, __GROUPRANKEX_2__, __GROUPRANKEX_3__, __GROUPRANKEX_4__, __GROUPRANKEX_5__}};
+            template <size_t NX, typename SignedT = int>
+            constexpr SignedT lengthx = TEMPLATE_lengthx;
+            template <size_t NY, typename SignedT = int>
+            constexpr SignedT lengthy = TEMPLATE_lengthy;
+            template <size_t NZ, typename SignedT = int>
+            constexpr SignedT lengthz = TEMPLATE_lengthz;
+            template <LEBEDEV_POINT_TYPE PType, typename SignedT = int>
+            constexpr SignedT fields_required = fields_required_table<SignedT>[static_cast<int>(PType)];
+            template <LEBEDEV_POINT_TYPE PType, typename SignedT = int>
+            constexpr SignedT extract_num = extract_num_table<SignedT>[static_cast<int>(PType)];
+            template <LEBEDEV_POINT_TYPE PType, typename SignedT = int>
+            constexpr SignedT reconstruct_num = reconstruct_num_table<SignedT>[static_cast<int>(PType)];
+            template <LEBEDEV_POINT_TYPE PType, typename SignedT = int>
+            constexpr c_array<SignedT, fields_required<PType, SignedT>> field_indexes;
+            template <typename SignedT>
+            constexpr c_array<SignedT, fields_required<LEBEDEV_POINT_TYPE::OPTRN6_00C, SignedT>> field_indexes<LEBEDEV_POINT_TYPE::OPTRN6_00C, SignedT> = TEMPLATE_field_indexes0;
+            template <typename SignedT>
+            constexpr c_array<SignedT, fields_required<LEBEDEV_POINT_TYPE::OPTRN12_0BB, SignedT>> field_indexes<LEBEDEV_POINT_TYPE::OPTRN12_0BB, SignedT> = TEMPLATE_field_indexes1;
+            template <typename SignedT>
+            constexpr c_array<SignedT, fields_required<LEBEDEV_POINT_TYPE::OPTRN8_AAA, SignedT>> field_indexes<LEBEDEV_POINT_TYPE::OPTRN8_AAA, SignedT> = TEMPLATE_field_indexes2;
+            template <typename SignedT>
+            constexpr c_array<SignedT, fields_required<LEBEDEV_POINT_TYPE::OPTRN24_AAC, SignedT>> field_indexes<LEBEDEV_POINT_TYPE::OPTRN24_AAC, SignedT> = TEMPLATE_field_indexes3;
+            template <typename SignedT>
+            constexpr c_array<SignedT, fields_required<LEBEDEV_POINT_TYPE::OPTRN24_AB0, SignedT>> field_indexes<LEBEDEV_POINT_TYPE::OPTRN24_AB0, SignedT> = TEMPLATE_field_indexes4;
+            template <typename SignedT>
+            constexpr c_array<SignedT, fields_required<LEBEDEV_POINT_TYPE::OPTRN48_ABC, SignedT>> field_indexes<LEBEDEV_POINT_TYPE::OPTRN48_ABC, SignedT> = TEMPLATE_field_indexes5;
+            template <typename SignedT>
+            constexpr c_array<SignedT, fields_required<LEBEDEV_POINT_TYPE::OPTRN6_00C, SignedT>> field_submultiplicities<LEBEDEV_POINT_TYPE::OPTRN6_00C, SignedT> = TEMPLATE_field_submultiplicities0;
+            template <typename SignedT>
+            constexpr c_array<SignedT, fields_required<LEBEDEV_POINT_TYPE::OPTRN12_0BB, SignedT>> field_submultiplicities<LEBEDEV_POINT_TYPE::OPTRN12_0BB, SignedT> = TEMPLATE_field_submultiplicities1;
+            template <typename SignedT>
+            constexpr c_array<SignedT, fields_required<LEBEDEV_POINT_TYPE::OPTRN8_AAA, SignedT>> field_submultiplicities<LEBEDEV_POINT_TYPE::OPTRN8_AAA, SignedT> = TEMPLATE_field_submultiplicities2;
+            template <typename SignedT>
+            constexpr c_array<SignedT, fields_required<LEBEDEV_POINT_TYPE::OPTRN24_AAC, SignedT>> field_submultiplicities<LEBEDEV_POINT_TYPE::OPTRN24_AAC, SignedT> = TEMPLATE_field_submultiplicities3;
+            template <typename SignedT>
+            constexpr c_array<SignedT, fields_required<LEBEDEV_POINT_TYPE::OPTRN24_AB0, SignedT>> field_submultiplicities<LEBEDEV_POINT_TYPE::OPTRN24_AB0, SignedT> = TEMPLATE_field_submultiplicities4;
+            template <typename SignedT>
+            constexpr c_array<SignedT, fields_required<LEBEDEV_POINT_TYPE::OPTRN48_ABC, SignedT>> field_submultiplicities<LEBEDEV_POINT_TYPE::OPTRN48_ABC, SignedT> = TEMPLATE_field_submultiplicities5;
+
+
+            namespace kernel
+            {
+                /// <summary>
+                /// This function determines whether an element is contained in the selected group__GROUPID__ asymmetric unit.
+                /// The asymmetric unit is selected as TEMPLATE_asymunit_expr.
+                /// x falls in the range of TEMPLATE_asymunit_indexrangex.
+                /// y falls in the range of TEMPLATE_asymunit_indexrangey.
+                /// z falls in the range of TEMPLATE_asymunit_indexrangez.
+                /// Note that these restriction is never checked.
+                /// </summary>
+                template <TEMPLATE_size_list, typename SignedT = int>
+                __host__ __device__ __forceinline__ constexpr bool element(SignedT x, SignedT y, SignedT z)
+                {
+                    SECTION_TEMPLATE_element
+                }
+
+                /// <summary>
+                /// This function calculates the shift of a group__GROUPID__ asymmetric unit.
+                /// The asymmetric unit is selected as TEMPLATE_asymunit_expr.
+                /// x falls in the range of TEMPLATE_asymunit_indexrangex.
+                /// y falls in the range of TEMPLATE_asymunit_indexrangey.
+                /// z falls in the range of TEMPLATE_asymunit_indexrangez.
+                /// Note that these restriction is never checked.
+                /// </summary>
+                template <TEMPLATE_size_list, typename SignedT = int>
+                __host__ __device__ __forceinline__ constexpr SignedT index_xyz(SignedT x, SignedT y, SignedT z)
+                {
+                    SECTION_TEMPLATE_index_xyz
+                }
+
+                /// <summary>
+                /// This function calculates the number of the sample points in a group__GROUPID__ asymmetric unit.
+                /// The asymmetric unit is selected as TEMPLATE_asymunit_expr.
+                /// </summary>
+                template <TEMPLATE_size_list, typename SignedT = int>
+                __host__ __device__ __forceinline__ constexpr SignedT total_elements()
+                {
+                    SECTION_TEMPLATE_total_elements
+                }
+
+                /// <summary>
+                /// This function return the relative positions of the symmetry operations in lebedev grids
+                /// In detail, the data at lebedev point i in spatial-compressed format, 
+                /// is equivalent to the data at extract_field_pos<i,...> in orientational-compressed format
+                /// Ideally this should be consteval function which is not currently supported by CUDA 11.x
+                /// </summary>
+                template <decltype(dim3::x) LebedevID, LEBEDEV_POINT_TYPE PType = LEBEDEV_POINT_TYPE::OPTRN0_EMPTY, typename SignedT = int>
+                __host__ __device__ __forceinline__ constexpr SignedT extract_field_pos()
+                {
+                    if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN6_00C) {
+						constexpr SignedT list[6] =
+                        SECTION_TEMPLATE_extract_field_pos_mat0
+						return list[LebedevID];
+					}
+					if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN12_0BB) {
+						constexpr SignedT list[12] =
+						SECTION_TEMPLATE_extract_field_pos_mat1
+						return list[LebedevID];
+					}
+					if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN8_AAA) {
+						constexpr SignedT list[8] =
+						SECTION_TEMPLATE_extract_field_pos_mat2
+						return list[LebedevID];
+					}
+					if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN24_AAC) {
+						constexpr SignedT list[24] =
+						SECTION_TEMPLATE_extract_field_pos_mat3
+						return list[LebedevID];
+					}
+					if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN24_AB0) {
+						constexpr SignedT list[24] =
+						SECTION_TEMPLATE_extract_field_pos_mat4
+						return list[LebedevID];
+					}
+					if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN48_ABC) {
+						constexpr SignedT list[48] = 
+                        SECTION_TEMPLATE_extract_field_pos_mat5
+						return list[LebedevID];
+					}
+					return -1;
+                }
+
+                /// <summary>
+                /// This function return the relative positions of the symmetry operations in lebedev grids
+                /// In detail, the operation i, mapping data in spatial-compressed format at reconstruct_lebedev_point_pos<i,...>() 
+                /// to the data of asymunit No. i in orientational-compressed format in reconstruct_field_pos<i,...>()
+                /// Ideally this should be consteval function which is not currently supported by CUDA 11.x
+                /// </summary>
+                template <decltype(dim3::x) OptrnID, LEBEDEV_POINT_TYPE PType = LEBEDEV_POINT_TYPE::OPTRN0_EMPTY, typename SignedT = int>
+                __host__ __device__ __forceinline__ constexpr SignedT reconstruct_lebedev_point_pos()
+                {
+                    if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN6_00C) {
+						constexpr SignedT list[__GROUPRANKEX_0__] =
+                        SECTION_TEMPLATE_reconstruct_lebedev_point_pos_mat0
+						return list[OptrnID];
+					}
+					if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN12_0BB) {
+						constexpr SignedT list[__GROUPRANKEX_1__] =
+						SECTION_TEMPLATE_reconstruct_lebedev_point_pos_mat1
+						return list[OptrnID];
+					}
+					if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN8_AAA) {
+						constexpr SignedT list[__GROUPRANKEX_2__] =
+						SECTION_TEMPLATE_reconstruct_lebedev_point_pos_mat2
+						return list[OptrnID];
+					}
+					if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN24_AAC) {
+						constexpr SignedT list[__GROUPRANKEX_3__] =
+						SECTION_TEMPLATE_reconstruct_lebedev_point_pos_mat3
+						return list[OptrnID];
+					}
+					if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN24_AB0) {
+						constexpr SignedT list[__GROUPRANKEX_4__] =
+						SECTION_TEMPLATE_reconstruct_lebedev_point_pos_mat4
+						return list[OptrnID];
+					}
+					if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN48_ABC) {
+						constexpr SignedT list[__GROUPRANKEX_5__] = 
+                        SECTION_TEMPLATE_reconstruct_lebedev_point_pos_mat5
+						return list[OptrnID];
+					}
+					return -1;
+                }
+
+                /// <summary>
+                /// This function return the relative positions of the symmetry operations in lebedev grids
+                /// In detail, the operation i, mapping data in spatial-compressed format at reconstruct_lebedev_point_pos<i,...>() 
+                /// to the data of asymunit No. i in orientational-compressed format in reconstruct_field_pos<i,...>()
+                /// Ideally this should be consteval function which is not currently supported by CUDA 11.x
+                /// </summary>
+                template <decltype(dim3::x) OptrnID, LEBEDEV_POINT_TYPE PType = LEBEDEV_POINT_TYPE::OPTRN0_EMPTY, typename SignedT = int>
+                __host__ __device__ __forceinline__ constexpr SignedT reconstruct_field_pos()
+                {
+                    if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN6_00C) {
+						constexpr SignedT list[__GROUPRANKEX_0__] =
+                        SECTION_TEMPLATE_reconstruct_field_pos_mat0
+						return list[OptrnID];
+					}
+					if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN12_0BB) {
+						constexpr SignedT list[__GROUPRANKEX_1__] =
+						SECTION_TEMPLATE_reconstruct_field_pos_mat1
+						return list[OptrnID];
+					}
+					if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN8_AAA) {
+						constexpr SignedT list[__GROUPRANKEX_2__] =
+						SECTION_TEMPLATE_reconstruct_field_pos_mat2
+						return list[OptrnID];
+					}
+					if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN24_AAC) {
+						constexpr SignedT list[__GROUPRANKEX_3__] =
+						SECTION_TEMPLATE_reconstruct_field_pos_mat3
+						return list[OptrnID];
+					}
+					if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN24_AB0) {
+						constexpr SignedT list[__GROUPRANKEX_4__] =
+						SECTION_TEMPLATE_reconstruct_field_pos_mat4
+						return list[OptrnID];
+					}
+					if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN48_ABC) {
+						constexpr SignedT list[__GROUPRANKEX_5__] = 
+                        SECTION_TEMPLATE_reconstruct_field_pos_mat5
+						return list[OptrnID];
+					}
+					return -1;
+                }
+
+                /// <summary>
+				/// Note that this kernel requires that blockIdx.x should be the number of lebedev points.
+				/// However, this is not checked in the kernel. Any block exceeds this constraint ***will return without doing anything***
+				/// </summary>
+				template<TEMPLATE_size_list, LEBEDEV_POINT_TYPE PType = LEBEDEV_POINT_TYPE::OPTRN0_EMPTY, typename SignedT = int>
+				__global__ void extract(double* dst_lebedev, const double* src_real) {
+					constexpr SignedT Nx = TEMPLATE_Nx;
+					constexpr SignedT Ny = TEMPLATE_Ny;
+					constexpr SignedT Nz = TEMPLATE_Nz;
+
+                    SECTION_TEMPLATE_derived_sizes
+
+					constexpr SignedT Sx = TEMPLATE_Sx;
+					constexpr SignedT Sy = TEMPLATE_Sy;
+					constexpr SignedT Sz = TEMPLATE_Sz;
+
+					constexpr SignedT NAsymunit = total_elements<TEMPLATE_reduced_size_list, SignedT>();
+
+                    for(SignedT x = Sx + (SignedT)(blockIdx.y); x < Sx + lengthx<Nx, SignedT>; x += (SignedT)(gridDim.y))
+                    {
+                        for(SignedT y = Sy + (SignedT)(threadIdx.x); y < Sy + lengthy<Ny, SignedT>; y += (SignedT)(blockDim.x))
+                        {
+                            for(SignedT z = Sz + (SignedT)(threadIdx.y); z < Sz + lengthz<Nz, SignedT>; z += (SignedT)(blockDim.y))
+                            {                               
+                                SignedT Asymunit_index = index_xyz<TEMPLATE_reduced_size_list, SignedT>(x, y, z);
+					            SignedT real_index = 0;
+                                
+#define GROUP__GROUPID___INDEX_CASES(LebedevID, x, y, z) \
+				                {\
+                                    constexpr SignedT field_shift = extract_field_pos<LebedevID, PType, SignedT>() * Nx * Ny * Nz;\
+                                    real_index = field_shift + (((x) % Nx) * Ny + ((y) % Ny)) * Nz + ((z) % Nz); break;\
+                                }
+
+                                if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN6_00C) {
+                                    switch (blockIdx.x)
+                                    {
+                                    SECTION_TEMPLATE_extract_switch0
+                                    default: return;
+                                    }
+                                }
+                                if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN12_0BB) {
+                                    switch (blockIdx.x)
+                                    {
+                                    SECTION_TEMPLATE_extract_switch1
+                                    default: return;
+                                    }
+                                }
+                                if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN8_AAA) {
+                                    switch (blockIdx.x)
+                                    {
+                                    SECTION_TEMPLATE_extract_switch2
+                                    default: return;
+                                    }
+                                }
+                                if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN24_AAC) {
+                                    switch (blockIdx.x)
+                                    {
+                                    SECTION_TEMPLATE_extract_switch3
+                                    default: return;
+                                    }
+                                }
+                                if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN24_AB0) {
+                                    switch (blockIdx.x)
+                                    {
+                                    SECTION_TEMPLATE_extract_switch4
+                                    default: return;
+                                    }
+                                }
+                                if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN48_ABC) {
+                                    switch (blockIdx.x)
+                                    {
+                                    SECTION_TEMPLATE_extract_switch5
+                                    default: return;
+                                    }
+                                }
+#ifdef GROUP__GROUPID___INDEX_CASES
+#undef GROUP__GROUPID___INDEX_CASES
+#endif // GROUP__GROUPID___INDEX_CASES
+                                if (element<TEMPLATE_reduced_size_list>(x, y, z)) {
+						            dst_lebedev[blockIdx.x * NAsymunit + Asymunit_index] = src_real[real_index];
+                                }
+                            }
+                        }
+                    }
+
+				}
+				
+                /// <summary>
+				/// Note that this kernel requires that blockIdx.x should be the number of operations multiples by number of leading lebedev points.
+				/// However, this is not checked in the kernel. Any block exceeds this constraint ***will return without doing anything***
+				/// </summary>
+				template<TEMPLATE_size_list, LEBEDEV_POINT_TYPE PType = LEBEDEV_POINT_TYPE::OPTRN0_EMPTY, typename SignedT = int>
+				__global__ void reconstruct(double* dst_real, const double* src_lebedev) {
+					constexpr SignedT Nx = TEMPLATE_Nx;
+					constexpr SignedT Ny = TEMPLATE_Ny;
+					constexpr SignedT Nz = TEMPLATE_Nz;
+
+                    SECTION_TEMPLATE_derived_sizes
+
+					constexpr SignedT Sx = TEMPLATE_Sx;
+					constexpr SignedT Sy = TEMPLATE_Sy;
+					constexpr SignedT Sz = TEMPLATE_Sz;
+
+					constexpr SignedT NAsymunit = total_elements<TEMPLATE_reduced_size_list, SignedT>();
+
+                    for(SignedT x = Sx + (SignedT)(blockIdx.y); x < Sx + lengthx<Nx, SignedT>; x += (SignedT)(gridDim.y))
+                    {
+                        for(SignedT y = Sy + (SignedT)(threadIdx.x); y < Sy + lengthy<Ny, SignedT>; y += (SignedT)(blockDim.x))
+                        {
+                            for(SignedT z = Sz + (SignedT)(threadIdx.y); z < Sz + lengthz<Nz, SignedT>; z += (SignedT)(blockDim.y))
+                            {                               
+                                SignedT Asymunit_index = index_xyz<TEMPLATE_reduced_size_list, SignedT>(x, y, z);
+                                SignedT lebdev_pos = 0;
+					            SignedT real_index = 0;
+
+#define GROUP__GROUPID___INDEX_CASES(OptrnID, x, y, z) \
+				                {\
+                                    constexpr SignedT temppos = reconstruct_lebedev_point_pos<OptrnID, PType, SignedT>();\
+                                    lebdev_pos = temppos;\
+                                    constexpr SignedT field_shift = reconstruct_field_pos<OptrnID, PType, SignedT>() * Nx * Ny * Nz;\
+                                    real_index = field_shift + (((x) % Nx) * Ny + ((y) % Ny)) * Nz + ((z) % Nz); break;\
+                                }
+
+                                if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN6_00C) {
+                                    switch (blockIdx.x)
+                                    {
+                                    SECTION_TEMPLATE_reconstruct_switch0
+                                    default: return;
+                                    }
+                                }
+                                if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN12_0BB) {
+                                    switch (blockIdx.x)
+                                    {
+                                    SECTION_TEMPLATE_reconstruct_switch1
+                                    default: return;
+                                    }
+                                }
+                                if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN8_AAA) {
+                                    switch (blockIdx.x)
+                                    {
+                                    SECTION_TEMPLATE_reconstruct_switch2
+                                    default: return;
+                                    }
+                                }
+                                if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN24_AAC) {
+                                    switch (blockIdx.x)
+                                    {
+                                    SECTION_TEMPLATE_reconstruct_switch3
+                                    default: return;
+                                    }
+                                }
+                                if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN24_AB0) {
+                                    switch (blockIdx.x)
+                                    {
+                                    SECTION_TEMPLATE_reconstruct_switch4
+                                    default: return;
+                                    }
+                                }
+                                if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN48_ABC) {
+                                    switch (blockIdx.x)
+                                    {
+                                    SECTION_TEMPLATE_reconstruct_switch5
+                                    default: return;
+                                    }
+                                }
+
+#ifdef GROUP__GROUPID___INDEX_CASES
+#undef GROUP__GROUPID___INDEX_CASES
+#endif // GROUP__GROUPID___INDEX_CASES
+                                if (element<TEMPLATE_reduced_size_list>(x, y, z)) {
+						            dst_real[real_index] = src_lebedev[lebdev_pos * NAsymunit + Asymunit_index];
+                                }
+                            }
+                        }
+                    }
+				}
+            }
+        }
+
+        /// <summary>
+		/// SignedT must be a type of Signed interger!!!
+		/// </summary>
+		/// <typeparam name="SignedT">  must be a type of Signed interger </typeparam>
+		template<TEMPLATE_size_list, typename SignedT = int>
+		struct GroupInfo {
+			using KernelFuncT = void (*)(double*, const double*);
+
+			constexpr static SignedT operation_number_ = detail::operation_number<SignedT>;
+			constexpr static c_array<SignedT, 6> fields_required_table_ = detail::fields_required_table<SignedT>;
+			constexpr static c_array<SignedT, 6> extract_num_table_ = detail::extract_num_table<SignedT>;
+			constexpr static c_array<SignedT, 6> reconstruct_num_table_ = detail::reconstruct_num_table<SignedT>;
+			constexpr static SignedT N_x_ = TEMPLATE_Nx;
+			constexpr static SignedT N_y_ = TEMPLATE_Ny;
+			constexpr static SignedT N_z_ = TEMPLATE_Nz;
+			constexpr static SignedT length_x_ = detail::lengthx<N_x_, SignedT>;
+			constexpr static SignedT length_y_ = detail::lengthy<N_y_, SignedT>;
+			constexpr static SignedT length_z_ = detail::lengthz<N_z_, SignedT>;
+			constexpr static SignedT total_elements_ = detail::kernel::total_elements<TEMPLATE_reduced_size_list, SignedT>();
+			
+			template<LEBEDEV_POINT_TYPE PType>
+			struct PointInfo {
+				constexpr static SignedT fields_required_ = detail::fields_required<PType, SignedT>;
+				constexpr static auto field_indexes_ = detail::field_indexes<PType, SignedT>;
+				constexpr static auto field_submultiplicities_ = detail::field_submultiplicities<PType, SignedT>;
+				constexpr static SignedT extract_num_ = detail::extract_num<PType, SignedT>;
+				constexpr static SignedT reconstruct_num_ = detail::reconstruct_num<PType, SignedT>;
+				constexpr static auto extract_fptr = detail::kernel::extract<TEMPLATE_reduced_size_list, PType, SignedT>;
+				constexpr static auto reconstruct_fptr = detail::kernel::reconstruct<TEMPLATE_reduced_size_list, PType, SignedT>;
+			};
+
+			constexpr static c_array<KernelFuncT, 6>  extract_fptr_table_ = {
+				PointInfo<LEBEDEV_POINT_TYPE::OPTRN6_00C>::extract_fptr,
+				PointInfo<LEBEDEV_POINT_TYPE::OPTRN12_0BB>::extract_fptr,
+				PointInfo<LEBEDEV_POINT_TYPE::OPTRN8_AAA>::extract_fptr,
+				PointInfo<LEBEDEV_POINT_TYPE::OPTRN24_AAC>::extract_fptr,
+				PointInfo<LEBEDEV_POINT_TYPE::OPTRN24_AB0>::extract_fptr,
+				PointInfo<LEBEDEV_POINT_TYPE::OPTRN48_ABC>::extract_fptr
+			};
+			constexpr static c_array<KernelFuncT, 6>  reconstruct_fptr_table_ = {
+				PointInfo<LEBEDEV_POINT_TYPE::OPTRN6_00C>::reconstruct_fptr,
+				PointInfo<LEBEDEV_POINT_TYPE::OPTRN12_0BB>::reconstruct_fptr,
+				PointInfo<LEBEDEV_POINT_TYPE::OPTRN8_AAA>::reconstruct_fptr,
+				PointInfo<LEBEDEV_POINT_TYPE::OPTRN24_AAC>::reconstruct_fptr,
+				PointInfo<LEBEDEV_POINT_TYPE::OPTRN24_AB0>::reconstruct_fptr,
+				PointInfo<LEBEDEV_POINT_TYPE::OPTRN48_ABC>::reconstruct_fptr
+			};
+		};
+    }
+
+};

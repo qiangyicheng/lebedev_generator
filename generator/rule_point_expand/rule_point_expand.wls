@@ -6,6 +6,12 @@
     2.  Mathematica 11.0, or later
     3.  This file is only launched from console, not from interactive input mode
 *)
+RulePointExpand::para="Not sufficient parameters. At least `1` required while `2` is received. Received parameters are `3`";
+If[Length[$ScriptCommandLine]<3,
+Message[RulePointExpand::para,3,Length[$ScriptCommandLine],$ScriptCommandLine];Exit[10],
+Nothing[]
+]
+
 templateFilename=($ScriptCommandLine)[[2]];
 template=Import[templateFilename];
 outputFilename=($ScriptCommandLine)[[3]];
