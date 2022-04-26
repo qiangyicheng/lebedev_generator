@@ -1,9 +1,6 @@
 #pragma once
 
-#include <cuda_runtime.h>
-#include <device_launch_parameters.h>
 
-#include "device_helper.h"
 
 #include "../lebedev_info.h"
 
@@ -11,7 +8,7 @@ namespace lebedev
 {
     namespace group2D009
     {
-        namespace device
+        namespace host
         {
             using lebedev::c_array;
             using lebedev::LEBEDEV_POINT_TYPE;
@@ -86,7 +83,7 @@ namespace lebedev
                     /// Note that these restriction is never checked.
                     /// </summary>
                     template <size_t NX, size_t NY, size_t NZ, typename SignedT = int>
-                    LEBEDEV_GROUP_INFO_BOTH_CALLABLE LEBEDEV_GROUP_INFO_BOTH_INLINE constexpr bool element(SignedT x, SignedT y, SignedT z)
+                    inline constexpr bool element(SignedT x, SignedT y, SignedT z)
                     {
                         return true;
                     }
@@ -100,7 +97,7 @@ namespace lebedev
                     /// Note that these restriction is never checked.
                     /// </summary>
                     template <size_t NX, size_t NY, size_t NZ, typename SignedT = int>
-                    LEBEDEV_GROUP_INFO_BOTH_CALLABLE LEBEDEV_GROUP_INFO_BOTH_INLINE constexpr SignedT index_xyz(SignedT x, SignedT y, SignedT z)
+                    inline constexpr SignedT index_xyz(SignedT x, SignedT y, SignedT z)
                     {
                         constexpr SignedT NX4 = (SignedT)(NX / 4);
                         constexpr SignedT NY2 = (SignedT)(NY / 2);
@@ -112,7 +109,7 @@ namespace lebedev
                     /// The asymmetric unit is selected as 0 <= x <= 1/4 && 0 <= y <= 1/2 && 0 <= z <= 1.
                     /// </summary>
                     template <size_t NX, size_t NY, size_t NZ, typename SignedT = int>
-                    LEBEDEV_GROUP_INFO_BOTH_CALLABLE LEBEDEV_GROUP_INFO_BOTH_INLINE constexpr SignedT total_elements()
+                    inline constexpr SignedT total_elements()
                     {
                         constexpr SignedT NX4 = (SignedT)(NX / 4);
                         constexpr SignedT NY2 = (SignedT)(NY / 2);
@@ -126,7 +123,7 @@ namespace lebedev
                     /// Ideally this should be consteval function which is not currently supported by CUDA 11.x
                     /// </summary>
                     template <decltype(dim3::x) LebedevID, LEBEDEV_POINT_TYPE PType = LEBEDEV_POINT_TYPE::OPTRN0_EMPTY, typename SignedT = int>
-                    LEBEDEV_GROUP_INFO_BOTH_CALLABLE LEBEDEV_GROUP_INFO_BOTH_INLINE constexpr SignedT extract_field_pos()
+                    inline constexpr SignedT extract_field_pos()
                     {
                         if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN6_00C) {
                             constexpr SignedT list[6] =
@@ -185,7 +182,7 @@ namespace lebedev
                     /// Ideally this should be consteval function which is not currently supported by CUDA 11.x
                     /// </summary>
                     template <decltype(dim3::x) OptrnID, LEBEDEV_POINT_TYPE PType = LEBEDEV_POINT_TYPE::OPTRN0_EMPTY, typename SignedT = int>
-                    LEBEDEV_GROUP_INFO_BOTH_CALLABLE LEBEDEV_GROUP_INFO_BOTH_INLINE constexpr SignedT reconstruct_lebedev_point_pos()
+                    inline constexpr SignedT reconstruct_lebedev_point_pos()
                     {
                         if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN6_00C) {
                             constexpr SignedT list[32] =
@@ -261,7 +258,7 @@ namespace lebedev
                     /// Ideally this should be consteval function which is not currently supported by CUDA 11.x
                     /// </summary>
                     template <decltype(dim3::x) OptrnID, LEBEDEV_POINT_TYPE PType = LEBEDEV_POINT_TYPE::OPTRN0_EMPTY, typename SignedT = int>
-                    LEBEDEV_GROUP_INFO_BOTH_CALLABLE LEBEDEV_GROUP_INFO_BOTH_INLINE constexpr SignedT reconstruct_field_pos()
+                    inline constexpr SignedT reconstruct_field_pos()
                     {
                         if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN6_00C) {
                             constexpr SignedT list[32] =
@@ -331,11 +328,11 @@ namespace lebedev
                     }
 
                     /// <summary>
-                    /// Note that this kernel requires that blockIdx.x should be the number of lebedev points.
+                    /// Note that this kernel requires that outer should be the number of lebedev points.
                     /// However, this is not checked in the kernel. Any block exceeds this constraint ***will return without doing anything***
                     /// </summary>
                     template<size_t NX, size_t NY, size_t NZ, LEBEDEV_POINT_TYPE PType = LEBEDEV_POINT_TYPE::OPTRN0_EMPTY, typename SignedT = int>
-                    LEBEDEV_GROUP_INFO_GLOBAL void extract(double* dst_lebedev, const double* src_real) {
+                    void extract(double* dst_lebedev, const double* src_real) {
                         constexpr SignedT Nx = NX;
                         constexpr SignedT Ny = NY;
                         constexpr SignedT Nz = NZ;
@@ -353,12 +350,13 @@ namespace lebedev
 
                         constexpr SignedT NAsymunit = total_elements<NX, NY, NZ, SignedT>();
 
+                        for(SignedT outer = 0; outer < extract_num<PType, SignedT>; ++outer)
                         {
-                            for(SignedT x = Sx + (SignedT)(blockIdx.y); x < Sx + lengthx<Nx, SignedT>; x += (SignedT)(gridDim.y))
+                            for(SignedT x = Sx + 0; x < Sx + lengthx<Nx, SignedT>; x += 1)
                             {
-                                for(SignedT y = Sy + (SignedT)(threadIdx.x); y < Sy + lengthy<Ny, SignedT>; y += (SignedT)(blockDim.x))
+                                for(SignedT y = Sy + 0; y < Sy + lengthy<Ny, SignedT>; y += 1)
                                 {
-                                    for(SignedT z = Sz + (SignedT)(threadIdx.y); z < Sz + lengthz<Nz, SignedT>; z += (SignedT)(blockDim.y))
+                                    for(SignedT z = Sz + 0; z < Sz + lengthz<Nz, SignedT>; z += 1)
                                     {                               
                                         SignedT Asymunit_index = index_xyz<NX, NY, NZ, SignedT>(x, y, z);
                                         SignedT real_index = 0;
@@ -370,7 +368,7 @@ namespace lebedev
                                         }
 
                                         if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN6_00C) {
-                                            switch (blockIdx.x)
+                                            switch (outer)
                                             {
                                             case 0:GROUP2D009_INDEX_CASES(0, (x), (y), (z));
                                             case 1:GROUP2D009_INDEX_CASES(1, (x), (y), (z));
@@ -382,7 +380,7 @@ namespace lebedev
                                             }
                                         }
                                         if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN12_0BB) {
-                                            switch (blockIdx.x)
+                                            switch (outer)
                                             {
                                             case 0:GROUP2D009_INDEX_CASES(0, (x), (y), (z));
                                             case 1:GROUP2D009_INDEX_CASES(1, (-1 + 4*NX4 - x), (-1 + 2*NY2 - y), (z));
@@ -400,7 +398,7 @@ namespace lebedev
                                             }
                                         }
                                         if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN8_AAA) {
-                                            switch (blockIdx.x)
+                                            switch (outer)
                                             {
                                             case 0:GROUP2D009_INDEX_CASES(0, (x), (y), (z));
                                             case 1:GROUP2D009_INDEX_CASES(1, (-1 + 4*NX4 - x), (-1 + 2*NY2 - y), (z));
@@ -414,7 +412,7 @@ namespace lebedev
                                             }
                                         }
                                         if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN24_AAC) {
-                                            switch (blockIdx.x)
+                                            switch (outer)
                                             {
                                             case 0:GROUP2D009_INDEX_CASES(0, (x), (y), (z));
                                             case 1:GROUP2D009_INDEX_CASES(1, (-1 + 4*NX4 - x), (-1 + 2*NY2 - y), (z));
@@ -444,7 +442,7 @@ namespace lebedev
                                             }
                                         }
                                         if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN24_AB0) {
-                                            switch (blockIdx.x)
+                                            switch (outer)
                                             {
                                             case 0:GROUP2D009_INDEX_CASES(0, (x), (y), (z));
                                             case 1:GROUP2D009_INDEX_CASES(1, (-1 + 4*NX4 - x), (-1 + 2*NY2 - y), (z));
@@ -474,7 +472,7 @@ namespace lebedev
                                             }
                                         }
                                         if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN48_ABC) {
-                                            switch (blockIdx.x)
+                                            switch (outer)
                                             {
                                             case 0:GROUP2D009_INDEX_CASES(0, (x), (y), (z));
                                             case 1:GROUP2D009_INDEX_CASES(1, (-1 + 4*NX4 - x), (-1 + 2*NY2 - y), (z));
@@ -531,7 +529,7 @@ namespace lebedev
     #undef GROUP2D009_INDEX_CASES
     #endif // GROUP2D009_INDEX_CASES
                                         if (element<NX, NY, NZ>(x, y, z)) {
-                                            dst_lebedev[blockIdx.x * NAsymunit + Asymunit_index] = src_real[real_index];
+                                            dst_lebedev[outer * NAsymunit + Asymunit_index] = src_real[real_index];
                                         }
                                     }
                                 }
@@ -541,11 +539,11 @@ namespace lebedev
                     }
                     
                     /// <summary>
-                    /// Note that this kernel requires that blockIdx.x should be the number of operations multiples by number of leading lebedev points.
+                    /// Note that this kernel requires that outer should be the number of operations multiples by number of leading lebedev points.
                     /// However, this is not checked in the kernel. Any block exceeds this constraint ***will return without doing anything***
                     /// </summary>
                     template<size_t NX, size_t NY, size_t NZ, LEBEDEV_POINT_TYPE PType = LEBEDEV_POINT_TYPE::OPTRN0_EMPTY, typename SignedT = int>
-                    LEBEDEV_GROUP_INFO_GLOBAL void reconstruct(double* dst_real, const double* src_lebedev) {
+                    void reconstruct(double* dst_real, const double* src_lebedev) {
                         constexpr SignedT Nx = NX;
                         constexpr SignedT Ny = NY;
                         constexpr SignedT Nz = NZ;
@@ -563,12 +561,13 @@ namespace lebedev
 
                         constexpr SignedT NAsymunit = total_elements<NX, NY, NZ, SignedT>();
 
+                        for(SignedT outer = 0; outer < reconstruct_num<PType, SignedT>; ++outer)
                         {
-                            for(SignedT x = Sx + (SignedT)(blockIdx.y); x < Sx + lengthx<Nx, SignedT>; x += (SignedT)(gridDim.y))
+                            for(SignedT x = Sx + 0; x < Sx + lengthx<Nx, SignedT>; x += 1)
                             {
-                                for(SignedT y = Sy + (SignedT)(threadIdx.x); y < Sy + lengthy<Ny, SignedT>; y += (SignedT)(blockDim.x))
+                                for(SignedT y = Sy + 0; y < Sy + lengthy<Ny, SignedT>; y += 1)
                                 {
-                                    for(SignedT z = Sz + (SignedT)(threadIdx.y); z < Sz + lengthz<Nz, SignedT>; z += (SignedT)(blockDim.y))
+                                    for(SignedT z = Sz + 0; z < Sz + lengthz<Nz, SignedT>; z += 1)
                                     {                               
                                         SignedT Asymunit_index = index_xyz<NX, NY, NZ, SignedT>(x, y, z);
                                         SignedT lebdev_pos = 0;
@@ -583,7 +582,7 @@ namespace lebedev
                                         }
 
                                         if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN6_00C) {
-                                            switch (blockIdx.x)
+                                            switch (outer)
                                             {
                                             case 0:GROUP2D009_INDEX_CASES(0, (x), (y), (z));
                                             case 1:GROUP2D009_INDEX_CASES(1, (-1 + 4*NX4 - x), (-1 + 2*NY2 - y), (z));
@@ -621,7 +620,7 @@ namespace lebedev
                                             }
                                         }
                                         if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN12_0BB) {
-                                            switch (blockIdx.x)
+                                            switch (outer)
                                             {
                                             case 0:GROUP2D009_INDEX_CASES(0, (x), (y), (z));
                                             case 1:GROUP2D009_INDEX_CASES(1, (-1 + 4*NX4 - x), (-1 + 2*NY2 - y), (z));
@@ -667,7 +666,7 @@ namespace lebedev
                                             }
                                         }
                                         if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN8_AAA) {
-                                            switch (blockIdx.x)
+                                            switch (outer)
                                             {
                                             case 0:GROUP2D009_INDEX_CASES(0, (x), (y), (z));
                                             case 1:GROUP2D009_INDEX_CASES(1, (-1 + 4*NX4 - x), (-1 + 2*NY2 - y), (z));
@@ -689,7 +688,7 @@ namespace lebedev
                                             }
                                         }
                                         if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN24_AAC) {
-                                            switch (blockIdx.x)
+                                            switch (outer)
                                             {
                                             case 0:GROUP2D009_INDEX_CASES(0, (x), (y), (z));
                                             case 1:GROUP2D009_INDEX_CASES(1, (-1 + 4*NX4 - x), (-1 + 2*NY2 - y), (z));
@@ -743,7 +742,7 @@ namespace lebedev
                                             }
                                         }
                                         if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN24_AB0) {
-                                            switch (blockIdx.x)
+                                            switch (outer)
                                             {
                                             case 0:GROUP2D009_INDEX_CASES(0, (x), (y), (z));
                                             case 1:GROUP2D009_INDEX_CASES(1, (-1 + 4*NX4 - x), (-1 + 2*NY2 - y), (z));
@@ -829,7 +828,7 @@ namespace lebedev
                                             }
                                         }
                                         if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN48_ABC) {
-                                            switch (blockIdx.x)
+                                            switch (outer)
                                             {
                                             case 0:GROUP2D009_INDEX_CASES(0, (x), (y), (z));
                                             case 1:GROUP2D009_INDEX_CASES(1, (-1 + 4*NX4 - x), (-1 + 2*NY2 - y), (z));

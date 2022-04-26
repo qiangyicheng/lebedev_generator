@@ -15,10 +15,13 @@ macro(add_prefix_surfix prefix surfix list_name)
    unset(${list_name}_TMP)
 endmacro(add_prefix_surfix)
 
-set(GROUP_INFO_FILENAMES ${GROUP_LIST})
+set(GROUP_INFO_FILENAMES_H ${GROUP_LIST})
+set(GROUP_INFO_FILENAMES_CUH ${GROUP_LIST})
 set(GROUP_INFO_PREFIX group)
+set(GROUP_INFO_SURFIX .h)
+add_prefix_surfix(${GROUP_INFO_PREFIX} ${GROUP_INFO_SURFIX} GROUP_INFO_FILENAMES_H)
 set(GROUP_INFO_SURFIX .cuh)
-add_prefix_surfix(${GROUP_INFO_PREFIX} ${GROUP_INFO_SURFIX} GROUP_INFO_FILENAMES)
+add_prefix_surfix(${GROUP_INFO_PREFIX} ${GROUP_INFO_SURFIX} GROUP_INFO_FILENAMES_CUH)
 
 if(ENABLE_WOLFRAM_SCRIPT)
     ##group*.cuh
@@ -26,7 +29,8 @@ if(ENABLE_WOLFRAM_SCRIPT)
     set(CURRENT_GENERATOR_DIR ${PROJECT_SOURCE_DIR}/generator/${CURRENT_TARGET_NAME})
     add_custom_command(
         OUTPUT 
-            ${GROUP_INFO_FILENAMES}
+            ${GROUP_INFO_FILENAMES_CUH}
+            ${GROUP_INFO_FILENAMES_H}
         COMMAND 
             wolframscript -file 
             ${CURRENT_GENERATOR_DIR}/${CURRENT_TARGET_NAME}.wls 
@@ -41,7 +45,8 @@ if(ENABLE_WOLFRAM_SCRIPT)
     )
     add_custom_target(${CURRENT_TARGET_NAME}
         DEPENDS 
-            ${GROUP_INFO_FILENAMES}
+            ${GROUP_INFO_FILENAMES_CUH}
+            ${GROUP_INFO_FILENAMES_H}
             ${WOLFRAM_SCRIPT_TARGET_LIST}
     )
     append_wolfram_script_target_list(${CURRENT_TARGET_NAME})
@@ -52,5 +57,7 @@ endif()
 
 target_sources(${PROJECT_NAME}
     INTERFACE
-    #${GROUP_INFO_FILENAMES} ## not included, since the dependency is set by add_dependencies before (which has a private scope)
+    device_helper.h
+    #${GROUP_INFO_FILENAMES_CUH} ## not included, since the dependency is set by add_dependencies before (which has a private scope)
+    #${GROUP_INFO_FILENAMES_H} ## not included, since the dependency is set by add_dependencies before (which has a private scope)
 )

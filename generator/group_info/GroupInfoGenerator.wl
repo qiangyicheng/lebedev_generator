@@ -215,7 +215,7 @@ GenerateExtractStr[MakeOpExp[#,sizelist]&/@Flatten[Table[movedops,{i,1,nfield}]]
 
 ModifyTarget[line_,rule_]:=Module[
 {s},
-s=StringReplace[line,StartOfString ~~s:Whitespace..~~rule[[1]]:>s];
+s=StringReplace[line,StartOfString ~~s:Whitespace...~~rule[[1]]:>s];
 StringReplace[StringTrim[rule[[2]]],StartOfLine~~a_:>s<>a]
 ];
 
@@ -313,7 +313,8 @@ ohop0,ohop1,ohop2,ohop3,ohop4,ohop5,ohops48,
 sgops, inversesgops,asymunitexpr,bbox,sizesymbolnames,sizesymbols,newvarinfo,newsizesymbols,
 compareans,
 matches,sectionTemplateExtractFieldPosMats,groupRandExs,sectionTemplateDerivedSizes,sectionTemplateReconstructLebedevPointPosMats,sectionTemplateReconstructFieldPosMats,sectionTemplateExtractSwitches,sectionTemplateReconstructSwitches,
-template,targetname,ansstr
+template,targetname,ansstr,
+deviceansstr,hostansstr
 },
 
 privateBaseAsymUnitExpr=baseAsymUnitExpr/.{Global`x->x,Global`y->y,Global`z->z};
@@ -443,8 +444,70 @@ Table[("__GROUPRANKEX_"<>ToString[i]<>"__")->ToString[groupRandExs[[i+1]]],{i,0,
 
 ];
 ansstr=StringReplace[ansstr,"Lebedev`Private`"->""];
-Export[targetname,ansstr,"Text",CharacterEncoding->"UTF8"];
-Print["the output C++ file is ",esc["red"],targetname,esc["reset"]];
+
+deviceansstr=SectionTemplateReplateFunc[ansstr,
+{
+"SECTION_TEMPLATE_EXTRACT_ITERATER_OUTER_LOOP_START"->"{",
+"SECTION_TEMPLATE_EXTRACT_ITERATER_OUTER_LOOP_END"->"}",
+"SECTION_TEMPLATE_RECONSTRUCT_ITERATER_OUTER_LOOP_START"->"{",
+"SECTION_TEMPLATE_RECONSTRUCT_ITERATER_OUTER_LOOP_END"->"}",
+"SECTION_TEMPLATE_ADDITIONAL_INCLUDE"->
+"#include <cuda_runtime.h>
+#include <device_launch_parameters.h>
+
+#include \"device_helper.h\""
+}
+];
+
+deviceansstr=StringReplace[deviceansstr,
+{
+"TEMPLATE_ITERATER_OUTER"->"blockIdx.x",
+"TEMPLATE_ITERATER_X_START"->"(SignedT)(blockIdx.y)",
+"TEMPLATE_ITERATER_X_STEP"->"(SignedT)(gridDim.y)",
+"TEMPLATE_ITERATER_Y_START"->"(SignedT)(threadIdx.x)",
+"TEMPLATE_ITERATER_Y_STEP"->"(SignedT)(blockDim.x)",
+"TEMPLATE_ITERATER_Z_START"->"(SignedT)(threadIdx.y)",
+"TEMPLATE_ITERATER_Z_STEP"->"(SignedT)(blockDim.y)",
+"TEMPLATE_GLOBAL"->"LEBEDEV_GROUP_INFO_GLOBAL",
+"TEMPLATE_BOTH_CALLABLE"->"LEBEDEV_GROUP_INFO_BOTH_CALLABLE",
+"TEMPLATE_BOTH_INLINE"->"LEBEDEV_GROUP_INFO_BOTH_INLINE",
+"TEMPLATE_TARGET"->"device"
+}
+];
+
+hostansstr=SectionTemplateReplateFunc[ansstr,
+{
+"SECTION_TEMPLATE_EXTRACT_ITERATER_OUTER_LOOP_START"->
+"for(SignedT outer = 0; outer < extract_num<PType, SignedT>; ++outer)
+{",
+"SECTION_TEMPLATE_EXTRACT_ITERATER_OUTER_LOOP_END"->"}",
+"SECTION_TEMPLATE_RECONSTRUCT_ITERATER_OUTER_LOOP_START"->
+"for(SignedT outer = 0; outer < reconstruct_num<PType, SignedT>; ++outer)
+{",
+"SECTION_TEMPLATE_RECONSTRUCT_ITERATER_OUTER_LOOP_END"->"}",
+"SECTION_TEMPLATE_ADDITIONAL_INCLUDE"->""
+}
+];
+
+hostansstr=StringReplace[hostansstr,
+{
+"TEMPLATE_ITERATER_OUTER"->"outer",
+"TEMPLATE_ITERATER_X_START"->"0",
+"TEMPLATE_ITERATER_X_STEP"->"1",
+"TEMPLATE_ITERATER_Y_START"->"0",
+"TEMPLATE_ITERATER_Y_STEP"->"1",
+"TEMPLATE_ITERATER_Z_START"->"0",
+"TEMPLATE_ITERATER_Z_STEP"->"1",
+"TEMPLATE_GLOBAL "->"",(*Note that there's a additional space here*)
+"TEMPLATE_BOTH_CALLABLE "->"",(*Note that there's a additional space here*)
+"TEMPLATE_BOTH_INLINE"->"inline",
+"TEMPLATE_TARGET"->"host"
+}
+];
+
+Export[targetname,deviceansstr,"Text",CharacterEncoding->"UTF8"];
+Export[StringReplace[targetname,".cuh"~~EndOfString->".h"],hostansstr,"Text",CharacterEncoding->"UTF8"];
+Print["the output C++ file is ",esc["red"],targetname,esc["reset"], " and ",esc["red"],StringReplace[targetname,".cuh"~~EndOfString->".h"],esc["reset"]];
 Print["============================================================================================"];
 ]
 End[ ]
