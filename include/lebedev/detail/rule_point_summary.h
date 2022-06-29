@@ -21,7 +21,7 @@ namespace lebedev
                 return qutility::c_array::join((type_expand<RulePointDataT::type_list_[Is]>())...);
             }
             template <size_t... Is>
-            constexpr static auto weights_list_impl(qutility::c_array::seq<Is...>)
+            constexpr static auto weight_list_impl(qutility::c_array::seq<Is...>)
             {
                 return qutility::c_array::join((weight_expand<RulePointDataT::type_list_[Is]>(RulePointDataT::weight_list_[Is]))...);
             }

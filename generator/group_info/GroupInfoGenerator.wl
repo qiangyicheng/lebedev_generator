@@ -471,7 +471,8 @@ deviceansstr=StringReplace[deviceansstr,
 "TEMPLATE_GLOBAL"->"LEBEDEV_GROUP_INFO_GLOBAL",
 "TEMPLATE_BOTH_CALLABLE"->"LEBEDEV_GROUP_INFO_BOTH_CALLABLE",
 "TEMPLATE_BOTH_INLINE"->"LEBEDEV_GROUP_INFO_BOTH_INLINE",
-"TEMPLATE_TARGET"->"device"
+"TEMPLATE_TARGET"->"device",
+"TEMPLATE_DIM3_ELE_TYPE"->"decltype(dim3::x)"
 }
 ];
 
@@ -501,7 +502,8 @@ hostansstr=StringReplace[hostansstr,
 "TEMPLATE_GLOBAL "->"",(*Note that there's a additional space here*)
 "TEMPLATE_BOTH_CALLABLE "->"",(*Note that there's a additional space here*)
 "TEMPLATE_BOTH_INLINE"->"inline",
-"TEMPLATE_TARGET"->"host"
+"TEMPLATE_TARGET"->"host",
+"TEMPLATE_DIM3_ELE_TYPE"->"int"
 }
 ];
 

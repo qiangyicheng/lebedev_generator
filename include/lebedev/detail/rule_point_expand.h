@@ -14,7 +14,7 @@ namespace lebedev
         inline constexpr c_array<LEBEDEV_POINT_TYPE, point_type_multiplicity(type)> type_expand()
         {
             constexpr size_t size = point_type_multiplicity(type);
-            c_array<LEBEDEV_POINT_TYPE, size> ans;
+            c_array<LEBEDEV_POINT_TYPE, size> ans{};
 
             for (size_t itr = 0; itr < size; ++itr)
             {
@@ -28,7 +28,7 @@ namespace lebedev
         inline constexpr c_array<double, point_type_multiplicity(type)> weight_expand(double const &w)
         {
             constexpr size_t size = point_type_multiplicity(type);
-            c_array<double, size> ans;
+            c_array<double, size> ans{};
 
             for (size_t itr = 0; itr < size; ++itr)
             {

@@ -12,10 +12,13 @@ namespace lebedev
         {
             using lebedev::c_array;
             using lebedev::LEBEDEV_POINT_TYPE;
-            using lebedev::detail::point_type_multiplicity;
 
             namespace detail
             {
+                using lebedev::detail::point_type_multiplicity;
+                using qutility::c_array::maximum;
+                using qutility::c_array::add_padding;
+
                 template <typename SignedT = int>
                 constexpr SignedT operation_number = 96;
                 template <typename SignedT = int>
@@ -58,6 +61,8 @@ namespace lebedev
                 constexpr c_array<SignedT, fields_required<LEBEDEV_POINT_TYPE::OPTRN24_AB0, SignedT>> field_indexes<LEBEDEV_POINT_TYPE::OPTRN24_AB0, SignedT> = {{0}};
                 template <typename SignedT>
                 constexpr c_array<SignedT, fields_required<LEBEDEV_POINT_TYPE::OPTRN48_ABC, SignedT>> field_indexes<LEBEDEV_POINT_TYPE::OPTRN48_ABC, SignedT> = {{0}};
+                template <LEBEDEV_POINT_TYPE PType, typename SignedT = int>
+                constexpr c_array<SignedT, fields_required<PType, SignedT>> field_submultiplicities;
                 template <typename SignedT>
                 constexpr c_array<SignedT, fields_required<LEBEDEV_POINT_TYPE::OPTRN6_00C, SignedT>> field_submultiplicities<LEBEDEV_POINT_TYPE::OPTRN6_00C, SignedT> = {{6}};
                 template <typename SignedT>
@@ -127,7 +132,7 @@ namespace lebedev
                     /// is equivalent to the data at extract_field_pos<i,...> in orientational-compressed format
                     /// Ideally this should be consteval function which is not currently supported by CUDA 11.x
                     /// </summary>
-                    template <decltype(dim3::x) LebedevID, LEBEDEV_POINT_TYPE PType = LEBEDEV_POINT_TYPE::OPTRN0_EMPTY, typename SignedT = int>
+                    template <int LebedevID, LEBEDEV_POINT_TYPE PType = LEBEDEV_POINT_TYPE::OPTRN0_EMPTY, typename SignedT = int>
                     inline constexpr SignedT extract_field_pos()
                     {
                         if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN6_00C) {
@@ -186,7 +191,7 @@ namespace lebedev
                     /// to the data of asymunit No. i in orientational-compressed format in reconstruct_field_pos<i,...>()
                     /// Ideally this should be consteval function which is not currently supported by CUDA 11.x
                     /// </summary>
-                    template <decltype(dim3::x) OptrnID, LEBEDEV_POINT_TYPE PType = LEBEDEV_POINT_TYPE::OPTRN0_EMPTY, typename SignedT = int>
+                    template <int OptrnID, LEBEDEV_POINT_TYPE PType = LEBEDEV_POINT_TYPE::OPTRN0_EMPTY, typename SignedT = int>
                     inline constexpr SignedT reconstruct_lebedev_point_pos()
                     {
                         if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN6_00C) {
@@ -282,7 +287,7 @@ namespace lebedev
                     /// to the data of asymunit No. i in orientational-compressed format in reconstruct_field_pos<i,...>()
                     /// Ideally this should be consteval function which is not currently supported by CUDA 11.x
                     /// </summary>
-                    template <decltype(dim3::x) OptrnID, LEBEDEV_POINT_TYPE PType = LEBEDEV_POINT_TYPE::OPTRN0_EMPTY, typename SignedT = int>
+                    template <int OptrnID, LEBEDEV_POINT_TYPE PType = LEBEDEV_POINT_TYPE::OPTRN0_EMPTY, typename SignedT = int>
                     inline constexpr SignedT reconstruct_field_pos()
                     {
                         if constexpr (PType == LEBEDEV_POINT_TYPE::OPTRN6_00C) {
@@ -1257,6 +1262,7 @@ namespace lebedev
                 constexpr static c_array<SignedT, 6> fields_required_table_ = detail::fields_required_table<SignedT>;
                 constexpr static c_array<SignedT, 6> extract_num_table_ = detail::extract_num_table<SignedT>;
                 constexpr static c_array<SignedT, 6> reconstruct_num_table_ = detail::reconstruct_num_table<SignedT>;
+                constexpr static SignedT max_fields_required_ = detail::maximum(fields_required_table_);
                 constexpr static SignedT N_x_ = NXYZ;
                 constexpr static SignedT N_y_ = NXYZ;
                 constexpr static SignedT N_z_ = NXYZ;
@@ -1272,26 +1278,46 @@ namespace lebedev
                     constexpr static auto field_submultiplicities_ = detail::field_submultiplicities<PType, SignedT>;
                     constexpr static SignedT extract_num_ = detail::extract_num<PType, SignedT>;
                     constexpr static SignedT reconstruct_num_ = detail::reconstruct_num<PType, SignedT>;
-                    constexpr static auto extract_fptr = detail::kernel::extract<NXYZ, PType, SignedT>;
-                    constexpr static auto reconstruct_fptr = detail::kernel::reconstruct<NXYZ, PType, SignedT>;
+                    constexpr static auto extract_fptr_ = detail::kernel::extract<NXYZ, PType, SignedT>;
+                    constexpr static auto reconstruct_fptr_ = detail::kernel::reconstruct<NXYZ, PType, SignedT>;
                 };
 
-                constexpr static c_array<KernelFuncT, 6>  extract_fptr_table_ = {
-                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN6_00C>::extract_fptr,
-                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN12_0BB>::extract_fptr,
-                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN8_AAA>::extract_fptr,
-                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN24_AAC>::extract_fptr,
-                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN24_AB0>::extract_fptr,
-                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN48_ABC>::extract_fptr
-                };
-                constexpr static c_array<KernelFuncT, 6>  reconstruct_fptr_table_ = {
-                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN6_00C>::reconstruct_fptr,
-                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN12_0BB>::reconstruct_fptr,
-                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN8_AAA>::reconstruct_fptr,
-                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN24_AAC>::reconstruct_fptr,
-                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN24_AB0>::reconstruct_fptr,
-                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN48_ABC>::reconstruct_fptr
-                };
+                constexpr static c_array<KernelFuncT, 6>  extract_fptr_table_ = {{
+                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN6_00C>::extract_fptr_,
+                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN12_0BB>::extract_fptr_,
+                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN8_AAA>::extract_fptr_,
+                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN24_AAC>::extract_fptr_,
+                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN24_AB0>::extract_fptr_,
+                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN48_ABC>::extract_fptr_
+                }};
+                constexpr static c_array<KernelFuncT, 6>  reconstruct_fptr_table_ = {{
+                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN6_00C>::reconstruct_fptr_,
+                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN12_0BB>::reconstruct_fptr_,
+                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN8_AAA>::reconstruct_fptr_,
+                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN24_AAC>::reconstruct_fptr_,
+                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN24_AB0>::reconstruct_fptr_,
+                    PointInfo<LEBEDEV_POINT_TYPE::OPTRN48_ABC>::reconstruct_fptr_
+                }};
+                //note that this table is padded to let its elements to have the same length.
+                //the valid length table is actually fields_required_table_
+                constexpr static c_array<c_array<SignedT, max_fields_required_>, 6>  field_indexes_table_ = {{
+                    detail::add_padding<max_fields_required_>(PointInfo<LEBEDEV_POINT_TYPE::OPTRN6_00C>::field_indexes_),
+                    detail::add_padding<max_fields_required_>(PointInfo<LEBEDEV_POINT_TYPE::OPTRN12_0BB>::field_indexes_),
+                    detail::add_padding<max_fields_required_>(PointInfo<LEBEDEV_POINT_TYPE::OPTRN8_AAA>::field_indexes_),
+                    detail::add_padding<max_fields_required_>(PointInfo<LEBEDEV_POINT_TYPE::OPTRN24_AAC>::field_indexes_),
+                    detail::add_padding<max_fields_required_>(PointInfo<LEBEDEV_POINT_TYPE::OPTRN24_AB0>::field_indexes_),
+                    detail::add_padding<max_fields_required_>(PointInfo<LEBEDEV_POINT_TYPE::OPTRN48_ABC>::field_indexes_)
+                }};
+                //note that this table is padded to let its elements to have the same length.
+                //the valid length table is actually fields_required_table_
+                constexpr static c_array<c_array<SignedT, max_fields_required_>, 6>  field_submultiplicities_table_ = {{
+                    detail::add_padding<max_fields_required_>(PointInfo<LEBEDEV_POINT_TYPE::OPTRN6_00C>::field_submultiplicities_),
+                    detail::add_padding<max_fields_required_>(PointInfo<LEBEDEV_POINT_TYPE::OPTRN12_0BB>::field_submultiplicities_),
+                    detail::add_padding<max_fields_required_>(PointInfo<LEBEDEV_POINT_TYPE::OPTRN8_AAA>::field_submultiplicities_),
+                    detail::add_padding<max_fields_required_>(PointInfo<LEBEDEV_POINT_TYPE::OPTRN24_AAC>::field_submultiplicities_),
+                    detail::add_padding<max_fields_required_>(PointInfo<LEBEDEV_POINT_TYPE::OPTRN24_AB0>::field_submultiplicities_),
+                    detail::add_padding<max_fields_required_>(PointInfo<LEBEDEV_POINT_TYPE::OPTRN48_ABC>::field_submultiplicities_)
+                }};
             };
         }
     }

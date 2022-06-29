@@ -27,6 +27,7 @@ namespace lebedev
         static constexpr size_t point_type_total_ = point_type_accum_count_[5];
 
         using PointData = detail::RulePointData<Rule>;
+        using PointDataFull = detail::RulePointDataFull<Rule>;
 
         template <LEBEDEV_POINT_TYPE Type, size_t index,
                   typename = typename std::enable_if_t<std::greater<size_t>()(point_type_count_[static_cast<size_t>(Type)], index)>>

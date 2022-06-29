@@ -6,8 +6,11 @@
 // gtest headers
 #include <gtest/gtest.h>
 
-// current project header
+// current project headers
 #include "lebedev/lebedev_info.h"
+#include "lebedev/group_info/group2D009.h"
+#include "lebedev/group_info/group3D230.h"
+#include "lebedev/orientational_asymmetric_unit.h"
 
 // support headers
 #include "sphere_lebedev_rule.hpp"
@@ -207,4 +210,56 @@ TEST(LebedevInfoTest, PointDataFull)
     using RulePointDataFullT = RulePointDataFull<rule>;
 
     EXPECT_EQ(RulePointDataFullT::pos_list_.size(), point_count(rule));
+}
+
+TEST(GroupInfoTest, GroupInfo2D009)
+{
+    using GroupInfoT = lebedev::group2D009::host::GroupInfo<1, 32, 32, int>;
+
+    constexpr auto field_indexes_table = GroupInfoT::field_indexes_table_;
+    constexpr auto field_submultiplicities_table = GroupInfoT::field_submultiplicities_table_;
+}
+
+TEST(GroupInfoTest, GroupInfo3D230)
+{
+    using GroupInfoT = lebedev::group3D230::host::GroupInfo<32, int>;
+
+    constexpr auto field_indexes_table = GroupInfoT::field_indexes_table_;
+    constexpr auto field_submultiplicities_table = GroupInfoT::field_submultiplicities_table_;
+}
+
+TEST(OrientationalAsymmetricUnitTest, LebedevInfo15GroupInfo3D230)
+{
+    using LebedevInfoT = lebedev::LebedevInfo<15>;
+    using GroupInfoT = lebedev::group3D230::host::GroupInfo<32, int>;
+
+    LebedevInfoT::point_type_list_;
+    LebedevInfoT::point_shift_list_;
+    LebedevInfoT::PointDataFull::pos_list_;
+    GroupInfoT::fields_required_table_;
+    GroupInfoT::field_indexes_table_;
+    constexpr auto oau_positions = lebedev::oau_positions<LebedevInfoT, GroupInfoT>;
+    constexpr auto oau_types = lebedev::oau_types<LebedevInfoT, GroupInfoT>;
+    constexpr auto oau_weights = lebedev::oau_weights<LebedevInfoT, GroupInfoT>;
+    constexpr auto oau_submultiplicities = lebedev::oau_submultiplicities<LebedevInfoT, GroupInfoT>;
+    constexpr auto total_weight = qutility::c_array::inner_product(oau_weights, oau_submultiplicities);
+    EXPECT_DOUBLE_EQ(total_weight, 1.0);
+}
+
+TEST(OrientationalAsymmetricUnitTest, LebedevInfo15GroupInfo2D009)
+{
+    using LebedevInfoT = lebedev::LebedevInfo<15>;
+    using GroupInfoT = lebedev::group2D009::host::GroupInfo<1, 32, 64, int>;
+
+    LebedevInfoT::point_type_list_;
+    LebedevInfoT::point_shift_list_;
+    LebedevInfoT::PointDataFull::pos_list_;
+    GroupInfoT::fields_required_table_;
+    GroupInfoT::field_indexes_table_;
+    constexpr auto oau_positions = lebedev::oau_positions<LebedevInfoT, GroupInfoT>;
+    constexpr auto oau_types = lebedev::oau_types<LebedevInfoT, GroupInfoT>;
+    constexpr auto oau_weights = lebedev::oau_weights<LebedevInfoT, GroupInfoT>;
+    constexpr auto oau_submultiplicities = lebedev::oau_submultiplicities<LebedevInfoT, GroupInfoT>;
+    constexpr auto total_weight = qutility::c_array::inner_product(oau_weights, oau_submultiplicities);
+    EXPECT_DOUBLE_EQ(total_weight, 1.0);
 }

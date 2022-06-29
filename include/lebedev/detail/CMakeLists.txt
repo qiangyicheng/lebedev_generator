@@ -4,7 +4,7 @@ if(ENABLE_WOLFRAM_SCRIPT)
     set(CURRENT_GENERATOR_DIR ${PROJECT_SOURCE_DIR}/generator/${CURRENT_TARGET_NAME})
     add_custom_command(
         OUTPUT 
-        ${CURRENT_TARGET_NAME}.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/${CURRENT_TARGET_NAME}.h
         COMMAND 
             wolframscript -file 
             ${CURRENT_GENERATOR_DIR}/${CURRENT_TARGET_NAME}.wls 
@@ -17,7 +17,7 @@ if(ENABLE_WOLFRAM_SCRIPT)
     )
     add_custom_target(${CURRENT_TARGET_NAME}
         DEPENDS 
-            ${CURRENT_TARGET_NAME}.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/${CURRENT_TARGET_NAME}.h
             ${WOLFRAM_SCRIPT_TARGET_LIST}
     )
     append_wolfram_script_target_list(${CURRENT_TARGET_NAME})
@@ -29,7 +29,7 @@ if(ENABLE_WOLFRAM_SCRIPT)
     set(CURRENT_SUPPORT_DIR ${PROJECT_SOURCE_DIR}/support/${CURRENT_TARGET_NAME})
     add_custom_command(
         OUTPUT 
-            ${CURRENT_TARGET_NAME}.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/${CURRENT_TARGET_NAME}.h
         COMMAND 
             wolframscript -file 
             ${CURRENT_GENERATOR_DIR}/${CURRENT_TARGET_NAME}.wls
@@ -44,7 +44,7 @@ if(ENABLE_WOLFRAM_SCRIPT)
     )
     add_custom_target(${CURRENT_TARGET_NAME}
         DEPENDS 
-            ${CURRENT_TARGET_NAME}.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/${CURRENT_TARGET_NAME}.h
             ${WOLFRAM_SCRIPT_TARGET_LIST}
     )
     append_wolfram_script_target_list(${CURRENT_TARGET_NAME})
@@ -57,7 +57,7 @@ target_sources(${PROJECT_NAME}
     INTERFACE
     point_type.h
     rule_info.h
-    #rule_point_data.h ## not included, since the dependency is set by add_dependencies before (which has a private scope)
-    #rule_point_expand.h ## not included, since the dependency is set by add_dependencies before (which has a private scope)
+    #${CMAKE_CURRENT_SOURCE_DIR}/rule_point_data.h ## not included, since the dependency is set by add_dependencies before (which has a private scope)
+    #${CMAKE_CURRENT_SOURCE_DIR}/rule_point_expand.h ## not included, since the dependency is set by add_dependencies before (which has a private scope)
     rule_point_summary.h
 )

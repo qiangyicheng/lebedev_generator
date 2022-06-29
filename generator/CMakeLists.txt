@@ -1,3 +1,5 @@
+set(ENABLE_WOLFRAM_SCRIPT True CACHE BOOL "whether WOLFRAM_SCRIPT is enabled")
+
 include(FetchContent)
 
 FetchContent_Declare(wolfram_script_cmake

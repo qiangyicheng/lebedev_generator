@@ -17,14 +17,14 @@ endmacro(add_prefix_surfix)
 
 set(GROUP_INFO_FILENAMES_H ${GROUP_LIST})
 set(GROUP_INFO_FILENAMES_CUH ${GROUP_LIST})
-set(GROUP_INFO_PREFIX group)
+set(GROUP_INFO_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/group)
 set(GROUP_INFO_SURFIX .h)
 add_prefix_surfix(${GROUP_INFO_PREFIX} ${GROUP_INFO_SURFIX} GROUP_INFO_FILENAMES_H)
 set(GROUP_INFO_SURFIX .cuh)
 add_prefix_surfix(${GROUP_INFO_PREFIX} ${GROUP_INFO_SURFIX} GROUP_INFO_FILENAMES_CUH)
 
 if(ENABLE_WOLFRAM_SCRIPT)
-    ##group*.cuh
+    ##group*.cuh group*.h
     set(CURRENT_TARGET_NAME group_info)
     set(CURRENT_GENERATOR_DIR ${PROJECT_SOURCE_DIR}/generator/${CURRENT_TARGET_NAME})
     add_custom_command(
@@ -34,13 +34,13 @@ if(ENABLE_WOLFRAM_SCRIPT)
         COMMAND 
             wolframscript -file 
             ${CURRENT_GENERATOR_DIR}/${CURRENT_TARGET_NAME}.wls 
-            ${CURRENT_GENERATOR_DIR}/${GROUP_INFO_PREFIX}XXX${GROUP_INFO_SURFIX}.template
+            ${CURRENT_GENERATOR_DIR}/groupXXX${GROUP_INFO_SURFIX}.template
             ${CMAKE_CURRENT_SOURCE_DIR}
             ${GROUP_LIST_SPACE_SEPRATED_STRING}
         DEPENDS 
             ${CURRENT_GENERATOR_DIR}/GroupInfoGenerator.wl
             ${CURRENT_GENERATOR_DIR}/${CURRENT_TARGET_NAME}.wls 
-            ${CURRENT_GENERATOR_DIR}/${GROUP_INFO_PREFIX}XXX${GROUP_INFO_SURFIX}.template
+            ${CURRENT_GENERATOR_DIR}/groupXXX${GROUP_INFO_SURFIX}.template
     VERBATIM
     )
     add_custom_target(${CURRENT_TARGET_NAME}
@@ -52,6 +52,14 @@ if(ENABLE_WOLFRAM_SCRIPT)
     append_wolfram_script_target_list(${CURRENT_TARGET_NAME})
 
     ##
+    add_dependencies(${PROJECT_NAME} group_info)
+else()
+    ##when wolframscropt engine is not found, headers must be allready generated
+    set(CURRENT_TARGET_NAME group_info)
+    add_library(${CURRENT_TARGET_NAME} INTERFACE
+        ${GROUP_INFO_FILENAMES_CUH}
+        ${GROUP_INFO_FILENAMES_H}
+    )
     add_dependencies(${PROJECT_NAME} group_info)
 endif()
 
