@@ -13,7 +13,19 @@ target_include_directories(${PROJECT_NAME} INTERFACE include/)
 
 # Use headers from qutility.
 # Note that after qutility is switched to cmake, the following line should be changed
-target_include_directories(${PROJECT_NAME} INTERFACE ~/include/qutility/)
+include(FetchContent)
+
+FetchContent_Declare(qutility
+    GIT_REPOSITORY    https://github.com/qiangyicheng/qutility_cmake.git
+    GIT_TAG           main
+)
+
+if(NOT qutility_POPULATED)
+    FetchContent_Populate(qutility)
+    add_subdirectory(${qutility_SOURCE_DIR} ${qutility_BINARY_DIR})
+endif()
+
+target_link_libraries(${PROJECT_NAME} INTERFACE qutility)
 
 add_subdirectory(generator)
 
